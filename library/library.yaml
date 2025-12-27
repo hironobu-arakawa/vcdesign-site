@@ -27,6 +27,22 @@ rules:
   - "各repoは README 先頭で Role/Scope/Boundary を宣言すると強い"
 
 repositories:
+  - id: vcdesign-core
+    role: Core
+    boundary_primary: Fact
+    audience: [Human, AI]
+    one_liner_ja: "VCDesign の不変な定義（正典）"
+    links:
+      github: "https://github.com/hironobu-arakawa/vcdesign-core"
+
+  - id: boa-core
+    role: Method
+    boundary_primary: Interpretation
+    audience: [Human, AI]
+    one_liner_ja: "VCDesign 下の境界構築工法（BOA）"
+    links:
+      github: "https://github.com/hironobu-arakawa/boa-core"
+
   - id: vcdesign-origins
     role: Origins
     boundary_primary: Fact
