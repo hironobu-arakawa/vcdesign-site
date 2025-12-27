@@ -1,0 +1,234 @@
+<!-- file: library/index.html -->
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Library | VCDesign</title>
+  <meta name="description" content="VCDesign の派生物（衛星リポジトリ）への参照構造。読むためではなく、境界を固定するための索引。" />
+  <style>
+    :root{
+      --bg:#0b0c10; --fg:#e8eaf0; --muted:#aab0c0; --card:#121420; --line:#242840;
+      --accent:#7dd3fc;
+    }
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans JP",sans-serif;}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
+    header{padding:6px 0 22px;border-bottom:1px solid var(--line);margin-bottom:18px}
+    h1{font-size:22px;margin:0 0 6px}
+    p{margin:10px 0;color:var(--muted);line-height:1.65}
+    .note{background:rgba(125,211,252,.08);border:1px solid rgba(125,211,252,.22);padding:12px 14px;border-radius:12px;margin:14px 0 18px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    @media (max-width:820px){ .grid{grid-template-columns:1fr} }
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px}
+    .top{display:flex;gap:10px;align-items:flex-start;justify-content:space-between}
+    .title{font-size:16px;margin:0}
+    .tag{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:2px 8px;border-radius:999px;white-space:nowrap}
+    .one{margin:8px 0 10px;color:var(--fg);line-height:1.55}
+    .meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 12px}
+    .pill{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:3px 8px;border-radius:999px}
+    .use{font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 10px}
+    .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .links a{font-size:13px}
+    .hr{height:1px;background:var(--line);margin:12px 0 10px}
+    footer{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;line-height:1.7}
+    code{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:6px}
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Library</h1>
+      <p>
+        ここは「派生物の倉庫」ではありません。<br/>
+        <strong>境界ごとに参照先を固定するための索引</strong>です。
+      </p>
+      <p>
+        機械可読な索引（AI向け）:
+        <a href="library.yaml"><code>library/library.yaml</code></a>
+      </p>
+
+      <div class="note">
+        <p style="margin:0">
+          読んでも理解できないのが正常です。<br/>
+          必要になったとき、必要な境界だけ拾ってください。<br/>
+          （このサイトは説明を増やすより、参照構造を設計します）
+        </p>
+      </div>
+
+      <p>
+        6つの衛星リポジトリを、<code>Role</code>（Origins / Field）と
+        <code>Boundary</code>（Fact / Interpretation / Responsibility）で整理しました。
+      </p>
+    </header>
+
+    <section class="grid">
+
+      <!-- 1) vcdesign-origins -->
+      <article class="card">
+        <div class="top">
+          <h2 class="title">VCDesign Origins</h2>
+          <div class="tag">Role: Origins</div>
+        </div>
+        <p class="one">
+          原典を「原典のまま」残す。説明も結論も足さない。
+        </p>
+        <div class="meta">
+          <span class="pill">Boundary: Fact</span>
+          <span class="pill">Audience: Human / AI</span>
+          <span class="pill">Stability: High</span>
+        </div>
+        <p class="use">
+          「いつから、どこで、何が言われていたか」を固定したいとき。<br/>
+          解釈や再編集の前に、アンカーとして参照する。
+        </p>
+        <div class="hr"></div>
+        <div class="links">
+          <a href="https://github.com/hironobu-arakawa/vcdesign-origins">GitHub</a>
+          <a href="https://github.com/hironobu-arakawa/vcdesign-origins#readme">Start here</a>
+        </div>
+      </article>
+
+      <!-- 2) factory-data-storage-notes -->
+      <article class="card">
+        <div class="top">
+          <h2 class="title">Factory Data Storage Notes</h2>
+          <div class="tag">Role: Field</div>
+        </div>
+        <p class="one">
+          「保存」は技術ではなく責務。不可逆点と責任の置き場所を決める。
+        </p>
+        <div class="meta">
+          <span class="pill">Boundary: Responsibility</span>
+          <span class="pill">Audience: Human / AI</span>
+          <span class="pill">Focus: storage placement</span>
+        </div>
+        <p class="use">
+          「どこに置くか」「いつ確定するか」「保障は誰が持つか」など、<br/>
+          仕様に書けない判断を“境界”として残したいとき。
+        </p>
+        <div class="hr"></div>
+        <div class="links">
+          <a href="https://github.com/hironobu-arakawa/factory-data-storage-notes">GitHub</a>
+          <a href="https://github.com/hironobu-arakawa/factory-data-storage-notes#readme">Start here</a>
+        </div>
+      </article>
+
+      <!-- 3) factory-data-shapes -->
+      <article class="card">
+        <div class="top">
+          <h2 class="title">Factory Data Shapes</h2>
+          <div class="tag">Role: Field</div>
+        </div>
+        <p class="one">
+          フロー途中の「shape」を固定する。保存形式ではなく、受け渡しの型を揃える。
+        </p>
+        <div class="meta">
+          <span class="pill">Boundary: Fact</span>
+          <span class="pill">Audience: Human / AI</span>
+          <span class="pill">Focus: contracts</span>
+        </div>
+        <p class="use">
+          Edge→Bus→DB→BI のどこで何が「同じ」かを定義したいとき。<br/>
+          形式の議論を“shape”に寄せて、意味の揺れを止める。
+        </p>
+        <div class="hr"></div>
+        <div class="links">
+          <a href="https://github.com/hironobu-arakawa/factory-data-shapes">GitHub</a>
+          <a href="https://github.com/hironobu-arakawa/factory-data-shapes#readme">Start here</a>
+        </div>
+      </article>
+
+      <!-- 4) db-layer-design-principles -->
+      <article class="card">
+        <div class="top">
+          <h2 class="title">DB Layer Design Principles</h2>
+          <div class="tag">Role: Field</div>
+        </div>
+        <p class="one">
+          DB層が引き受けるもの／引き受けないものを、原理で切る。
+        </p>
+        <div class="meta">
+          <span class="pill">Boundary: Responsibility</span>
+          <span class="pill">Audience: Human / AI</span>
+          <span class="pill">Focus: DB responsibilities</span>
+        </div>
+        <p class="use">
+          「RDB/TSDB/Lake のどれが正しいか」ではなく、<br/>
+          “責務の割り当て”としてDB設計を整理したいとき。
+        </p>
+        <div class="hr"></div>
+        <div class="links">
+          <a href="https://github.com/hironobu-arakawa/db-layer-design-principles">GitHub</a>
+          <a href="https://github.com/hironobu-arakawa/db-layer-design-principles#readme">Start here</a>
+        </div>
+      </article>
+
+      <!-- 5) ot-it-async-design-appendix -->
+      <article class="card">
+        <div class="top">
+          <h2 class="title">OT-IT Async Design Appendix</h2>
+          <div class="tag">Role: Field</div>
+        </div>
+        <p class="one">
+          非同期前提で、運用と設計の境界を守る。補遺としてパターンを残す。
+        </p>
+        <div class="meta">
+          <span class="pill">Boundary: Interpretation</span>
+          <span class="pill">Audience: Human / AI</span>
+          <span class="pill">Focus: async-first</span>
+        </div>
+        <p class="use">
+          OT/IT の摩擦が「技術」ではなく「時間」と「責務」で起きているとき。<br/>
+          “会議室時間”を持ち込まない設計の型が欲しいとき。
+        </p>
+        <div class="hr"></div>
+        <div class="links">
+          <a href="https://github.com/hironobu-arakawa/ot-it-async-design-appendix">GitHub</a>
+          <a href="https://github.com/hironobu-arakawa/ot-it-async-design-appendix#readme">Start here</a>
+        </div>
+      </article>
+
+      <!-- 6) edge-semantics-template -->
+      <article class="card">
+        <div class="top">
+          <h2 class="title">Edge Semantics Template</h2>
+          <div class="tag">Role: Field</div>
+        </div>
+        <p class="one">
+          Edgeで意味を扱うためのテンプレ。Factは不変、解釈は候補、責任は現場に置く。
+        </p>
+        <div class="meta">
+          <span class="pill">Boundary: Interpretation</span>
+          <span class="pill">Audience: Human / AI</span>
+          <span class="pill">Focus: semantics at edge</span>
+        </div>
+        <p class="use">
+          「意味」を中央に集める前に、どこまでをEdgeで固定できるか考えるとき。<br/>
+          生成AIに読ませても“誤読しにくい構造”を作りたいとき。
+        </p>
+        <div class="hr"></div>
+        <div class="links">
+          <a href="https://github.com/hironobu-arakawa/edge-semantics-template">GitHub</a>
+          <a href="https://github.com/hironobu-arakawa/edge-semantics-template#readme">Start here</a>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      <div>
+        このページは説明書ではありません。<br/>
+        参照先（衛星）の責務を固定し、境界越しの誤読を減らすための索引です。
+      </div>
+      <div style="margin-top:10px">
+        AI向け索引:
+        <a href="library.yaml"><code>library/library.yaml</code></a>
+      </div>
+    </footer>
+
+  </main>
+</body>
+</html>

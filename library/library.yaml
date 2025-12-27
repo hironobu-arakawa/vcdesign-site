@@ -1,0 +1,129 @@
+# file: library/library.yaml
+version: 1.0
+kind: vcdesign_library_index
+id: vcdesign_library
+name:
+  ja: VCDesign Library Index
+  en: VCDesign Library Index
+
+intent:
+  - "vcdesign.org から派生リポジトリへの参照構造を固定する"
+  - "派生物を '置き場所(責務)' と '境界(F/I/R)' で分類し、誤読を減らす"
+  - "人間にもAIにも同じ入口を提供する（ただし解釈は押し付けない）"
+
+concepts:
+  boundary_axes:
+    - Fact
+    - Interpretation
+    - Responsibility
+  roles:
+    - Origins
+    - Field
+
+rules:
+  - "vcdesign-site は『説明の増築』をしない。リンク構造で案内する"
+  - "Origins は原典。再編集・要約・結論の追加をしない（必要なら別レイヤでやる）"
+  - "Field は適用。だが Field の結論を Core に逆流させない（境界で止める）"
+  - "各repoは README 先頭で Role/Scope/Boundary を宣言すると強い"
+
+repositories:
+  - id: vcdesign-origins
+    role: Origins
+    boundary_primary: Fact
+    audience: [Human, AI]
+    stability: High
+    one_liner_ja: "原典を『原典のまま』残す。説明も結論も足さない。"
+    use_when_ja:
+      - "いつ・どこで・何が言われていたかを固定したい"
+      - "解釈や再編集の前にアンカーが必要"
+    links:
+      github: "https://github.com/hironobu-arakawa/vcdesign-origins"
+      start_here: "https://github.com/hironobu-arakawa/vcdesign-origins#readme"
+      ai_entry: null
+    tags: [origins, anchor, no-interpretation]
+
+  - id: factory-data-storage-notes
+    role: Field
+    boundary_primary: Responsibility
+    audience: [Human, AI]
+    stability: Medium
+    one_liner_ja: "『保存』は技術ではなく責務。不可逆点と置き場所を決める。"
+    use_when_ja:
+      - "どこに置くか／いつ確定するか／保障は誰が持つかを整理したい"
+      - "仕様に書けない判断を『境界』として残したい"
+    links:
+      github: "https://github.com/hironobu-arakawa/factory-data-storage-notes"
+      start_here: "https://github.com/hironobu-arakawa/factory-data-storage-notes#readme"
+      ai_entry: null
+    tags: [storage, placement, responsibility, invariants]
+
+  - id: factory-data-shapes
+    role: Field
+    boundary_primary: Fact
+    audience: [Human, AI]
+    stability: Medium
+    one_liner_ja: "フロー途中の shape を固定する。保存形式ではなく受け渡しの型を揃える。"
+    use_when_ja:
+      - "Edge→Bus→DB→BI で『同じ』を定義したい"
+      - "形式議論を shape に寄せて、意味の揺れを止めたい"
+    links:
+      github: "https://github.com/hironobu-arakawa/factory-data-shapes"
+      start_here: "https://github.com/hironobu-arakawa/factory-data-shapes#readme"
+      ai_entry: null
+    tags: [shape, contract, flow, schema]
+
+  - id: db-layer-design-principles
+    role: Field
+    boundary_primary: Responsibility
+    audience: [Human, AI]
+    stability: Medium
+    one_liner_ja: "DB層が引き受ける／引き受けないを、原理で切る。"
+    use_when_ja:
+      - "RDB/TSDB/Lake の議論を『責務割当』として整理したい"
+      - "DBの役割肥大（万能化）を防ぎたい"
+    links:
+      github: "https://github.com/hironobu-arakawa/db-layer-design-principles"
+      start_here: "https://github.com/hironobu-arakawa/db-layer-design-principles#readme"
+      ai_entry: null
+    tags: [db, principles, responsibility, layering]
+
+  - id: ot-it-async-design-appendix
+    role: Field
+    boundary_primary: Interpretation
+    audience: [Human, AI]
+    stability: Medium
+    one_liner_ja: "非同期前提で、運用と設計の境界を守る。補遺としてパターンを残す。"
+    use_when_ja:
+      - "OT/IT の摩擦が時間・責務で起きている"
+      - "『会議室時間』を現場に持ち込まない型が欲しい"
+    links:
+      github: "https://github.com/hironobu-arakawa/ot-it-async-design-appendix"
+      start_here: "https://github.com/hironobu-arakawa/ot-it-async-design-appendix#readme"
+      ai_entry: null
+    tags: [async-first, ot-it, patterns, boundary]
+
+  - id: edge-semantics-template
+    role: Field
+    boundary_primary: Interpretation
+    audience: [Human, AI]
+    stability: Medium
+    one_liner_ja: "Edgeで意味を扱うテンプレ。Fact不変、解釈は候補、責任は現場へ。"
+    use_when_ja:
+      - "意味を中央に集める前に、Edgeで固定できる範囲を決めたい"
+      - "生成AIに読ませても誤読しにくい構造が欲しい"
+    links:
+      github: "https://github.com/hironobu-arakawa/edge-semantics-template"
+      start_here: "https://github.com/hironobu-arakawa/edge-semantics-template#readme"
+      ai_entry: null
+    tags: [edge, semantics, template, interpretation]
+
+site_integration:
+  minimal:
+    path: "/library/"
+    pages:
+      - "/library/index.html"
+      - "/library/library.yaml"
+    nav_label: "Library"
+    policy:
+      - "サイト側には本文を持ち込まない（入口と参照構造に徹する）"
+      - "必要なら README のみをミラーする（全文ミラーは原則しない）"
