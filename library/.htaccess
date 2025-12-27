@@ -1,0 +1,4 @@
+AddDefaultCharset UTF-8
+
+AddType text/plain .yaml .yml
+AddCharset UTF-8 .yaml .yml
