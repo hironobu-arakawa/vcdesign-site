@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BOA — Boundary-Oriented Architecture</title>
+  <meta name="description" content="BOA (Boundary-Oriented Architecture) is a construction method for separating Fact, Meaning, and Responsibility by boundaries. Standalone. AI-aware. Human-owned responsibility." />
+  <meta name="theme-color" content="#0b0f19" />
+
+  <style>
+    :root{
+      --bg: #0b0f19;
+      --panel: #111827;
+      --text: #e5e7eb;
+      --muted: #a7b0bf;
+      --line: rgba(255,255,255,.10);
+      --accent: #60a5fa;
+      --accent2:#34d399;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 980px;
+    }
+
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f7f8fb;
+        --panel:#ffffff;
+        --text:#111827;
+        --muted:#4b5563;
+        --line: rgba(17,24,39,.12);
+        --shadow: 0 18px 60px rgba(17,24,39,.12);
+      }
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 15% -10%, rgba(96,165,250,.22), transparent 60%),
+                  radial-gradient(900px 600px at 110% 10%, rgba(52,211,153,.18), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+
+    header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .brand{ display:flex; flex-direction:column; gap: 8px; }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color: var(--muted);
+      font-size: 14px;
+      letter-spacing: .02em;
+    }
+
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 5px rgba(96,165,250,.12);
+    }
+
+    h1{
+      margin: 0;
+      font-size: clamp(34px, 4.6vw, 50px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 75ch;
+    }
+
+    .pillbar{
+      display:flex;
+      gap:10px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+
+    .pill{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    main{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .two{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 860px){
+      main{ gap: 18px; }
+      .two{ grid-template-columns: 1fr 1fr; }
+    }
+
+    .card{
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .card .inner{ padding: 22px 22px; }
+
+    @media (min-width: 860px){
+      .card .inner{ padding: 24px 26px; }
+    }
+
+    .card h2{
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+
+    .card p{ margin: 0 0 12px 0; }
+
+    .muted{ color: var(--muted); }
+
+    .quote{
+      border-left: 3px solid rgba(96,165,250,.55);
+      padding-left: 14px;
+      color: var(--muted);
+      margin: 12px 0 0 0;
+    }
+
+    .rules{
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+
+    .rule{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(17,24,39,.22);
+      padding: 14px 14px;
+    }
+
+    .rule strong{
+      display:block;
+      font-size: 14px;
+      letter-spacing: .01em;
+    }
+
+    .rule span{
+      display:block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .btnrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-size: 13px;
+      text-decoration:none;
+    }
+
+    .btn.primary{
+      border-color: rgba(96,165,250,.45);
+      background: rgba(96,165,250,.12);
+    }
+
+    .btn:hover{ text-decoration:none; filter: brightness(1.03); }
+
+    code.inline{
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 2px 8px;
+      font-size: 12px;
+      color: var(--text);
+    }
+
+    footer{
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 13px;
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="kicker"><span class="dot" aria-hidden="true"></span><span>BOA</span></div>
+        <h1>Separate Fact, Meaning, and Responsibility.</h1>
+        <p class="subtitle">
+          BOA (Boundary-Oriented Architecture) is a construction method that separates
+          <strong>Fact</strong>, <strong>Meaning</strong>, and <strong>Responsibility</strong> across boundaries by default-async.
+          You can use BOA standalone.
+        </p>
+      </div>
+
+      <div class="pillbar" aria-label="Site hints">
+        <span class="pill">Construction method</span>
+        <span class="pill">Standalone</span>
+        <span class="pill">Default-async</span>
+        <span class="pill">AI-aware</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="card">
+        <div class="inner">
+          <h2>Start here</h2>
+          <p class="muted">
+            If you only remember one thing: BOA prevents silent meaning drift and responsibility leakage.
+            It does so by making boundaries explicit.
+          </p>
+          <p class="quote">
+            BOA is not a philosophy. It is a method you can apply immediately.
+          </p>
+
+          <div class="btnrow" role="navigation" aria-label="Primary links">
+            <!-- Replace URLs with your real paths -->
+            <a class="btn primary" href="https://raw.githubusercontent.com/hironobu-arakawa/boa-core/8a53aff8b6150366f8dc02bceba563f3c4a2b6b6/boa_core.yaml" target="_blank">→ boa_core.yaml (raw)</a>
+            <a class="btn" href="https://github.com/hironobu-arakawa/boa-core" target="_blank">GitHub</a>
+            <a class="btn" href="/"  target="_blank">VCDesign</a>
+          </div>
+        </div>
+      </section>
+
+      <pre style="
+        background:rgba(0,0,0,0.100);
+        padding:15px;
+        border-radius: 8px;   /* 12 → 8 */
+        box-shadow: none;
+        border:1px solid var(--line);
+        overflow-x:auto;
+        font-size:13px;
+        color:var(--muted);
+        margin-top:14px;
+      ">
+      <span style="color:var(--accent);">Fact:</span> [Immutable, Context-free]
+      <span style="color:var(--accent);">Meaning:</span> [Revisable, Context-bound] <span style="color:#6b7280;"># AI operates here</span>
+      <span style="color:var(--accent);">Responsibility:</span> [Human-owned, Explicit]
+      </pre>
+
+      <section class="two">
+        <section class="card">
+          <div class="inner">
+            <h2>What BOA is</h2>
+            <ul class="rules">
+              <li class="rule">
+                <strong>A boundary-first construction method</strong>
+                <span>Declare boundaries where meaning changes and responsibility cannot pass silently.</span>
+              </li>
+              <li class="rule">
+                <strong>Default-async by design</strong>
+                <span>Assume delays, retries, and partial failure as the normal operating condition.</span>
+              </li>
+              <li class="rule">
+                <strong>Separation of concerns, but sharper</strong>
+                <span>Separate immutable facts from contextual interpretations and human-owned responsibility.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="inner">
+            <h2>What BOA is not</h2>
+            <ul class="rules">
+              <li class="rule">
+                <strong>Not a reference architecture</strong>
+                <span>BOA does not mandate topology, products, or layers.</span>
+              </li>
+              <li class="rule">
+                <strong>Not an autonomy license for AI</strong>
+                <span>AI may suggest hypotheses, but never owns decisions or responsibility.</span>
+              </li>
+              <li class="rule">
+                <strong>Not a way to eliminate boundaries</strong>
+                <span>Boundaries are inevitable. BOA makes them visible and operable.</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <section class="card">
+        <div class="inner">
+          <h2>The three artifacts</h2>
+          <p class="muted">
+            BOA treats these as different artifacts with different owners.
+            Mixing them is the most common failure mode.
+          </p>
+
+          <ol class="rules">
+            <li class="rule">
+              <strong>Fact</strong>
+              <span>Immutable observations. No meaning. No overwrites.</span>
+            </li>
+            <li class="rule">
+              <strong>Meaning</strong>
+              <span>Contextual interpretations. Revisable. Must be labeled and scoped.</span>
+            </li>
+            <li class="rule">
+              <strong>Responsibility</strong>
+              <span>Human-owned decisions. Explicit owner. Auditable rationale.</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="card" id="ai">
+        <div class="inner">
+          <h2>AI positioning</h2>
+          <p>
+            BOA is <strong>AI-aware</strong>, not AI-delegated.
+          </p>
+          <p class="muted">
+            AI may generate candidate meanings (<em>hypotheses</em>), compare interpretations, and expose trade-offs.
+            AI must never overwrite facts, make final decisions, or silently promote meaning.
+          </p>
+          <p class="quote">
+            Promotion requires an explicit human owner and explicit resolution.
+          </p>
+        </div>
+      </section>
+
+      <section class="card" id="when">
+        <div class="inner">
+          <h2>When to use BOA</h2>
+          <ul class="rules">
+            <li class="rule">
+              <strong>You have multiple worlds</strong>
+              <span>OT/IT, teams, vendors, systems, or time horizons with different meanings.</span>
+            </li>
+            <li class="rule">
+              <strong>Meaning drift is expensive</strong>
+              <span>Small interpretation changes cause big operational risk.</span>
+            </li>
+            <li class="rule">
+              <strong>You need AI assistance without responsibility leakage</strong>
+              <span>LLMs can help, but decisions must remain owned.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="card" id="misunderstood">
+        <div class="inner">
+          <h2>Frequently misunderstood</h2>
+          <ul class="rules">
+            <li class="rule">
+              <strong>Do I need VCDesign to use BOA?</strong>
+              <span>No. BOA is designed to be applied standalone.</span>
+            </li>
+            <li class="rule">
+              <strong>Is BOA only for factories?</strong>
+              <span>No. It is domain-agnostic. “Worlds” can be teams, products, systems, or time.</span>
+            </li>
+            <li class="rule">
+              <strong>Does BOA replace good engineering?</strong>
+              <span>No. It makes meaning and responsibility explicit so engineering can stay honest.</span>
+            </li>
+          </ul>
+          <p class="muted">
+            If you want the deeper design core that explains why BOA works, see VCDesign.
+            <span class="muted">This is optional.</span>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© BOA — Boundary-Oriented Architecture.</div>
+      <div class="muted">Standalone method. Static HTML. No dependencies.</div>
+    </footer>
+  </div>
+</body>
+</html>
