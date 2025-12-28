@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resolution Protocol (RP) | VCDesign</title>
+  <meta name="description" content="Pre-decision interlock specification for promoting Resolution into the Responsible Domain." />
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    header, main, footer {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
+    header { padding-bottom: 8px; }
+    h1 { font-size: 2rem; margin: 0 0 8px 0; }
+    h2 { font-size: 1.25rem; margin-top: 28px; }
+    p { margin: 12px 0; }
+    ul { margin: 10px 0 10px 22px; }
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.95em;
+    }
+    .lede { opacity: 0.9; }
+    .note {
+      border: 1px solid rgba(127,127,127,0.35);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin: 14px 0;
+    }
+    .quote {
+      border-left: 4px solid rgba(127,127,127,0.45);
+      padding-left: 12px;
+      margin: 12px 0;
+      opacity: 0.95;
+    }
+    a { text-underline-offset: 3px; }
+    footer { opacity: 0.7; font-size: 0.9rem; padding-top: 10px; }
+    .topnav {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+    .topnav a { margin-right: 12px; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="topnav">
+      <a href="/">VCDesign</a>
+      <a href="/boa">BOA</a>
+      <a href="/library">Library</a>
+    </div>
+    <h1>Resolution Protocol (RP)</h1>
+    <p class="lede">
+      RP (Resolution Protocol) is a <strong>pre-decision interlock</strong>.
+      It prevents accidental promotion of AI outputs into the <strong>Responsible Domain</strong>.
+    </p>
+    <div class="note">
+      <strong>RP is not a new philosophy.</strong><br />
+      RP is the <strong>specification</strong> that makes BOA’s
+      “promotion requires explicit resolution” enforceable.
+    </div>
+  </header>
+
+  <main>
+    <h2>What RP is</h2>
+    <p>
+      RP is a <strong>promotion gate for Resolution</strong>.
+      It is evaluated <strong>before</strong> anything is promoted into the Responsible Domain, especially when:
+    </p>
+    <ul>
+      <li>AI-generated candidates exist</li>
+      <li>evidence is incomplete or implicit</li>
+      <li>responsibility or ownership is unclear</li>
+    </ul>
+    <p>
+      If RP conditions are not satisfied, the system must fail safe.
+    </p>
+
+    <h2>What RP is not</h2>
+    <p>RP is <strong>not</strong>:</p>
+    <ul>
+      <li>an operational procedure / runbook</li>
+      <li>a manual for human actions</li>
+      <li>a mechanism that delegates or automates judgment</li>
+      <li>a way for AI to finalize decisions</li>
+    </ul>
+    <p>
+      RP defines <strong>constraints and failure modes</strong>, not steps.
+    </p>
+
+    <h2>Where RP applies in BOA</h2>
+    <p>BOA separates artifacts into:</p>
+    <ul>
+      <li><strong>Fact</strong> (immutable observations)</li>
+      <li><strong>Meaning</strong> (interpretation / hypothesis / suggestion)</li>
+      <li><strong>Responsibility</strong> (actions and commitments)</li>
+    </ul>
+    <p>RP applies at the boundary:</p>
+    <div class="quote"><strong>Meaning → Responsibility (promotion)</strong></div>
+    <p>
+      RP makes this boundary explicit and enforceable.
+    </p>
+
+    <h2>Fail-safe by design</h2>
+    <p>RP is <strong>fail-safe by default</strong>:</p>
+    <ul>
+      <li>Default outcome: <strong>deny promotion</strong></li>
+      <li>If conditions are not met: <strong>quarantine</strong> or <strong>reject</strong></li>
+      <li>AI may propose candidates, but <strong>cannot finalize resolution</strong></li>
+    </ul>
+    <p>
+      This prevents silent actuation and accidental responsibility.
+    </p>
+
+    <h2>Specification</h2>
+    <p>RP is defined as a normative protocol in the VCDesign Core:</p>
+    <ul>
+      <li>
+        VCDesign Core YAML:
+        <a href="https://github.com/hironobu-arakawa/vcdesign-core/blob/main/vcdesign_core.yaml">
+          vcdesign_core.yaml
+        </a>
+      </li>
+    </ul>
+    <p>
+      If you implement VCDesign, treat RP as a <strong>mandatory gate</strong> for any Resolution promotion.
+    </p>
+  </main>
+
+  <footer>
+    <p>VCDesign.org — Resolution Protocol (RP)</p>
+  </footer>
+</body>
+</html>
