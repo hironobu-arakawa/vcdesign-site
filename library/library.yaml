@@ -133,6 +133,21 @@ repositories:
       ai_entry: null
     tags: [edge, semantics, template, interpretation]
 
+  - id: interface-determinability-gate
+    role: Field
+    boundary_primary: Responsibility
+    audience: [Human, AI]
+    stability: Medium
+    one_liner_ja: "AI が『決定可能性』を越えて推論しないためのガードレール。"
+    use_when_ja:
+      - "AI が物理的・因果的な推論を勝手に行うリスクを止めたい"
+      - "インターフェースから決定できない状態で AI を黙らせたい"
+      - "責任境界を AI に越えさせない構造が必要"
+    links:
+      github: "https://github.com/hironobu-arakawa/interface-determinability-gate"
+      start_here: "https://github.com/hironobu-arakawa/interface-determinability-gate#readme"
+    tags: [ai, boundary, determinability, responsibility]
+
 site_integration:
   minimal:
     path: "/library/"
