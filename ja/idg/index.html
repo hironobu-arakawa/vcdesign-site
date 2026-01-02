@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IDG（Interface Determinability Gate）日本語入口｜VCDesign</title>
+  <meta name="description" content="IDG（Interface Determinability Gate）は、曖昧な入力を境界で止めるための最小ゲートです。責任の越境や説明不能な入力を防ぎます。" />
+  <meta name="theme-color" content="#0b0f19" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <div class="kicker"><span class="dot"></span><span>IDG — 日本語入口</span></div>
+        <h1>曖昧な入力は、ここで止める。</h1>
+        <p class="subtitle">
+          IDG（Interface Determinability Gate）は、  
+          「説明できないもの」「責任が曖昧なもの」「境界を越えるもの」を  
+          システムに入れないための <strong>最小のインターフェース・ゲート</strong> です。
+        </p>
+        <p class="subtitle">
+          これはガバナンスではありません。  
+          判断もしません。  
+          <strong>決定不能なものを通さないだけ</strong>です。
+        </p>
+        <div class="top-ref">
+          <a href="/idg/" target="_blank">→ 英語正典（IDG）</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Section: What IDG is -->
+    <section class="card">
+      <div class="inner">
+        <h2>IDGとは（短く）</h2>
+        <p class="muted">
+          IDGは、外部から入ってくる入力が  
+          <strong>説明できるか（Explainability）</strong>  
+          <strong>追跡できるか（Auditability）</strong>  
+          <strong>責任が明確か（Ownership）</strong>  
+          <strong>境界内か（Scope）</strong>  
+          を確認し、曖昧なら「通さない」ゲートです。
+        </p>
+        <p class="muted">
+          これは「AIを安全にする仕組み」ではなく、  
+          <strong>曖昧性が境界を越えて責任が消えるのを防ぐための最小構造</strong>です。
+        </p>
+      </div>
+    </section>
+
+    <!-- Section: Why IDG exists -->
+    <section class="card">
+      <div class="inner">
+        <h2>なぜIDGが必要なのか</h2>
+        <ul class="rules">
+          <li class="rule">
+            <strong>1. 曖昧な入力が「勝手に意味を持つ」から</strong>
+            <span>未定義のフィールドや曖昧な文脈が、後工程で“事実扱い”される。</span>
+          </li>
+          <li class="rule">
+            <strong>2. AIが「決めていないこと」を勝手に補完するから</strong>
+            <span>推測や補完が責任境界を越えると、説明不能な判断が生まれる。</span>
+          </li>
+          <li class="rule">
+            <strong>3. 責任の所在が曖昧なまま進むと、後戻りできないから</strong>
+            <span>境界で止めないと、曖昧さがそのまま実行に入ってしまう。</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section: Gate Conditions -->
+    <section class="card">
+      <div class="inner">
+        <h2>IDGがブロックする条件（4つの曖昧性）</h2>
+        <ul class="rules">
+          <li class="rule">
+            <strong>Auditability（追跡不能）</strong>
+            <span>後から「なぜこの入力が来たのか」が説明できない。</span>
+          </li>
+          <li class="rule">
+            <strong>Explainability（説明不能）</strong>
+            <span>拒否理由を第三者に構造として説明できない。</span>
+          </li>
+          <li class="rule">
+            <strong>Ownership（責任不明）</strong>
+            <span>誰がこの入力の意味を引き受けるのか不明。</span>
+          </li>
+          <li class="rule">
+            <strong>Scope（境界外）</strong>
+            <span>宣言された境界を越えている。</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section: Fail-Closed -->
+    <section class="card">
+      <div class="inner">
+        <h2>IDGは「Fail-Closed」</h2>
+        <p class="muted">
+          IDGは「曖昧なら通さない」が原則です。  
+          推測しません。補完しません。  
+          <strong>曖昧なまま進めることが最大のリスクだからです。</strong>
+        </p>
+        <ul class="rules">
+          <li class="rule">
+            <strong>デフォルトは拒否</strong>
+            <span>曖昧なら通さない。</span>
+          </li>
+          <li class="rule">
+            <strong>理由を返す</strong>
+            <span>拒否理由は構造として返す（感情や物語ではなく）。</span>
+          </li>
+          <li class="rule">
+            <strong>補完しない</strong>
+            <span>AIが勝手に「良かれと思って」補完しない。</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section: Relationship -->
+    <section class="card">
+      <div class="inner">
+        <h2>VCDesignの中でのIDGの位置</h2>
+        <p class="muted">
+          IDGは「最も外側の境界」を守るゲートです。  
+          RPやBOAより前にあります。
+        </p>
+        <ul class="rules">
+          <li class="rule">
+            <strong>IDG → 外部入力の曖昧性を止める</strong>
+            <span>（External → System Boundary）</span>
+          </li>
+          <li class="rule">
+            <strong>RP → Meaning → Responsibility の昇格を守る</strong>
+            <span>（判断前インターロック）</span>
+          </li>
+          <li class="rule">
+            <strong>BOA → Fact / Meaning / Responsibility を分離する</strong>
+            <span>（構築方法）</span>
+          </li>
+          <li class="rule">
+            <strong>VCD → なぜ境界が必要なのかを定義する</strong>
+            <span>（哲学的コア）</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div>© VCDesign — Interface Determinability Gate</div>
+      <div class="muted">このページは日本語での入口です。正典は英語版を参照してください。</div>
+      <div class="muted"><a href="/idg/">→ 英語正典（IDG）</a></div>
+    </footer>
+
+  </div>
+</body>
+</html>

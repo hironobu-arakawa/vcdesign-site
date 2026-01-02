@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BOA（Boundary-Oriented Architecture）日本語入口｜VCDesign</title>
+  <meta name="description" content="BOA（Boundary-Oriented Architecture）は、Fact / Meaning / Responsibility を境界で分離するための構築方法です。生成AIを“責任を持って使う”ための前提構造です。" />
+  <meta name="theme-color" content="#0b0f19" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <div class="kicker"><span class="dot"></span><span>BOA — 日本語入口</span></div>
+        <h1>意味と責任が混ざらない設計へ。</h1>
+        <p class="subtitle">
+          BOA（Boundary-Oriented Architecture）は、  
+          <strong>Fact（事実）</strong>  
+          <strong>Meaning（解釈）</strong>  
+          <strong>Responsibility（責任）</strong>  
+          を境界で分離するための構築方法です。
+        </p>
+        <p class="subtitle">
+          生成AIを「任せる」のではなく、  
+          <strong>責任を持ったまま使うための前提構造</strong>でもあります。
+        </p>
+        <div class="top-ref">
+          <a href="/boa/" target="_blank">→ 英語正典（BOA）</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- What BOA is -->
+    <section class="card">
+      <div class="inner">
+        <h2>BOAとは（短く）</h2>
+        <p class="muted">
+          BOAは、情報が境界を越えるときに  
+          <strong>意味が勝手に変わる</strong>  
+          <strong>責任が曖昧になる</strong>  
+          という問題を防ぐための構造です。
+        </p>
+        <p class="muted">
+          これはアーキテクチャの“型”ではありません。  
+          <strong>境界をどう置くか</strong>を扱う方法です。
+        </p>
+      </div>
+    </section>
+
+    <!-- Why BOA exists -->
+    <section class="card">
+      <div class="inner">
+        <h2>なぜBOAが必要なのか</h2>
+        <ul class="rules">
+          <li class="rule">
+            <strong>1. 意味が境界を越えると変わるから</strong>
+            <span>現場・部署・システムごとに「同じ言葉」が違う意味を持つ。</span>
+          </li>
+          <li class="rule">
+            <strong>2. 解釈が“事実扱い”される危険があるから</strong>
+            <span>AIの推測や人の思い込みが、いつの間にか事実に昇格する。</span>
+          </li>
+          <li class="rule">
+            <strong>3. 責任の所在が曖昧なまま進むと後戻りできないから</strong>
+            <span>品質・安全・権限など、不可逆な領域では致命的。</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Three Artifacts -->
+    <section class="card">
+      <div class="inner">
+        <h2>BOAが扱う3つのアーティファクト</h2>
+        <p class="muted">BOAは情報を次の3つに分けて扱います。</p>
+
+        <ul class="rules">
+          <li class="rule">
+            <strong>Fact（事実）</strong>
+            <span>観測・記録・条件。書き換えない。</span>
+          </li>
+          <li class="rule">
+            <strong>Meaning（意味）</strong>
+            <span>解釈・推定・候補。変わりうる。AIが得意。</span>
+          </li>
+          <li class="rule">
+            <strong>Responsibility（責任）</strong>
+            <span>最終判断と説明。人が引き取る。</span>
+          </li>
+        </ul>
+
+        <p class="muted">
+          生成AIの出力は <strong>Meaning（候補）</strong> として扱い、  
+          Fact や Responsibility に混ぜません。
+        </p>
+      </div>
+    </section>
+
+    <!-- Default-Async -->
+    <section class="card">
+      <div class="inner">
+        <h2>BOAの特徴（Default-Async）</h2>
+        <p class="muted">
+          BOAは「世界は同期していない」という前提で設計します。  
+          遅延・欠損・再送・部分的失敗を“普通の状態”として扱います。
+        </p>
+        <ul class="rules">
+          <li class="rule">
+            <strong>境界で分ける</strong>
+            <span>意味が変わる場所に境界を置く。</span>
+          </li>
+          <li class="rule">
+            <strong>責任を混ぜない</strong>
+            <span>AIの候補と人の判断を混ぜない。</span>
+          </li>
+          <li class="rule">
+            <strong>後工程に押し込まない</strong>
+            <span>曖昧さを運用に押し付けない。</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Relationship -->
+    <section class="card">
+      <div class="inner">
+        <h2>VCDesignの中でのBOAの位置</h2>
+        <p class="muted">
+          BOAは「構築方法」であり、  
+          IDG・RP・VCD と連携して動きます。
+        </p>
+        <ul class="rules">
+          <li class="rule">
+            <strong>IDG → 曖昧な入力を止める</strong>
+            <span>（External → System Boundary）</span>
+          </li>
+          <li class="rule">
+            <strong>BOA → Fact / Meaning / Responsibility を分離する</strong>
+            <span>（構築方法）</span>
+          </li>
+          <li class="rule">
+            <strong>RP → Meaning → Responsibility の昇格を守る</strong>
+            <span>（判断前インターロック）</span>
+          </li>
+          <li class="rule">
+            <strong>VCD → なぜ境界が必要なのかを定義する</strong>
+            <span>（哲学的コア）</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div>© VCDesign — Boundary-Oriented Architecture</div>
+      <div class="muted">このページは日本語での入口です。正典は英語版を参照してください。</div>
+      <div class="muted"><a href="/boa/">→ 英語正典（BOA）</a></div>
+    </footer>
+
+  </div>
+</body>
+</html>

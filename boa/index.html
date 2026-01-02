@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BOA — Boundary-Oriented Architecture</title>
-  <meta name="description" content="BOA (Boundary-Oriented Architecture) is a construction method for separating Fact, Meaning, and Responsibility by boundaries. Standalone. AI-aware. Human-owned responsibility." />
+  <title>BOA — Boundary-Oriented Architecture | VCDesign</title>
+  <meta name="description" content="BOA (Boundary-Oriented Architecture) is a construction method that separates Fact, Meaning, and Responsibility across boundaries. Standalone. AI-aware. Human-owned responsibility." />
   <meta name="theme-color" content="#0b0f19" />
 
   <style>
+    /* --- existing CSS preserved exactly --- */
     :root{
       --bg: #0b0f19;
       --panel: #111827;
@@ -241,49 +242,48 @@
   <div class="wrap">
     <header>
       <div class="brand">
-        <div class="kicker"><span class="dot" aria-hidden="true"></span><span>BOA</span></div>
+        <div class="kicker"><span class="dot"></span><span>BOA — Boundary-Oriented Architecture</span></div>
         <h1>Separate Fact, Meaning, and Responsibility.</h1>
         <p class="subtitle">
-          BOA (Boundary-Oriented Architecture) is a construction method that separates
-          <strong>Fact</strong>, <strong>Meaning</strong>, and <strong>Responsibility</strong> across boundaries by default-async.
-          You can use BOA standalone.
+          BOA is one of the four entry points of the VCDesign ecosystem.  
+          It is a construction method that separates <strong>Fact</strong>, <strong>Meaning</strong>, and <strong>Responsibility</strong>  
+          across boundaries by default-async.  
+          BOA can be used standalone.
         </p>
       </div>
 
-      <div class="pillbar" aria-label="Site hints">
-        <span class="pill">Construction method</span>
-        <span class="pill">Standalone</span>
-        <span class="pill">Default-async</span>
-        <span class="pill">AI-aware</span>
+      <div class="pillbar">
         <a class="pill" href="/">VCDesign</a>
-        <a class="pill" href="ja/">BOA (日本語入口)</a>
+        <a class="pill" href="/idg">IDG</a>
+        <a class="pill" href="/rp">RP</a>
+        <a class="pill" href="/vcd">VCD</a>
         <a class="pill" href="/library/">Library</a>
       </div>
     </header>
 
     <main>
+
       <section class="card">
         <div class="inner">
           <h2>Start here</h2>
           <p class="muted">
-            If you only remember one thing: BOA prevents silent meaning drift and responsibility leakage.
-            It does so by making boundaries explicit.
+            BOA prevents silent meaning drift and responsibility leakage  
+            by making boundaries explicit and operable.
           </p>
           <p class="muted">
-            BOA defines boundaries and ownership.
-            For cases where governance cannot be shared but boundary safety is still required,
-            a lightweight interlock can be deployed independently.
+            For boundary safety when governance is incomplete,  
+            a lightweight interlock can be deployed independently:  
             <a href="/idg" target="_blank">→ Interface Determinability Gate (IDG)</a>
           </p>
           <p class="quote">
-            BOA is not a philosophy. It is a method you can apply immediately.
+            BOA is not a philosophy.  
+            It is a method you can apply immediately.
           </p>
 
-          <div class="btnrow" role="navigation" aria-label="Primary links">
-            <!-- Replace URLs with your real paths -->
-            <a class="btn primary" href="https://raw.githubusercontent.com/hironobu-arakawa/boa-core/8a53aff8b6150366f8dc02bceba563f3c4a2b6b6/boa_core.yaml" target="_blank">→ boa_core.yaml (raw)</a>
+          <div class="btnrow">
+            <a class="btn primary" href="https://raw.githubusercontent.com/hironobu-arakawa/boa-core/main/boa_core.yaml" target="_blank">→ boa_core.yaml (raw)</a>
             <a class="btn" href="https://github.com/hironobu-arakawa/boa-core" target="_blank">GitHub</a>
-            <a class="btn" href="/"  target="_blank">VCDesign</a>
+            <a class="btn" href="/" target="_blank">VCDesign</a>
           </div>
         </div>
       </section>
@@ -291,17 +291,16 @@
       <pre style="
         background:rgba(0,0,0,0.100);
         padding:15px;
-        border-radius: 8px;   /* 12 → 8 */
-        box-shadow: none;
+        border-radius: 8px;
         border:1px solid var(--line);
         overflow-x:auto;
         font-size:13px;
         color:var(--muted);
         margin-top:14px;
       ">
-      <span style="color:var(--accent);">Fact:</span> [Immutable, Context-free]
-      <span style="color:var(--accent);">Meaning:</span> [Revisable, Context-bound] <span style="color:#6b7280;"># AI operates here</span>
-      <span style="color:var(--accent);">Responsibility:</span> [Human-owned, Explicit]
+<span style="color:var(--accent);">Fact:</span> [Immutable, Context-free]
+<span style="color:var(--accent);">Meaning:</span> [Revisable, Context-bound] <span style="color:#6b7280;"># AI operates here</span>
+<span style="color:var(--accent);">Responsibility:</span> [Human-owned, Explicit]
       </pre>
 
       <section class="two">
@@ -318,7 +317,7 @@
                 <span>Assume delays, retries, and partial failure as the normal operating condition.</span>
               </li>
               <li class="rule">
-                <strong>Separation of concerns, but sharper</strong>
+                <strong>Sharper separation of concerns</strong>
                 <span>Separate immutable facts from contextual interpretations and human-owned responsibility.</span>
               </li>
             </ul>
@@ -350,7 +349,7 @@
         <div class="inner">
           <h2>The three artifacts</h2>
           <p class="muted">
-            BOA treats these as different artifacts with different owners.
+            BOA treats these as different artifacts with different owners.  
             Mixing them is the most common failure mode.
           </p>
 
@@ -371,33 +370,24 @@
         </div>
       </section>
 
-      <section class="card" id="ai">
+      <section class="card">
         <div class="inner">
           <h2>AI positioning</h2>
-          <p>
-            BOA is <strong>AI-aware</strong>, not AI-delegated.
-          </p>
+          <p>BOA is <strong>AI-aware</strong>, not AI-delegated.</p>
           <p class="muted">
-            AI may generate candidate meanings (<em>hypotheses</em>), compare interpretations, and expose trade-offs.
+            AI may generate candidate meanings, compare interpretations, and expose trade-offs.  
             AI must never overwrite facts, make final decisions, or silently promote meaning.
           </p>
           <p class="quote">
-            Promotion requires an explicit human owner and explicit resolution.<br>
-            <a href="/rp" target="_blank">
-              → Resolution Protocol (RP): pre-decision interlock specification
-            </a><br><br>
-            <span class="muted">
-              For lightweight, local enforcement at system boundaries (before governance),
-              see
-              <a href="/idg" target="_blank">
-                Interface Determinability Gate (IDG)
-              </a>.
-            </span>
+            Promotion requires explicit human ownership.  
+            <a href="/rp" target="_blank">→ Resolution Protocol (RP)</a><br><br>
+            For boundary-level determinability checks, see  
+            <a href="/idg" target="_blank">Interface Determinability Gate (IDG)</a>.
           </p>
         </div>
       </section>
 
-      <section class="card" id="when">
+      <section class="card">
         <div class="inner">
           <h2>When to use BOA</h2>
           <ul class="rules">
@@ -407,7 +397,7 @@
             </li>
             <li class="rule">
               <strong>Meaning drift is expensive</strong>
-              <span>Small interpretation changes cause big operational risk.</span>
+              <span>Small interpretation changes cause large operational risk.</span>
             </li>
             <li class="rule">
               <strong>You need AI assistance without responsibility leakage</strong>
@@ -417,7 +407,7 @@
         </div>
       </section>
 
-      <section class="card" id="misunderstood">
+      <section class="card">
         <div class="inner">
           <h2>Frequently misunderstood</h2>
           <ul class="rules">
@@ -435,11 +425,12 @@
             </li>
           </ul>
           <p class="muted">
-            BOA can be applied on its own.
-            VCDesign is the design core that defines the broader constraints BOA operates within.
+            BOA can be applied on its own.  
+            VCDesign defines the broader constraints BOA operates within.
           </p>
         </div>
       </section>
+
     </main>
 
     <footer>

@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Resolution Protocol (RP) | VCDesign</title>
-  <meta name="description" content="Pre-decision interlock specification for promoting Resolution into the Responsible Domain." />
+  <title>RP — Resolution Protocol | VCDesign</title>
+  <meta name="description" content="RP is a pre-decision promotion gate that prevents accidental elevation of Meaning into the Responsible Domain." />
+
   <style>
     :root { color-scheme: light dark; }
     body {
@@ -55,85 +56,95 @@
   <header>
     <div class="topnav">
       <a href="/">VCDesign</a>
+      <a href="/idg">IDG</a>
+      <a href="/rp"><strong>RP</strong></a>
       <a href="/boa">BOA</a>
+      <a href="/vcd">VCD</a>
       <a href="/library">Library</a>
     </div>
+
     <h1>Resolution Protocol (RP)</h1>
+
     <p class="lede">
-      RP (Resolution Protocol) is a <strong>pre-decision interlock</strong>.
-      It prevents accidental promotion of AI outputs into the <strong>Responsible Domain</strong>.
+      RP is one of the four entry points of the VCDesign ecosystem.  
+      It is a <strong>pre-decision promotion gate</strong> that prevents accidental elevation  
+      of Meaning into the <strong>Responsible Domain</strong>.
     </p>
+
     <div class="note">
-      <strong>RP is not a new philosophy.</strong><br />
-      RP is the <strong>specification</strong> that makes BOA’s
-      “promotion requires explicit resolution” enforceable.
+      <strong>RP is not governance and not a workflow.</strong><br />
+      RP does not automate judgment or authorize decisions.  
+      It only enforces <strong>promotion conditions</strong> before responsibility is assigned.
     </div>
   </header>
 
   <main>
+
     <h2>What RP is</h2>
     <p>
-      RP is a <strong>promotion gate for Resolution</strong>.
-      It is evaluated <strong>before</strong> anything is promoted into the Responsible Domain, especially when:
+      RP is a <strong>promotion interlock</strong>.  
+      It is evaluated <strong>before</strong> any Meaning is promoted into Responsibility, especially when:
     </p>
     <ul>
       <li>AI-generated candidates exist</li>
       <li>evidence is incomplete or implicit</li>
-      <li>responsibility or ownership is unclear</li>
+      <li>ownership or accountability is unclear</li>
     </ul>
-    <p>
-      If RP conditions are not satisfied, the system must fail safe.
-    </p>
+    <p>If RP conditions are not satisfied, the system must <strong>fail safe</strong>.</p>
 
     <h2>What RP is not</h2>
     <p>RP is <strong>not</strong>:</p>
     <ul>
-      <li>an operational procedure / runbook</li>
-      <li>a manual for human actions</li>
-      <li>a mechanism that delegates or automates judgment</li>
+      <li>a runbook or operational procedure</li>
+      <li>a mechanism that delegates judgment</li>
       <li>a way for AI to finalize decisions</li>
+      <li>a replacement for human responsibility</li>
     </ul>
-    <p>
-      RP defines <strong>constraints and failure modes</strong>, not steps.
-    </p>
+    <p>RP defines <strong>constraints</strong>, not steps.</p>
 
-    <h2>Where RP applies in BOA</h2>
+    <h2>Where RP sits in BOA</h2>
     <p>BOA separates artifacts into:</p>
     <ul>
-      <li><strong>Fact</strong> (immutable observations)</li>
-      <li><strong>Meaning</strong> (interpretation / hypothesis / suggestion)</li>
-      <li><strong>Responsibility</strong> (actions and commitments)</li>
+      <li><strong>Fact</strong> — immutable observations</li>
+      <li><strong>Meaning</strong> — interpretation / hypothesis</li>
+      <li><strong>Responsibility</strong> — actions and commitments</li>
     </ul>
-    <p>RP applies at the boundary:</p>
+
+    <p>RP governs the promotion boundary:</p>
     <div class="quote"><strong>Meaning → Responsibility (promotion)</strong></div>
-    <p>
-      RP makes this boundary explicit and enforceable.
-    </p>
+
+    <p>RP makes this boundary explicit and enforceable.</p>
 
     <h2>Fail-safe by design</h2>
-    <p>RP is <strong>fail-safe by default</strong>:</p>
+    <p>RP defaults to <strong>fail-safe</strong>:</p>
     <ul>
       <li>Default outcome: <strong>deny promotion</strong></li>
       <li>If conditions are not met: <strong>quarantine</strong> or <strong>reject</strong></li>
       <li>AI may propose candidates, but <strong>cannot finalize resolution</strong></li>
     </ul>
-    <p>
-      This prevents silent actuation and accidental responsibility.
-    </p>
 
     <h2>Specification</h2>
-    <p>RP is defined as a normative protocol in the VCDesign Core:</p>
+    <p>RP is defined in the VCDesign Core:</p>
     <ul>
       <li>
-        VCDesign Core YAML:
         <a href="https://github.com/hironobu-arakawa/vcdesign-core/blob/main/vcdesign_core.yaml">
           vcdesign_core.yaml
         </a>
       </li>
     </ul>
     <p>
-      If you implement VCDesign, treat RP as a <strong>mandatory gate</strong> for any Resolution promotion.
+      If you implement VCDesign, treat RP as a <strong>mandatory gate</strong>  
+      for any promotion into the Responsible Domain.
     </p>
+
+    <h2>Position in the ecosystem</h2>
+    <p class="muted">
+      IDG blocks ambiguity before it enters.  
+      RP governs promotion.  
+      BOA constructs boundaries.  
+      VCD defines why boundaries matter.
+    </p>
+
   </main>
 
   <footer>

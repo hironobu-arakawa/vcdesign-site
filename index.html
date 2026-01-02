@@ -3,567 +3,106 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VCDesign — Value Continuity Design</title>
-  <meta name="description" content="VCDesign (Value Continuity Design) is a design core
-for sustaining value over time in systems where context changes." />
+  <title>VCDesign — Boundary-Oriented Ecosystem</title>
+  <meta name="description" content="VCDesign is a boundary-oriented ecosystem built on VCD (Value Continuity Design). It provides four independent entry points: IDG, RP, BOA, and VCD." />
   <meta name="theme-color" content="#0b0f19" />
-
-  <style>
-    :root{
-      --bg: #0b0f19;
-      --panel: #111827;
-      --text: #e5e7eb;
-      --muted: #a7b0bf;
-      --line: rgba(255,255,255,.10);
-      --accent: #60a5fa;
-      --accent2:#34d399;
-      --shadow: 0 18px 60px rgba(0,0,0,.35);
-      --radius: 16px;
-      --max: 980px;
-    }
-
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg:#f7f8fb;
-        --panel:#ffffff;
-        --text:#111827;
-        --muted:#4b5563;
-        --line: rgba(17,24,39,.12);
-        --shadow: 0 18px 60px rgba(17,24,39,.12);
-      }
-    }
-
-    *{ box-sizing: border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 800px at 15% -10%, rgba(96,165,250,.22), transparent 60%),
-                  radial-gradient(900px 600px at 110% 10%, rgba(52,211,153,.18), transparent 55%),
-                  var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    a{ color: var(--accent); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
-
-    .wrap{
-      width: min(var(--max), 100%);
-      margin: 0 auto;
-      padding: 40px 20px 64px;
-    }
-
-    header{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-
-    .brand{
-      display:flex;
-      flex-direction:column;
-      gap: 8px;
-    }
-
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      color: var(--muted);
-      font-size: 14px;
-      letter-spacing: .02em;
-    }
-
-    .dot{
-      width:10px;height:10px;border-radius:999px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 5px rgba(96,165,250,.12);
-    }
-
-    h1{
-      margin: 0;
-      font-size: clamp(36px, 5vw, 54px);
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-    }
-
-    .subtitle{
-      margin: 0;
-      color: var(--muted);
-      font-size: 16px;
-      max-width: 70ch;
-    }
-
-    .pillbar{
-      display:flex;
-      gap:10px;
-      flex-wrap: wrap;
-      justify-content:flex-end;
-    }
-
-    .pill{
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      padding: 8px 12px;
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 13px;
-      white-space: nowrap;
-    }
-
-    main{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    .card{
-      background: rgba(255,255,255,.03);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-
-    .card .inner{
-      padding: 22px 22px;
-    }
-
-    .card h2{
-      margin: 0 0 10px 0;
-      font-size: 18px;
-      letter-spacing: -0.01em;
-    }
-
-    .card p{
-      margin: 0 0 12px 0;
-      color: var(--text);
-    }
-
-    .muted{ color: var(--muted); }
-
-    .rules{
-      margin: 14px 0 0;
-      padding: 0;
-      list-style: none;
-      display:flex;
-      flex-direction:column;
-      gap: 10px;
-    }
-
-    .rule{
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(17,24,39,.22);
-      padding: 14px 14px;
-    }
-
-    .rule strong{
-      display:block;
-      font-size: 14px;
-      letter-spacing: .01em;
-    }
-
-    .rule span{
-      display:block;
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 4px;
-    }
-
-    .two{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    @media (min-width: 860px){
-      main{ gap: 18px; }
-      .two{ grid-template-columns: 1fr 1fr; }
-      .card .inner{ padding: 24px 26px; }
-    }
-
-    .quote{
-      border-left: 3px solid rgba(96,165,250,.55);
-      padding-left: 14px;
-      color: var(--muted);
-      margin: 12px 0 0 0;
-    }
-
-    footer{
-      margin-top: 28px;
-      color: var(--muted);
-      font-size: 13px;
-      display:flex;
-      justify-content:space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-      border-top: 1px solid var(--line);
-      padding-top: 16px;
-    }
-
-    code.inline{
-      background: rgba(255,255,255,.06);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 2px 8px;
-      font-size: 12px;
-      color: var(--text);
-    }
-    /* --- AI / LLM helper box --- */
-    .ai-box{
-      margin-top: 14px;
-      border: 1px dashed rgba(96,165,250,.45);
-      background: rgba(96,165,250,.08);
-      border-radius: 14px;
-      padding: 14px;
-    }
-    .ai-box .label{
-      font-size: 12px;
-      letter-spacing: .02em;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-    .ai-box pre{
-      margin: 0;
-      white-space: pre-wrap;
-      word-break: break-word;
-      background: rgba(0,0,0,.18);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 12px;
-      font-size: 12px;
-      line-height: 1.55;
-      color: var(--text);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <div class="wrap">
+
+    <!-- Header -->
     <header>
       <div class="brand">
-        <div class="kicker"><span class="dot" aria-hidden="true"></span><span>VCDesign (VCD)</span></div>
-        <h1>Design where decisions live.</h1>
+        <div class="kicker"><span class="dot"></span><span>VCDesign Ecosystem</span></div>
+        <h1>Design where boundaries decide.</h1>
         <p class="subtitle">
-          VCDesign is a design core for systems that must survive change.
-          It does not teach how to build. It defines how value is sustained over time,even as meaning changes, decisions shift, and responsibility must remain explicit.
+          VCDesign is not a framework.  
+          It is a boundary-oriented ecosystem built on  
+          <strong>VCD — Value Continuity Design</strong>,  
+          the philosophical layer that defines why boundaries must exist.  
+          The ecosystem offers four independent entry points — each with its own responsibility.
         </p>
       </div>
-
-  <div class="pillbar" aria-label="Site hints">
-    <span class="pill">Design core (not a framework)</span>
-    <span class="pill">Method-agnostic</span>
-    <span class="pill">AI-aware</span>
-    <span class="pill">Boundary-first</span>
-    <a class="pill" href="boa/">BOA</a>
-    <a class="pill" href="boa/ja/">BOA (日本語入口)</a>
-    <a class="pill" href="library/">Library</a>
-  </div>
-
     </header>
 
-    <main>
+    <!-- Four Entry Cards -->
+    <main class="two">
+
+      <!-- IDG -->
       <section class="card">
         <div class="inner">
-          <h2>Machine-readable core</h2>
-          <p class="quote">
-            This is the authoritative definition of VCDesign.
-          </p>
-
+          <h2>IDG — Interface Determinability Gate</h2>
           <p class="muted">
-            VCDesign is defined by immutable rules.
-            If you are using AI or automation, load the core directly.
-            <br /><a href="https://raw.githubusercontent.com/hironobu-arakawa/vcdesign-core/main/vcdesign_core.yaml" target="_blank">
-              → vcdesign_core.yaml (raw)
-            </a><br />
-            For applications and field-level materials, see the <a href="library/">Library</a>.
+            Ambiguity stops here.  
+            IDG blocks inputs that cannot be owned, traced, or explained.
           </p>
-
-          <p class="muted">
-          Construction method under VCDesign (Fact / Meaning / Responsibility)
-            <br /><a href="https://raw.githubusercontent.com/hironobu-arakawa/boa-core/main/boa_core.yaml" target="_blank">
-              → boa_core.yaml (raw)
-            </a><br />
-            Practical patterns and field applications are indexed in the <a href="library/">Library</a>.
-            </p>
-          </p>
-          <p>
-            Design rationale and boundary philosophy (for context, not definition): 
-            <a href="https://raw.githubusercontent.com/hironobu-arakawa/vcdesign-core/main/PHILOSOPHY.md">PHILOSOPHY.md</a>
-          </p><br />
-
-          <p class="muted">
-            Machine-readable navigation index for derived repositories (Role / Boundary)
-            <br /><a href="library/library.yaml" target="_blank">
-              → library.yaml (index)
-            </a>
-
-          </p>
-
-
-        <div class="ai-box" aria-label="AI copy-paste prompt">
-            <div class="label">How to use VCDesign / BOA with an LLM</div>
-            <pre>You are an assistant helping with VCDesign / BOA.
-
-              When using an LLM with VCDesign / BOA:
-
-              1) YOU must provide the YAML explicitly.
-                (LLMs do NOT fetch external definitions by themselves.)
-
-                Canonical cores:
-                - VCDesign core:
-                  https://raw.githubusercontent.com/hironobu-arakawa/vcdesign-core/main/vcdesign_core.yaml
-                - BOA core:
-                  https://raw.githubusercontent.com/hironobu-arakawa/boa/main/boa_core.yaml
-
-              2) Ask the LLM to interpret the YAML along VCDesign concepts:
-                - What is Value (immutable meaning)
-                - What is Decision (delegated judgment)
-                - What is structurally strong vs changeable
-
-              3) Treat the output as interpretation.
-                Final judgment and responsibility remain human-owned.
-
-              </pre>
-          </div>
+          <a href="idg/" class="pill">Open IDG</a>
         </div>
       </section>
+
+      <!-- RP -->
       <section class="card">
         <div class="inner">
-          <h2>Why VCDesign exists</h2>
-          <p>
-            Most systems fail <strong>after</strong> they are delivered.
-            Not because technology was wrong, but because meaning drifted, decisions were frozen too early, responsibility became implicit, and boundaries were never declared.
-          </p>
+          <h2>RP — Resolution Protocol</h2>
           <p class="muted">
-            VCDesign exists to prevent that failure mode.
+            Decisions must not silently promote themselves.  
+            RP protects the moment where Meaning becomes Responsibility.
           </p>
+          <a href="rp/" class="pill">Open RP</a>
         </div>
       </section>
 
-      <section class="two">
-        <section class="card">
-          <div class="inner">
-            <h2>What VCDesign designs</h2>
-            <p>VCDesign designs <strong>structure</strong>, not solutions.</p>
-            <p class="muted">
-              Specifically: where decisions are allowed to live, where meaning must stop, where responsibility cannot escape, and where change is expected—not resisted.
-            </p>
-            <p class="quote">
-              If these are wrong, no architecture survives.
-            </p>
-          </div>
-        </section>
-
-        <section class="card">
-          <div class="inner">
-            <h2>What VCDesign is <em>not</em></h2>
-            <p class="muted">
-              VCDesign is not a framework, a methodology, a checklist, a reference architecture, or a product selection guide.
-            </p>
-            <p>
-              If you are looking for answers, this site will disappoint you.
-              If you are deciding <strong>what must not break</strong>, it will help.
-            </p>
-          </div>
-        </section>
-      </section>
-
-      <section class="card" id="core-rules">
+      <!-- BOA -->
+      <section class="card">
         <div class="inner">
-          <h2>The Five Core Rules</h2>
-          <p class="muted">VCDesign is built on five irreversible rules. These rules do not evolve. Everything else does.</p>
-
-          <ol class="rules">
-            <li class="rule">
-              <strong>1. Meaning is contextual (therefore value continuity must be designed)</strong>
-              <span>— therefore value must be designed to survive that divergence.</span>
-            </li>
-            <li class="rule">
-              <strong>2. Outcomes require judgment</strong>
-              <span>Data alone never produces results.</span>
-            </li>
-            <li class="rule">
-              <strong>3. Boundaries limit meaning</strong>
-              <span>Meaning can be defined beyond a boundary, but not fully carried.</span>
-            </li>
-            <li class="rule">
-              <strong>4. Do not fix the unfixed</strong>
-              <span>What cannot be designed should not be frozen.</span>
-            </li>
-            <li class="rule">
-              <strong>5. Storage follows flow</strong>
-              <span>Persistence is a consequence, not a starting point.</span>
-            </li>
-          </ol>
+          <h2>BOA — Boundary-Oriented Architecture</h2>
+          <p class="muted">
+            Fact, Meaning, Responsibility.  
+            BOA constructs boundaries that survive change and prevent silent drift.
+          </p>
+          <a href="boa/" class="pill">Open BOA</a>
         </div>
       </section>
 
-    <section class="card" id="boa">
-  <div class="inner">
-    <h2>BOA (Boundary-Oriented Architecture)</h2>
-    <p class="muted">
-      Construction method under VCDesign.<br />
-      Separates Fact, Interpretation, and Responsibility by boundary.
-    </p>
-    <ul class="rules">
-      <li class="rule">
-        <a href="boa" target="_blank">
-          <strong>→ Open BOA</strong>
-        </a>
-        <span>
-          How boundaries are actually constructed and kept.
-        </span>
-      </li>
-    </ul>
-  </div>
-</section>
+      <!-- VCD -->
+      <section class="card">
+        <div class="inner">
+          <h2>VCD — Value Continuity Design</h2>
+          <p class="muted">
+            The philosophical core.  
+            VCD defines the conditions under which value and responsibility  
+            survive context drift and remain explainable over time.
+          </p>
+          <a href="vcd/" class="pill">Open VCD</a>
+        </div>
+      </section>
 
-<section class="card" id="library">
+    </main>
+
+    <!-- Library -->
+    <section class="card" style="margin-top:24px;">
       <div class="inner">
-        <h2>Library (Non-core)</h2>
+        <h2>Library (Derived Repositories)</h2>
         <p class="muted">
-          Derived repositories live outside the core.
-          This site does not duplicate them. It only fixes the reference.
+          Practical notes, field observations, and implementation materials.  
+          These are not the Core — they live outside the boundary.
         </p>
-        <ul class="rules">
-          <li class="rule">
-            <a href="library" target="_blank">
-              <strong>→ Open the Library index</strong>
-            </a>
-            <span>
-              Navigation for derived repositories, organized by Role and Boundary.
-            </span>
-          </li>
-        </ul>
+        <a href="library/" class="pill">Open Library</a>
       </div>
     </section>
 
-      <section class="two">
-        <section class="card">
-          <div class="inner">
-            <h2>Relationship to construction methods</h2>
-            <p>
-              VCDesign sits <strong>above</strong> construction.
-              Methods such as <strong>Boundary-Oriented Architecture (BOA)</strong> exist under VCDesign.
-            </p>
-            <p class="muted">
-              VCDesign defines <em>why</em> boundaries matter.
-              Methods define <em>how</em> to build with them.
-              VCDesign never mandates a method.
-            </p>
-          </div>
-        </section>
-
-        <section class="card">
-          <div class="inner">
-            <h2>AI positioning</h2>
-            <p>
-              VCDesign is <strong>AI-aware</strong>, not AI-driven.
-            </p>
-            <p class="muted">
-              AI may assist by generating hypotheses, comparing interpretations, and exposing trade-offs.
-              AI must never make final decisions, own responsibility, overwrite facts, or silently promote meaning.
-            </p>
-            <p class="quote">
-              Final judgment remains human-owned.
-            </p>
-          </div>
-        </section>
-      </section>
-
-      <section class="two">
-        <section class="card">
-          <div class="inner">
-            <h2>Who this is for</h2>
-            <p class="muted">
-              VCDesign applies to industrial systems, information systems, socio-technical systems, and AI-assisted decision environments.
-            </p>
-            <p>
-              It does not apply to systems that require <strong>zero ambiguity</strong> and <strong>zero human judgment</strong>.
-            </p>
-          </div>
-        </section>
-
-        <section class="card">
-          <div class="inner">
-            <h2>How to read this site</h2>
-            <p>
-              Read it as <strong>constraints</strong>, not guidance.
-            </p>
-            <p class="muted">
-              VCDesign does not tell you what to build.
-              It tells you where building the wrong thing becomes irreversible.
-            </p>
-            <p class="muted">
-              If you want the machine-readable core, look for <code class="inline">vcd_core.yaml</code>.
-            </p>
-          </div>
-        </section>
-      </section>
-      <section class="card" id="faq">
-        <div class="inner">
-          <h2>Frequently misunderstood</h2>
-          <p class="muted">
-            VCDesign is often misunderstood.  
-            If any of the following disappoints you, that is intentional.
-          </p>
-
-          <ul class="rules">
-            <li class="rule">
-              <strong>Is VCDesign a framework or methodology?</strong>
-              <span>
-                No. VCDesign defines constraints, not steps.
-                It does not tell you what to do or how to do it.
-              </span>
-            </li>
-
-            <li class="rule">
-              <strong>Does VCDesign provide reference architectures?</strong>
-              <span>
-                No. Reference architectures freeze decisions too early.
-                VCDesign exists precisely to avoid that failure mode.
-              </span>
-            </li>
-
-            <li class="rule">
-              <strong>Can VCDesign be applied without BOA?</strong>
-              <span>
-                Yes. BOA is one construction method under VCDesign.
-                VCDesign never mandates a method.
-              </span>
-            </li>
-
-            <li class="rule">
-              <strong>Is VCDesign compatible with AI-driven systems?</strong>
-              <span>
-                VCDesign is AI-aware, not AI-delegated.
-                AI may generate hypotheses, but responsibility never transfers.
-              </span>
-            </li>
-
-            <li class="rule">
-              <strong>Why doesn’t VCDesign give concrete answers?</strong>
-              <span>
-                Because answers belong to contexts,
-                but value must survive across them.
-                VCDesign protects the structure in which value can be sustained safely.
-              </span>
-            </li>
-          </ul>
-        </div>
-        </section>
-    </main>
-
+    <!-- Footer -->
     <footer>
-      <div>© VCDesign — Design core for survivable systems.</div>
+      <div>© VCDesign — Value Continuity Design.</div>
       <div class="muted">Static HTML. No dependencies.</div>
-      <div class="muted">Opinions expire. Constraints remain.</div>
+      <div class="muted">Boundaries first. Opinions expire.</div>
+      <div class="muted" style="margin-top:6px;">
+      <a href="/ja/">Japanese entry</a>
+      </div>
     </footer>
+
   </div>
 </body>
 </html>
