@@ -70,6 +70,48 @@
         </a>
       </p>
     </header>
+    <section class="card">
+      <h2>Structural notice — non-direct execution boundary</h2>
+
+      <p>
+        In systems where <span class="k">non-deterministic or responsibility-bearing
+        judgments</span> are involved, this library assumes the existence of a
+        <span class="k">structural boundary</span> that prevents such judgments
+        from being passed <span class="k">directly</span> into execution,
+        control, or promotion layers.
+      </p>
+
+      <p>
+        This boundary is <strong>structural</strong>, not algorithmic.
+        It does not decide outcomes, enforce policies, or optimize results.
+        Its sole role is to <span class="k">interrupt passage</span> when
+        determinability, ownership, or scope cannot be made explicit
+        <em>before</em> downstream effects occur.
+      </p>
+
+      <p>
+        Whether the judgment source is human, rule-based, or AI-driven
+        is intentionally left unspecified.
+        Only the <span class="k">placement of the boundary</span> is fixed:
+      </p>
+
+      <ul>
+        <li>No judgment is promoted to an execution-bearing domain without passing a gate</li>
+        <li>No ambiguity is resolved implicitly or retroactively</li>
+        <li>No component beyond the gate assumes responsibility by accident</li>
+      </ul>
+
+      <p>
+        The patterns below illustrate <strong>where</strong> such boundaries
+        commonly appear—not <strong>how</strong> they are implemented.
+      </p>
+
+      <div class="pillrow">
+        <span class="pill">structural boundary</span>
+        <span class="pill">non-direct execution</span>
+        <span class="pill">judgment isolation</span>
+      </div>
+    </section>
 
     <section class="card">
       <h2>Minimum gate conditions (ambiguity signals)</h2>
