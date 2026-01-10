@@ -6,7 +6,7 @@
   <title>BOA（Boundary-Oriented Architecture）日本語入口｜VCDesign</title>
   <meta name="description" content="BOA（Boundary-Oriented Architecture）は、Fact / Meaning / Responsibility を境界で分離するための構築方法です。生成AIを“責任を持って使う”ための前提構造です。" />
   <meta name="theme-color" content="#0b0f19" />
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
@@ -104,6 +104,30 @@
     <section class="card">
       <div class="inner">
         <h2>BOAの特徴（Default-Async）</h2>
+        <section class="card">
+          <div class="inner">
+            <h2>判断しない、という選択</h2>
+            <p class="muted">
+              BOAでは、Meaning（解釈）が安全に出せない状態を
+              <strong>異常とはみなしません。</strong>
+            </p>
+            <p class="muted">
+              推定が不十分なままMeaningを作ることは、
+              事実や責任を汚染する危険があります。
+            </p>
+            <p class="muted">
+              そのためBOAでは、
+              <strong>「判断しない」「止める」ことを
+              正常な状態として明示的に扱います。</strong>
+            </p>
+            <p class="muted">
+              この停止は失敗ではなく、
+              人に判断を返すための
+              <strong>構造上のハンドオフ</strong>です。
+            </p>
+          </div>
+        </section>
+
         <p class="muted">
           BOAは「世界は同期していない」という前提で設計します。  
           遅延・欠損・再送・部分的失敗を“普通の状態”として扱います。
