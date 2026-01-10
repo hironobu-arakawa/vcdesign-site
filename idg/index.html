@@ -5,190 +5,163 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>IDG — Interface Determinability Gate | VCDesign</title>
   <meta name="description" content="IDG is a lightweight boundary interlock that blocks undeterminable inputs before they cause responsibility leakage or unsafe coupling." />
-
-  <style>
-    :root { color-scheme: light dark; }
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-    header, main, footer {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 24px 20px;
-    }
-    header { padding-bottom: 8px; }
-    h1 { font-size: 2rem; margin: 0 0 8px 0; }
-    h2 { font-size: 1.25rem; margin-top: 28px; }
-    p { margin: 12px 0; }
-    ul { margin: 10px 0 10px 22px; }
-    code, pre {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 0.95em;
-    }
-    .lede { opacity: 0.9; }
-    .note {
-      border: 1px solid rgba(127,127,127,0.35);
-      border-radius: 10px;
-      padding: 12px 14px;
-      margin: 14px 0;
-    }
-    .quote {
-      border-left: 4px solid rgba(127,127,127,0.45);
-      padding-left: 12px;
-      margin: 12px 0;
-      opacity: 0.95;
-    }
-    a { text-underline-offset: 3px; }
-    footer { opacity: 0.7; font-size: 0.9rem; padding-top: 10px; }
-    .topnav {
-      font-size: 0.95rem;
-      opacity: 0.9;
-      margin-bottom: 10px;
-    }
-    .topnav a { margin-right: 12px; }
-  </style>
+  <meta name="theme-color" content="#0b0f19" />
+  <link rel="stylesheet" href="../style.css" />
 </head>
 
 <body>
-  <header>
-    <div class="topnav">
-      <a href="/">VCDesign</a>
-      <a href="/idg"><strong>IDG</strong></a>
-      <a href="/rp">RP</a>
-      <a href="/boa">BOA</a>
-      <a href="/vcd">VCD</a>
-      <a href="/library">Library</a>
-    </div>
+  <div class="wrap">
+    
+    <header>
+      <div class="brand">
+        <nav class="topnav">
+          <a href="/">VCDesign</a>
+          <a href="/idg"><strong>IDG</strong></a>
+          <a href="/rp">RP</a>
+          <a href="/boa">BOA</a>
+          <a href="/vcd">VCD</a>
+          <a href="/library">Library</a>
+        </nav>
 
-    <h1>Interface Determinability Gate (IDG)</h1>
+        <h1>Interface Determinability Gate (IDG)</h1>
+        
+        <p class="subtitle">
+          IDG is one of the four entry points of the VCDesign ecosystem.  
+          It is a <strong>lightweight boundary interlock</strong> that blocks <strong>undeterminable inputs</strong>  
+          before they cause responsibility leakage or unsafe coupling.
+        </p>
 
-    <p class="lede">
-      IDG is one of the four entry points of the VCDesign ecosystem.  
-      It is a <strong>lightweight boundary interlock</strong> that blocks <strong>undeterminable inputs</strong>  
-      before they cause responsibility leakage or unsafe coupling.
-    </p>
+        <div class="note">
+          <strong>IDG is not governance.</strong>
+          It does not decide, interpret, or authorize.  
+          It only enforces <strong>minimum determinability</strong> at the boundary.
+        </div>
+      </div>
+    </header>
 
-    <div class="note">
-      <strong>IDG is not governance.</strong><br />
-      It does not decide, interpret, or authorize.  
-      It only enforces <strong>minimum determinability</strong> at the boundary.
-    </div>
-  </header>
+    <main>
 
-  <main>
+      <section class="two">
+        <section class="card">
+          <div class="inner">
+            <h2>What IDG is</h2>
+            <p class="muted">
+              IDG is a <strong>fast, local gate</strong> evaluated exactly at the interface  
+              where a system receives signals, data, or commands from outside its trusted domain.
+            </p>
+            <ul>
+              <li>checks determinability (can this be explained and audited?)</li>
+              <li>checks boundary integrity (does this violate declared scope?)</li>
+              <li>checks responsibility leakage (is ownership implicit or missing?)</li>
+            </ul>
+            <p class="muted">If IDG conditions are not satisfied, the system must <strong>fail closed</strong>.</p>
+          </div>
+        </section>
 
-    <h2>What IDG is</h2>
-    <p>
-      IDG is a <strong>fast, local gate</strong> evaluated exactly at the interface  
-      where a system receives signals, data, or commands from outside its trusted domain.
-    </p>
-    <ul>
-      <li>checks determinability (can this be explained and audited?)</li>
-      <li>checks boundary integrity (does this violate declared scope?)</li>
-      <li>checks responsibility leakage (is ownership implicit or missing?)</li>
-    </ul>
-    <p>If IDG conditions are not satisfied, the system must <strong>fail closed</strong>.</p>
+        <section class="card">
+          <div class="inner">
+            <h2>What IDG is not</h2>
+            <p class="muted">IDG defines <strong>hard stops</strong> and <strong>reject reasons</strong>, not outcomes. It is not:</p>
+            <ul>
+              <li>a decision mechanism</li>
+              <li>a policy engine</li>
+              <li>a replacement for human judgment</li>
+              <li>a way to “make AI safe” by post-hoc explanation</li>
+              <li>a substitute for RP (Resolution Protocol)</li>
+            </ul>
+          </div>
+        </section>
+      </section>
 
-    <h2>What IDG is not</h2>
-    <p>IDG is <strong>not</strong>:</p>
-    <ul>
-      <li>a decision mechanism</li>
-      <li>a policy engine</li>
-      <li>a replacement for human judgment</li>
-      <li>a way to “make AI safe” by post-hoc explanation</li>
-      <li>a substitute for RP (Resolution Protocol)</li>
-    </ul>
-    <p>IDG defines <strong>hard stops</strong> and <strong>reject reasons</strong>, not outcomes.</p>
+      <section class="card">
+        <div class="inner">
+          <h2>Where IDG sits in VCDesign</h2>
+          <p class="muted">
+            In BOA, artifacts are separated into Fact, Meaning, and Responsibility.
+          </p>
+          
+          <div class="quote">
+            <strong>RP</strong> governs the promotion boundary:<br>
+            Meaning → Responsibility (promotion)
+          </div>
 
-    <h2>Where IDG sits in VCDesign</h2>
-    <p>
-      In BOA, artifacts are separated into:
-    </p>
-    <ul>
-      <li><strong>Fact</strong> — immutable observations</li>
-      <li><strong>Meaning</strong> — interpretation / hypothesis</li>
-      <li><strong>Responsibility</strong> — actions and commitments</li>
-    </ul>
+          <div class="quote" style="border-left-color: var(--accent);">
+            <strong>IDG</strong> applies earlier, at the trust boundary:<br>
+            External / Untrusted Input → System Boundary
+          </div>
 
-    <p>RP governs the promotion boundary:</p>
-    <div class="quote"><strong>Meaning → Responsibility (promotion)</strong></div>
+          <p class="muted" style="margin-top:14px">
+            IDG can be deployed even when governance is incomplete  
+            because it does not claim authority — it only blocks what is <strong>undeterminable</strong>.
+          </p>
+        </div>
+      </section>
 
-    <p>IDG applies earlier, at the trust boundary:</p>
-    <div class="quote"><strong>External / Untrusted Input → System Boundary</strong></div>
+      <section class="two">
+        <section class="card">
+          <div class="inner">
+            <h2>Fail-closed by design</h2>
+            <p class="muted">IDG defaults to <strong>fail-closed</strong>:</p>
+            <ul>
+              <li>Default outcome: <strong>block</strong></li>
+              <li>If determinability is insufficient: <strong>reject</strong> with a reason</li>
+              <li>If a boundary is violated: <strong>reject</strong> with explicit boundary reference</li>
+            </ul>
+          </div>
+        </section>
 
-    <p>
-      IDG can be deployed even when governance is incomplete  
-      because it does not claim authority — it only blocks what is <strong>undeterminable</strong>.
-    </p>
+        <section class="card">
+          <div class="inner">
+            <h2>Design principles</h2>
+            <ul>
+              <li><strong>Fast</strong>: minimal checks, low operational burden</li>
+              <li><strong>Local</strong>: scoped to the interface, not system-wide governance</li>
+              <li><strong>Explainable</strong>: every block has a clear, documentable reason</li>
+              <li><strong>Non-authoritative</strong>: it does not “decide”; it only denies passage</li>
+              <li><strong>Composable</strong>: multiple IDGs can exist at different boundaries</li>
+            </ul>
+          </div>
+        </section>
+      </section>
 
-    <h2>Fail-closed by design</h2>
-    <p>IDG defaults to <strong>fail-closed</strong>:</p>
-    <ul>
-      <li>Default outcome: <strong>block</strong></li>
-      <li>If determinability is insufficient: <strong>reject</strong> with a reason</li>
-      <li>If a boundary is violated: <strong>reject</strong> with explicit boundary reference</li>
-    </ul>
+      <section class="card">
+        <div class="inner">
+          <h2>Relationship to RP</h2>
+          <p class="muted">IDG and RP are complementary:</p>
+          <ul>
+            <li><strong>IDG</strong> blocks <em>early</em> (boundary integrity and determinability)</li>
+            <li><strong>RP</strong> governs <em>promotion</em> (Meaning → Responsibility)</li>
+            <li>IDG can exist <strong>without</strong> RP</li>
+            <li>RP assumes an explicit Responsible Domain; IDG does not</li>
+          </ul>
+        </div>
+      </section>
 
-    <h2>Design principles</h2>
-    <ul>
-      <li><strong>Fast</strong>: minimal checks, low operational burden</li>
-      <li><strong>Local</strong>: scoped to the interface, not system-wide governance</li>
-      <li><strong>Explainable</strong>: every block has a clear, documentable reason</li>
-      <li><strong>Non-authoritative</strong>: it does not “decide”; it only denies passage</li>
-      <li><strong>Composable</strong>: multiple IDGs can exist at different boundaries</li>
-    </ul>
+      <section class="card">
+        <div class="inner">
+          <h2>Specification & Further reading</h2>
+          <p class="muted">
+            IDG is intended to be implemented as a simple gate (code, config, or contract clause)  
+            at any interface where determinability matters.
+          </p>
+          <div class="note" style="margin-top:12px;">
+            There is intentionally no single reference implementation.  
+            IDG is designed to be adapted locally, without assuming shared governance.
+          </div>
 
-    <h2>Relationship to RP</h2>
-    <p>IDG and RP are complementary:</p>
-    <ul>
-      <li><strong>IDG</strong> blocks <em>early</em> (boundary integrity and determinability)</li>
-      <li><strong>RP</strong> governs <em>promotion</em> (Meaning → Responsibility)</li>
-      <li>IDG can exist <strong>without</strong> RP</li>
-      <li>RP assumes an explicit Responsible Domain; IDG does not</li>
-    </ul>
+          <div class="btnrow">
+             <a class="btn primary" href="https://github.com/hironobu-arakawa/interface-determinability-gate" target="_blank">→ IDG Pattern Repository (GitHub)</a>
+             <a class="btn" href="/library/" target="_blank">VCDesign Library</a>
+          </div>
+        </div>
+      </section>
 
-    <h2>Specification</h2>
-    <p>
-      IDG is intended to be implemented as a simple gate  
-      (code, config, or contract clause)  
-      at any interface where determinability matters.
-    </p>
+    </main>
 
-    <p class="muted">
-      There is intentionally no single reference implementation.  
-      IDG is designed to be adapted locally, without assuming shared governance.
-    </p>
-
-    <h2>Further reading</h2>
-    <ul>
-      <li>
-        <a href="/library/" target="_blank">VCDesign Library</a>
-        — boundary patterns, failure cases, and design notes
-      </li>
-      <li>
-        <a href="https://github.com/hironobu-arakawa/interface-determinability-gate" target="_blank">
-          IDG Pattern Repository
-        </a>
-        — schemas and practical examples
-      </li>
-    </ul>
-
-    <h2>Position in the ecosystem</h2>
-    <p class="muted">
-      IDG is the earliest boundary in the VCDesign ecosystem.  
-      It blocks ambiguity before it enters.  
-      RP governs promotion.  
-      BOA constructs boundaries.  
-      VCD defines why boundaries matter.
-    </p>
-
-  </main>
-
-  <footer>
-    <p>VCDesign.org — Interface Determinability Gate (IDG)</p>
-  </footer>
+    <footer>
+      <div>© VCDesign — Interface Determinability Gate (IDG)</div>
+      <div class="muted">Standalone method. Static HTML.</div>
+    </footer>
+  </div>
 </body>
 </html>

@@ -202,6 +202,7 @@ code.inline{
     font-size: 12px;
     color: var(--text);
 }
+
 /* --- AI / LLM helper box --- */
 .ai-box{
     margin-top: 14px;
@@ -227,4 +228,88 @@ code.inline{
     font-size: 12px;
     line-height: 1.55;
     color: var(--text);
+}
+
+/* --- Buttons (Added from BOA) --- */
+.btnrow{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top: 12px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.03);
+    color: var(--text);
+    font-size: 13px;
+    text-decoration:none;
+}
+
+.btn.primary{
+    border-color: rgba(96,165,250,.45);
+    background: rgba(96,165,250,.12);
+}
+
+.btn:hover{ text-decoration:none; filter: brightness(1.03); }
+
+/* --- Code Panel (Added from BOA) --- */
+.code-panel{
+    background:rgba(0,0,0,0.100);
+    padding:15px;
+    border-radius: 8px;
+    border:1px solid var(--line);
+    overflow-x:auto;
+    font-size:13px;
+    color:var(--muted);
+    margin-top:14px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+.code-panel .accent { color: var(--accent); }
+.code-panel .comment { color: #6b7280; }
+
+/* --- 既存のCSSの末尾に追加 --- */
+
+/* --- Top Navigation (Breadcrumbs) --- */
+.topnav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: var(--muted);
+}
+.topnav a { color: var(--muted); margin: 0; }
+.topnav a:hover, .topnav strong { color: var(--accent); }
+
+/* --- Note / Alert Box --- */
+.note {
+    background: rgba(96,165,250,.08); /* --accent color base */
+    border: 1px solid rgba(96,165,250,.22);
+    padding: 14px 16px;
+    border-radius: 12px;
+    margin: 16px 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+.note strong {
+    color: var(--text);
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* --- List Styling adjustments for cards --- */
+.card .inner ul {
+    margin: 8px 0 8px 20px;
+    color: var(--muted);
+}
+.card .inner ul li {
+    margin-bottom: 4px;
 }
