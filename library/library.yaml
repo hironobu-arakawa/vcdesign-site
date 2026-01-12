@@ -43,6 +43,7 @@ repositories:
     boundary_primary: Fact
     audience: [Human, AI]
     one_liner_ja: "何を「価値」として守るか。技術選定の前に決めるべき、不変の定義と責任境界。"
+    one_liner_en: "What to protect as 'value'. Immutable definitions and responsibility boundaries that must be decided before technology selection."
     links:
       github: "https://github.com/hironobu-arakawa/vcdesign-core"
 
@@ -52,6 +53,7 @@ repositories:
     boundary_primary: Interpretation
     audience: [Human, AI]
     one_liner_ja: "どこで守るか。曖昧な「解釈」がシステムを汚染しないための、境界構築メソッド。"
+    one_liner_en: "Where to protect. A boundary construction method to prevent ambiguous 'interpretations' from contaminating the system."
     links:
       github: "https://github.com/hironobu-arakawa/boa-core"
 
@@ -62,6 +64,7 @@ repositories:
     audience: [Human, AI]
     stability: High
     one_liner_ja: "原典を『原典のまま』残す。説明も結論も足さない。"
+    one_liner_en: "Preserve origins as-is. No interpretations, no conclusions added."
     use_when_ja:
       - "いつ・どこで・何が言われていたかを固定したい"
       - "解釈や再編集の前にアンカーが必要"
@@ -78,6 +81,7 @@ repositories:
     audience: [Human, AI]
     stability: Medium
     one_liner_ja: "「どこに保存するか」は技術選定ではなく責務の割り当てである、という視点。不可逆点を見極める。"
+    one_liner_en: "'Where to store' is responsibility assignment, not tech selection. Identify irreversible commitment points."
     use_when_ja:
       - "どこに置くか／いつ確定するか／保障は誰が持つかを整理したい"
       - "仕様に書けない判断を『境界』として残したい"
@@ -94,6 +98,7 @@ repositories:
     audience: [Human, AI]
     stability: Medium
     one_liner_ja: "Edge(発生)→Bus(輸送)→DB(蓄積)→BI(活用) の長いフローで、データの形(Shape)を固定し意味の揺れを防ぐ。"
+    one_liner_en: "Fix data Shape across the Edge→Bus→DB→BI flow to prevent semantic drift."
     use_when_ja:
       - "Edge→Bus→DB→BI で『同じ』を定義したい"
       - "形式議論を shape に寄せて、意味の揺れを止めたい"
@@ -110,6 +115,7 @@ repositories:
     audience: [Human, AI]
     stability: Medium
     one_liner_ja: "「万能なDB」を作ろうとして失敗しないために、DB層が引き受けるべき責務を原理原則で切り分ける。"
+    one_liner_en: "Separate DB layer responsibilities by principle to avoid building (and failing at) an omnipotent database."
     use_when_ja:
       - "RDB/TSDB/Lake の議論を『責務割当』として整理したい"
       - "DBの役割肥大（万能化）を防ぎたい"
@@ -126,6 +132,7 @@ repositories:
     audience: [Human, AI]
     stability: Medium
     one_liner_ja: "同期通信前提のITを非同期な現場(OT)に持ち込まない。時間軸のズレと思想の衝突を前提とした設計パターン。"
+    one_liner_en: "Don't impose sync-first IT on async OT field. Design patterns for temporal misalignment and philosophical conflicts."
     use_when_ja:
       - "OT/IT の摩擦が時間・責務で起きている"
       - "『会議室時間』を現場に持ち込まない型が欲しい"
@@ -142,6 +149,7 @@ repositories:
     audience: [Human, AI]
     stability: Medium
     one_liner_ja: "現場(Edge)で発生した数値を、意味付けしてから中央に送るための実装テンプレート。後工程での誤読を防ぐ。"
+    one_liner_en: "Implementation template for tagging raw Edge data with semantics before sending to central. Prevents downstream misreading."
     use_when_ja:
       - "意味を中央に集める前に、Edgeで固定できる範囲を決めたい"
       - "生成AIに読ませても誤読しにくい構造が欲しい"
@@ -158,6 +166,7 @@ repositories:
     audience: [Human, AI]
     stability: Medium
     one_liner_ja: "どうやって守るか。責任なきデータをシステムに入れないための、決定可能性ゲートの実装例。"
+    one_liner_en: "How to protect. Reference implementation of a Determinability Gate to block data without clear responsibility."
     use_when_ja:
       - "曖昧性を境界で止めたい"
       - "責任境界を AI に越えさせない構造が必要"
@@ -174,6 +183,7 @@ repositories:
     audience: [Human, AI]
     stability: Medium
     one_liner_ja: "境界レンズ集。IDG導入時に、どこで曖昧性が発生しやすいかをパターンで把握する。"
+    one_liner_en: "Catalog of boundary lenses. Identify where ambiguity tends to emerge when deploying IDG."
     use_when_ja:
       - "どこで曖昧性が発生するかを可視化したい"
       - "IDG の導入前に境界の壊れ方を把握したい"
@@ -188,6 +198,7 @@ repositories:
     audience: [Human, AI]
     stability: Medium
     one_liner_ja: "AIモデルを作る前に「そもそもこの判断をAIに委譲してよいか」を決める、不可逆性の判断ゲート。"
+    one_liner_en: "Pre-model decision gate: determine if this judgment can be delegated to AI, considering irreversibility."
     use_when_ja:
       - "予測精度以前に、外すと取り返しがつかない領域を排除したい"
       - "48-72時間以内に『GO/NO-GO』を判断したい"
@@ -203,6 +214,7 @@ repositories:
     audience: [Human, AI]
     stability: Medium
     one_liner_ja: "「良い設計か」ではなく「必要な手続きが抜けていないか」を機械的にチェックし、ガバナンス違反をCIで落とす。"
+    one_liner_en: "Mechanically check for missing required procedures (not design quality). Fail CI on governance violations."
     use_when_ja:
       - "CIで VCDesign / BOA のガバナンス違反（責任者の不在など）を落としたい"
       - "人間が忘れても機械が止める仕組みが欲しい"

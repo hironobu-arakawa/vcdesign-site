@@ -278,7 +278,8 @@
             <a href="https://github.com/hironobu-arakawa/vcdesign-origins" target="_blank">vcdesign-origins</a>
             <span style="display:block; color:var(--muted); margin-top:2px;">
               Primary sources / 歴史的アンカー<br />
-              解釈が入る前の一次情報をそのまま保存している場所。すべての議論の原点。
+              解釈が入る前の一次情報をそのまま保存している場所。すべての議論の原点。<br />
+              <span style="font-size:12px;">Preserve origins as-is. No interpretations, no conclusions added.</span>
             </span>
           </li>
           <li style="margin-top:10px;">
@@ -286,7 +287,9 @@
               target="_blank">idg-boundary-patterns (Profiles)</a>
             <span style="display:block; color:var(--muted); margin-top:2px;">
               Boundary Lenses / 境界レンズ集<br />
-              曖昧性が発生しやすいポイントをパターン化したもの。(Moved to IDG repository)
+              曖昧性が発生しやすいポイントをパターン化したもの。(Moved to IDG repository)<br />
+              <span style="font-size:12px;">Catalog of boundary lenses. Identify where ambiguity tends to emerge when
+                deploying IDG.</span>
             </span>
           </li>
         </ul>
@@ -309,7 +312,9 @@
           </div>
           <p class="one">
             「良い設計か」ではなく「必要な手続きが抜けていないか」を機械的にチェックするツール。<br />
-            公式/共有の境界をまたぐ際に、責任者(Resolution)の定義がない等のガバナンス違反をCIで落とします。
+            公式/共有の境界をまたぐ際に、責任者(Resolution)の定義がない等のガバナンス違反をCIで落とします。<br />
+            <span style="color:var(--muted); font-size:12px;">Mechanically check for missing required procedures (not
+              design quality). Fail CI on governance violations.</span>
           </p>
           <div class="meta">
             <span class="pill">Focus: Governance CI</span>
@@ -328,7 +333,9 @@
           </div>
           <p class="one">
             AIモデルを作る前に「そもそもこの判断をAIに委譲してよいか」を決めるための意思決定ゲート。<br />
-            予測精度云々の前に、外したときの影響が取り返しがつかない領域（不可逆性）を排除します。
+            予測精度云々の前に、外したときの影響が取り返しがつかない領域（不可逆性）を排除します。<br />
+            <span style="color:var(--muted); font-size:12px;">Pre-model decision gate: determine if this judgment can be
+              delegated to AI, considering irreversibility.</span>
           </p>
           <div class="meta">
             <span class="pill">Focus: Pre-model safety</span>
@@ -358,7 +365,9 @@
           </div>
           <p class="one">
             「どこに保存するか」は技術選定ではなく責務の割り当てである、という視点のメモ。<br />
-            データがどの時点で「確定（不可逆）」するのかを見極め、適切な置き場所を決めるための指針です。
+            データがどの時点で「確定（不可逆）」するのかを見極め、適切な置き場所を決めるための指針です。<br />
+            <span style="color:var(--muted); font-size:12px;">'Where to store' is responsibility assignment, not tech
+              selection. Identify irreversible commitment points.</span>
           </p>
           <div class="links">
             <a href="https://github.com/hironobu-arakawa/factory-data-storage-notes">GitHub</a>
@@ -373,7 +382,9 @@
           </div>
           <p class="one">
             Edge(発生)→Bus(輸送)→DB(蓄積)→BI(活用) という長いフローの中で、データの形(Shape)をどう固定するか。<br />
-            意味の揺れを防ぐためのカタログと命名規則の実例。
+            意味の揺れを防ぐためのカタログと命名規則の実例。<br />
+            <span style="color:var(--muted); font-size:12px;">Fix data Shape across the Edge→Bus→DB→BI flow to prevent
+              semantic drift.</span>
           </p>
           <div class="links">
             <a href="https://github.com/hironobu-arakawa/factory-data-shapes">GitHub</a>
@@ -388,7 +399,9 @@
           </div>
           <p class="one">
             データベースに何を期待し、何を期待してはいけないか。<br />
-            「万能なDB」を作ろうとして失敗しないために、DB層が引き受けるべき責務を原理原則で切り分けます。
+            「万能なDB」を作ろうとして失敗しないために、DB層が引き受けるべき責務を原理原則で切り分けます。<br />
+            <span style="color:var(--muted); font-size:12px;">Separate DB layer responsibilities by principle to avoid
+              building (and failing at) an omnipotent database.</span>
           </p>
           <div class="links">
             <a href="https://github.com/hironobu-arakawa/db-layer-design-principles">GitHub</a>
@@ -403,7 +416,9 @@
           </div>
           <p class="one">
             同期通信（API呼び出し）前提のITシステムを、非同期な現場（OT）に持ち込むと破綻します。<br />
-            時間軸のズレと思想の衝突を前提とした、非同期ファーストな設計パターン集。
+            時間軸のズレと思想の衝突を前提とした、非同期ファーストな設計パターン集。<br />
+            <span style="color:var(--muted); font-size:12px;">Don't impose sync-first IT on async OT field. Design
+              patterns for temporal misalignment and philosophical conflicts.</span>
           </p>
           <div class="links">
             <a href="https://github.com/hironobu-arakawa/ot-it-async-design-appendix">GitHub</a>
@@ -418,7 +433,9 @@
           </div>
           <p class="one">
             現場（Edge）で発生したデータを、意味付けしてから中央に送るための実装テンプレート。<br />
-            生の数値ではなく「意味」を扱うことで、後工程での誤読リスクを減らします。
+            生の数値ではなく「意味」を扱うことで、後工程での誤読リスクを減らします。<br />
+            <span style="color:var(--muted); font-size:12px;">Implementation template for tagging raw Edge data with
+              semantics before sending to central. Prevents downstream misreading.</span>
           </p>
           <div class="links">
             <a href="https://github.com/hironobu-arakawa/edge-semantics-template">GitHub</a>
