@@ -1,44 +1,177 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Library | VCDesign</title>
   <meta name="description" content="VCDesign の派生物（衛星リポジトリ）への参照構造。読むためではなく、境界を固定するための索引。" />
   <style>
-    :root{
-      --bg:#0b0c10; --fg:#e8eaf0; --muted:#aab0c0; --card:#121420; --line:#242840;
-      --accent:#7dd3fc;
+    :root {
+      --bg: #0b0c10;
+      --fg: #e8eaf0;
+      --muted: #aab0c0;
+      --card: #121420;
+      --line: #242840;
+      --accent: #7dd3fc;
     }
-    body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans JP",sans-serif;}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
-    header{padding:6px 0 22px;border-bottom:1px solid var(--line);margin-bottom:18px}
-    h1{font-size:22px;margin:0 0 6px}
-    p{margin:10px 0;color:var(--muted);line-height:1.65}
-    .note{background:rgba(125,211,252,.08);border:1px solid rgba(125,211,252,.22);padding:12px 14px;border-radius:12px;margin:14px 0 18px}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-    @media (max-width:820px){ .grid{grid-template-columns:1fr} }
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px}
-    .top{display:flex;gap:10px;align-items:flex-start;justify-content:space-between}
-    .title{font-size:16px;margin:0}
-    .tag{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:2px 8px;border-radius:999px;white-space:nowrap}
-    .one{margin:8px 0 10px;color:var(--fg);line-height:1.55}
-    .meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 12px}
-    .pill{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:3px 8px;border-radius:999px}
-    .use{font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 10px}
-    .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-    .links a{font-size:13px}
-    .hr{height:1px;background:var(--line);margin:12px 0 10px}
-    footer{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;line-height:1.7}
-    code{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:6px}
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none
+    }
+
+    a:hover {
+      text-decoration: underline
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px 60px
+    }
+
+    header {
+      padding: 6px 0 22px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 18px
+    }
+
+    h1 {
+      font-size: 22px;
+      margin: 0 0 6px
+    }
+
+    p {
+      margin: 10px 0;
+      color: var(--muted);
+      line-height: 1.65
+    }
+
+    .note {
+      background: rgba(125, 211, 252, .08);
+      border: 1px solid rgba(125, 211, 252, .22);
+      padding: 12px 14px;
+      border-radius: 12px;
+      margin: 14px 0 18px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px
+    }
+
+    @media (max-width:820px) {
+      .grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 14px 12px
+    }
+
+    .top {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      justify-content: space-between
+    }
+
+    .title {
+      font-size: 16px;
+      margin: 0
+    }
+
+    .tag {
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 2px 8px;
+      border-radius: 999px;
+      white-space: nowrap
+    }
+
+    .one {
+      margin: 8px 0 10px;
+      color: var(--fg);
+      line-height: 1.55
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px
+    }
+
+    .pill {
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 3px 8px;
+      border-radius: 999px
+    }
+
+    .use {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 10px
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px
+    }
+
+    .links a {
+      font-size: 13px
+    }
+
+    .hr {
+      height: 1px;
+      background: var(--line);
+      margin: 12px 0 10px
+    }
+
+    footer {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7
+    }
+
+    code {
+      background: rgba(255, 255, 255, .06);
+      padding: 2px 6px;
+      border-radius: 6px
+    }
+
     .topnav {
       font-size: 0.95rem;
       opacity: 0.9;
       margin-bottom: 14px;
     }
-    .topnav a { margin-right: 12px; }
+
+    .topnav a {
+      margin-right: 12px;
+    }
   </style>
 </head>
 
@@ -56,289 +189,248 @@
     </div>
 
     <header>
-      <h1>Library</h1>
-
-      <!-- English Intro -->
-      <div class="note">
-        <p style="margin:0">
-          <strong>English note:</strong><br/>
-          This Library is an index of satellite repositories in the VCDesign ecosystem.  
-          It is not meant to be read sequentially.  
-          It exists to <strong>fix boundaries</strong> and to show <strong>where each responsibility lives</strong>.  
-          Most content remains in Japanese intentionally, to preserve the nuance of  
-          “responsibility”, “Genba (field operations)”, and boundary failures that  
-          cannot be translated without distortion.
-        </p>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px;">
+        <h1>Library</h1>
+        <a href="library.yaml" style="font-size:13px; color:var(--muted);">For AI: library.yaml</a>
       </div>
 
-      <!-- Japanese Intro -->
-      <div class="note">
-        <p style="margin:0">
-          この Library は、VCDesign エコシステムの「衛星リポジトリ」を  
-          <strong>境界ごとに固定するための索引</strong>です。  
-          読む場所ではなく、<strong>参照先を決める場所</strong>です。
-        </p>
-      </div>
-
-      <p>
-        VCDesign / BOA / RP / IDG に関連する資料を  
-        <strong>Role（Origins / Field）</strong> と  
-        <strong>Boundary（Fact / Interpretation / Responsibility）</strong>  
-        で整理しています。
+      <p style="color:var(--fg); font-size:15px; line-height:1.6; margin:0 0 12px;">
+        VCDesign エコシステムの「衛星リポジトリ」を境界ごとに固定するための索引です。<br>
+        読むためではなく、参照先（責任の所在）を決めるために使用します。
       </p>
 
-      <p>
-        機械可読な索引（AI向け）:  
-        <a href="library.yaml"><code>library/library.yaml</code></a>
+      <p style="color:var(--muted); font-size:13px; line-height:1.5; margin:0;">
+        Index of satellite repositories. Not meant to be read sequentially, but to fix boundaries and show where each
+        responsibility lives.
       </p>
-
-      <div class="note">
-        <p style="margin:0">
-          読んで理解できなくても問題ありません。  
-          必要になったとき、必要な境界だけ拾ってください。  
-          （このページは説明ではなく、境界の配置です）
-        </p>
-      </div>
     </header>
 
-    <!-- Repository Index (English) -->
-    <section class="card" style="margin-bottom:18px">
-      <h2 class="title">Repository Index</h2>
-      <p class="muted">
-        Authoritative repositories under VCDesign / BOA.  
-        Only these are considered “inside the system”.
+    <!-- 1. VCDesign Core -->
+    <section style="margin-bottom: 60px;">
+      <h2
+        style="font-size:18px; color:var(--accent); border-bottom:1px solid var(--line); padding-bottom:8px; margin-bottom:24px;">
+        1. VCDesign Core & Architecture
+      </h2>
+      <p style="margin-bottom:24px; font-size:14px;">
+        不変の哲学(VCDesign)から、具体的な実装(IDG)までの階層構造。
       </p>
 
-      <ul class="rules">
+      <!-- Hierarchy Visual -->
+      <div class="hierarchy" style="display:flex; flex-direction:column; gap:12px; margin-bottom:32px;">
 
-        <li class="rule">
-          <a href="https://github.com/hironobu-arakawa/vcdesign-core" target="_blank">
-            <strong>vcdesign-core</strong>
-          </a>
-          <span>Core definition of VCDesign (immutable rules)</span>
-        </li>
+        <!-- Layer 1: Philosophy -->
+        <div class="layer" style="border-left: 3px solid #6366f1; padding-left: 18px;">
+          <div style="font-size:11px; color:#6366f1; font-weight:bold; letter-spacing:1px; margin-bottom:4px;">
+            PHILOSOPHY (WHY)</div>
+          <h3 style="margin:0; font-size:16px;">
+            <a href="https://github.com/hironobu-arakawa/vcdesign-core" target="_blank">vcdesign-core</a>
+          </h3>
+          <p style="margin:6px 0 0; font-size:13px; color:var(--fg); line-height:1.5;">
+            <strong>何を「価値」として守るか</strong><br />
+            技術選定の前に決めるべき、不変の定義と責任境界。<br />
+            <span style="color:var(--muted); font-size:12px;">Defines what to protect (Value, Responsibility,
+              Provenance).</span>
+          </p>
+        </div>
 
-        <li class="rule">
-          <a href="https://github.com/hironobu-arakawa/boa-core" target="_blank">
-            <strong>boa-core</strong>
-          </a>
-          <span>Core definition of BOA (construction method)</span>
-        </li>
+        <div style="padding-left: 20px; color:var(--line);">↓ Implements</div>
 
-        <br />
+        <!-- Layer 2: Architecture -->
+        <div class="layer" style="border-left: 3px solid #8b5cf6; padding-left: 18px;">
+          <div style="font-size:11px; color:#8b5cf6; font-weight:bold; letter-spacing:1px; margin-bottom:4px;">
+            ARCHITECTURE (WHERE)</div>
+          <h3 style="margin:0; font-size:16px;">
+            <a href="https://github.com/hironobu-arakawa/boa-core" target="_blank">boa-core</a>
+          </h3>
+          <p style="margin:6px 0 0; font-size:13px; color:var(--fg); line-height:1.5;">
+            <strong>どこで守るか（Boundary Oriented Architecture）</strong><br />
+            曖昧な「解釈」がシステムを汚染しないための、境界構築メソッド。<br />
+            <span style="color:var(--muted); font-size:12px;">Defines where to protect it (Boundaries, Meanings,
+              Resolutions).</span>
+          </p>
+        </div>
 
-        <li class="rule">
-          <a href="https://github.com/hironobu-arakawa/vcdesign-origins" target="_blank">
-            <strong>vcdesign-origins</strong>
-          </a>
-          <span>Primary sources (immutable, no interpretation)</span>
-        </li>
+        <div style="padding-left: 20px; color:var(--line);">↓ Enforces</div>
 
-        <li class="rule">
-          <a href="https://github.com/hironobu-arakawa/interface-determinability-gate" target="_blank">
-            <strong>interface-determinability-gate</strong>
-          </a>
-          <span>IDG official repository (gate definition + examples)</span>
-        </li>
+        <!-- Layer 3: Component -->
+        <div class="layer" style="border-left: 3px solid #ec4899; padding-left: 18px;">
+          <div style="font-size:11px; color:#ec4899; font-weight:bold; letter-spacing:1px; margin-bottom:4px;">COMPONENT
+            (HOW)</div>
+          <h3 style="margin:0; font-size:16px;">
+            <a href="https://github.com/hironobu-arakawa/interface-determinability-gate"
+              target="_blank">interface-determinability-gate (IDG)</a>
+          </h3>
+          <p style="margin:6px 0 0; font-size:13px; color:var(--fg); line-height:1.5;">
+            <strong>どうやって守るか（具体的なゲート実装）</strong><br />
+            責任なきデータをシステムに入れないための、決定可能性ゲートの実装例。<br />
+            <span style="color:var(--muted); font-size:12px;">Defines how to protect it (The Gate
+              implementation).</span>
+          </p>
+        </div>
 
-        <li class="rule">
-          <a href="/library/idg-boundary-patterns" target="_blank">
-            <strong>idg-boundary-patterns</strong>
-          </a>
-          <span>Optional boundary lenses for IDG (not requirements)</span>
-        </li>
+      </div>
 
-        <li class="rule">
-          <a href="https://github.com/hironobu-arakawa/factory-data-storage-notes" target="_blank">
-            <strong>factory-data-storage-notes</strong>
-          </a>
-          <span>Storage responsibility and irreversibility notes</span>
-        </li>
-
-        <li class="rule">
-          <a href="https://github.com/hironobu-arakawa/factory-data-shapes" target="_blank">
-            <strong>factory-data-shapes</strong>
-          </a>
-          <span>Data shape catalog across the flow</span>
-        </li>
-
-        <li class="rule">
-          <a href="https://github.com/hironobu-arakawa/db-layer-design-principles" target="_blank">
-            <strong>db-layer-design-principles</strong>
-          </a>
-          <span>Responsibility principles for DB layers</span>
-        </li>
-
-        <li class="rule">
-          <a href="https://github.com/hironobu-arakawa/ot-it-async-design-appendix" target="_blank">
-            <strong>ot-it-async-design-appendix</strong>
-          </a>
-          <span>Async-first OT/IT design appendix</span>
-        </li>
-
-        <li class="rule">
-          <a href="https://github.com/hironobu-arakawa/edge-semantics-template" target="_blank">
-            <strong>edge-semantics-template</strong>
-          </a>
-          <span>Semantic handling template at the edge</span>
-        </li>
-
-      </ul>
+      <!-- Core References -->
+      <div style="margin-left: 20px; border-top:1px dashed var(--line); padding-top:16px;">
+        <div style="font-size:12px; color:var(--muted); margin-bottom:8px;">References & Resources:</div>
+        <ul style="margin:0; padding-left:18px; color:var(--muted); font-size:13px; line-height:1.8;">
+          <li>
+            <a href="https://github.com/hironobu-arakawa/vcdesign-origins" target="_blank">vcdesign-origins</a>
+            <span style="display:block; color:var(--muted); margin-top:2px;">
+              Primary sources / 歴史的アンカー<br />
+              解釈が入る前の一次情報をそのまま保存している場所。すべての議論の原点。
+            </span>
+          </li>
+          <li style="margin-top:10px;">
+            <a href="https://github.com/hironobu-arakawa/interface-determinability-gate/tree/main/profiles"
+              target="_blank">idg-boundary-patterns (Profiles)</a>
+            <span style="display:block; color:var(--muted); margin-top:2px;">
+              Boundary Lenses / 境界レンズ集<br />
+              曖昧性が発生しやすいポイントをパターン化したもの。(Moved to IDG repository)
+            </span>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Cards (Japanese) -->
-    <section class="grid">
+    <!-- 2. Tools -->
+    <section style="margin-bottom: 60px;">
+      <h2
+        style="font-size:18px; color:var(--accent); border-bottom:1px solid var(--line); padding-bottom:8px; margin-bottom:24px;">
+        2. Tools & Governance
+      </h2>
 
-      <!-- Origins -->
-      <article class="card">
-        <div class="top">
-          <h2 class="title">VCDesign Origins</h2>
-          <div class="tag">Role: Origins</div>
-        </div>
-        <p class="one">原典を「原典のまま」残す。説明も結論も足さない。</p>
-        <div class="meta">
-          <span class="pill">Boundary: Fact</span>
-          <span class="pill">Audience: Human / AI</span>
-          <span class="pill">Stability: High</span>
-        </div>
-        <p class="use">解釈の前に、歴史的アンカーとして参照する。</p>
-        <div class="hr"></div>
-        <div class="links">
-          <a href="https://github.com/hironobu-arakawa/vcdesign-origins">GitHub</a>
-        </div>
-      </article>
+      <div class="grid">
+        <!-- vcdlint -->
+        <article class="card">
+          <div class="top">
+            <h3 class="title">vcdlint</h3>
+            <div class="tag">CI / Linter</div>
+          </div>
+          <p class="one">
+            「良い設計か」ではなく「必要な手続きが抜けていないか」を機械的にチェックするツール。<br />
+            公式/共有の境界をまたぐ際に、責任者(Resolution)の定義がない等のガバナンス違反をCIで落とします。
+          </p>
+          <div class="meta">
+            <span class="pill">Focus: Governance CI</span>
+          </div>
+          <div class="hr"></div>
+          <div class="links">
+            <a href="https://github.com/hironobu-arakawa/vcdlint">GitHub</a>
+          </div>
+        </article>
 
-      <!-- IDG -->
-      <article class="card">
-        <div class="top">
-          <h2 class="title">Interface Determinability Gate</h2>
-          <div class="tag">Role: Field</div>
-        </div>
-        <p class="one">IDG の公式リポジトリ。Gate の定義と最小限の例が含まれる。</p>
-        <div class="meta">
-          <span class="pill">Boundary: Responsibility</span>
-          <span class="pill">Focus: determinability</span>
-        </div>
-        <p class="use">曖昧性を境界で止めるための最小構造を確認したいとき。</p>
-        <div class="hr"></div>
-        <div class="links">
-          <a href="https://github.com/hironobu-arakawa/interface-determinability-gate">GitHub</a>
-        </div>
-      </article>
+        <!-- Predictability Gate -->
+        <article class="card">
+          <div class="top">
+            <h3 class="title">Predictability Gate</h3>
+            <div class="tag">Operation Gate</div>
+          </div>
+          <p class="one">
+            AIモデルを作る前に「そもそもこの判断をAIに委譲してよいか」を決めるための意思決定ゲート。<br />
+            予測精度云々の前に、外したときの影響が取り返しがつかない領域（不可逆性）を排除します。
+          </p>
+          <div class="meta">
+            <span class="pill">Focus: Pre-model safety</span>
+          </div>
+          <div class="hr"></div>
+          <div class="links">
+            <a href="https://github.com/hironobu-arakawa/predictability-gate">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-      <!-- IDG Boundary Patterns -->
-      <article class="card">
-        <div class="top">
-          <h2 class="title">IDG Boundary Patterns</h2>
-          <div class="tag">Role: Field</div>
-        </div>
-        <p class="one">曖昧性の境界を見抜くためのレンズ集。構造だけを残し、内容はローカルに適応。</p>
-        <div class="meta">
-          <span class="pill">Boundary: Responsibility</span>
-          <span class="pill">Focus: ambiguity signals</span>
-        </div>
-        <p class="use">IDG を導入する際に「どこで曖昧性が発生するか」を可視化したいとき。</p>
-        <div class="hr"></div>
-        <div class="links">
-          <a href="/library/idg-boundary-patterns">Open</a>
-        </div>
-      </article>
+    <!-- 3. Factory IoT -->
+    <section>
+      <h2
+        style="font-size:18px; color:var(--accent); border-bottom:1px solid var(--line); padding-bottom:8px; margin-bottom:24px;">
+        3. Factory IoT & Field Patterns
+      </h2>
 
-      <!-- Storage Notes -->
-      <article class="card">
-        <div class="top">
-          <h2 class="title">Factory Data Storage Notes</h2>
-          <div class="tag">Role: Field</div>
-        </div>
-        <p class="one">保存は技術ではなく責務。不可逆点を整理する。</p>
-        <div class="meta">
-          <span class="pill">Boundary: Responsibility</span>
-          <span class="pill">Focus: storage placement</span>
-        </div>
-        <p class="use">どこで確定し、誰が責任を持つかを整理したいとき。</p>
-        <div class="hr"></div>
-        <div class="links">
-          <a href="https://github.com/hironobu-arakawa/factory-data-storage-notes">GitHub</a>
-        </div>
-      </article>
+      <div class="grid">
 
-      <!-- Data Shapes -->
-      <article class="card">
-        <div class="top">
-          <h2 class="title">Factory Data Shapes</h2>
-          <div class="tag">Role: Field</div>
-        </div>
-        <p class="one">フロー途中の「shape」を固定し、意味の揺れを止める。</p>
-        <div class="meta">
-          <span class="pill">Boundary: Fact</span>
-          <span class="pill">Focus: contracts</span>
-        </div>
-        <p class="use">Edge→Bus→DB→BI の整合性を保つ。</p>
-        <div class="hr"></div>
-        <div class="links">
-          <a href="https://github.com/hironobu-arakawa/factory-data-shapes">GitHub</a>
-        </div>
-      </article>
+        <!-- Storage Notes -->
+        <article class="card">
+          <div class="top">
+            <h3 class="title">Factory Data Storage Notes</h3>
+            <div class="tag">Storage</div>
+          </div>
+          <p class="one">
+            「どこに保存するか」は技術選定ではなく責務の割り当てである、という視点のメモ。<br />
+            データがどの時点で「確定（不可逆）」するのかを見極め、適切な置き場所を決めるための指針です。
+          </p>
+          <div class="links">
+            <a href="https://github.com/hironobu-arakawa/factory-data-storage-notes">GitHub</a>
+          </div>
+        </article>
 
-      <!-- DB Principles -->
-      <article class="card">
-        <div class="top">
-          <h2 class="title">DB Layer Design Principles</h2>
-          <div class="tag">Role: Field</div>
-        </div>
-        <p class="one">DB 層の責務を原理で切る。</p>
-        <div class="meta">
-          <span class="pill">Boundary: Responsibility</span>
-          <span class="pill">Focus: DB responsibilities</span>
-        </div>
-        <p class="use">DB を「責務」で整理したいとき。</p>
-        <div class="hr"></div>
-        <div class="links">
-          <a href="https://github.com/hironobu-arakawa/db-layer-design-principles">GitHub</a>
-        </div>
-      </article>
+        <!-- Data Shapes -->
+        <article class="card">
+          <div class="top">
+            <h3 class="title">Factory Data Shapes</h3>
+            <div class="tag">Contract</div>
+          </div>
+          <p class="one">
+            Edge(発生)→Bus(輸送)→DB(蓄積)→BI(活用) という長いフローの中で、データの形(Shape)をどう固定するか。<br />
+            意味の揺れを防ぐためのカタログと命名規則の実例。
+          </p>
+          <div class="links">
+            <a href="https://github.com/hironobu-arakawa/factory-data-shapes">GitHub</a>
+          </div>
+        </article>
 
-      <!-- OT/IT Async -->
-      <article class="card">
-        <div class="top">
-          <h2 class="title">OT-IT Async Design Appendix</h2>
-          <div class="tag">Role: Field</div>
-        </div>
-        <p class="one">非同期前提で OT/IT の境界を守る。</p>
-        <div class="meta">
-          <span class="pill">Boundary: Interpretation</span>
-          <span class="pill">Focus: async-first</span>
-        </div>
-        <p class="use">時間と責務の摩擦を扱うとき。</p>
-        <div class="hr"></div>
-        <div class="links">
-          <a href="https://github.com/hironobu-arakawa/ot-it-async-design-appendix">GitHub</a>
-        </div>
-      </article>
+        <!-- DB Principles -->
+        <article class="card">
+          <div class="top">
+            <h3 class="title">DB Layer Design Principles</h3>
+            <div class="tag">Principles</div>
+          </div>
+          <p class="one">
+            データベースに何を期待し、何を期待してはいけないか。<br />
+            「万能なDB」を作ろうとして失敗しないために、DB層が引き受けるべき責務を原理原則で切り分けます。
+          </p>
+          <div class="links">
+            <a href="https://github.com/hironobu-arakawa/db-layer-design-principles">GitHub</a>
+          </div>
+        </article>
 
-      <!-- Edge Semantics -->
-      <article class="card">
-        <div class="top">
-          <h2 class="title">Edge Semantics Template</h2>
-          <div class="tag">Role: Field</div>
-        </div>
-        <p class="one">Edge で意味を扱うためのテンプレ。</p>
-        <div class="meta">
-          <span class="pill">Boundary: Interpretation</span>
-          <span class="pill">Focus: semantics at edge</span>
-        </div>
-        <p class="use">中央集約前に意味を整えたいとき。</p>
-        <div class="hr"></div>
-        <div class="links">
-          <a href="https://github.com/hironobu-arakawa/edge-semantics-template">GitHub</a>
-        </div>
-      </article>
+        <!-- OT/IT Async -->
+        <article class="card">
+          <div class="top">
+            <h3 class="title">OT-IT Async Design Appendix</h3>
+            <div class="tag">Async</div>
+          </div>
+          <p class="one">
+            同期通信（API呼び出し）前提のITシステムを、非同期な現場（OT）に持ち込むと破綻します。<br />
+            時間軸のズレと思想の衝突を前提とした、非同期ファーストな設計パターン集。
+          </p>
+          <div class="links">
+            <a href="https://github.com/hironobu-arakawa/ot-it-async-design-appendix">GitHub</a>
+          </div>
+        </article>
 
+        <!-- Edge Semantics -->
+        <article class="card">
+          <div class="top">
+            <h3 class="title">Edge Semantics Template</h3>
+            <div class="tag">Template</div>
+          </div>
+          <p class="one">
+            現場（Edge）で発生したデータを、意味付けしてから中央に送るための実装テンプレート。<br />
+            生の数値ではなく「意味」を扱うことで、後工程での誤読リスクを減らします。
+          </p>
+          <div class="links">
+            <a href="https://github.com/hironobu-arakawa/edge-semantics-template">GitHub</a>
+          </div>
+        </article>
+
+      </div>
     </section>
 
     <footer>
       <div>
-        このページは説明書ではありません。  
+        このページは説明書ではありません。
         参照先（衛星）の責務を固定し、境界越しの誤読を減らすための索引です。
       </div>
       <div style="margin-top:10px">
@@ -349,4 +441,5 @@
 
   </main>
 </body>
+
 </html>

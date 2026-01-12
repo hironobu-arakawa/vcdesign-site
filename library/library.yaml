@@ -25,25 +25,39 @@ rules:
   - "Field は適用。だが Field の結論を Core に逆流させない（境界で止める）"
   - "各repoは README 先頭で Role/Scope/Boundary を宣言すると強い"
 
+categories:
+  - id: core
+    name: "VCDesign Core & Architecture"
+    description: "哲学、ルール、設計手法の階層構造定義"
+  - id: tools
+    name: "Tools & Governance"
+    description: "ルールを強制・補助するためのツールキット"
+  - id: factory
+    name: "Factory IoT & Field Patterns"
+    description: "現場での具体的な適用パターンとデータ設計"
+
 repositories:
   - id: vcdesign-core
     role: Core
+    category: core
     boundary_primary: Fact
     audience: [Human, AI]
-    one_liner_ja: "VCDesign の不変な定義（正典）"
+    one_liner_ja: "何を「価値」として守るか。技術選定の前に決めるべき、不変の定義と責任境界。"
     links:
       github: "https://github.com/hironobu-arakawa/vcdesign-core"
 
   - id: boa-core
     role: Method
+    category: core
     boundary_primary: Interpretation
     audience: [Human, AI]
-    one_liner_ja: "VCDesign 下の境界構築工法（BOA）"
+    one_liner_ja: "どこで守るか。曖昧な「解釈」がシステムを汚染しないための、境界構築メソッド。"
     links:
       github: "https://github.com/hironobu-arakawa/boa-core"
 
   - id: vcdesign-origins
     role: Origins
+    category: core
     boundary_primary: Fact
     audience: [Human, AI]
     stability: High
@@ -59,10 +73,11 @@ repositories:
 
   - id: factory-data-storage-notes
     role: Field
+    category: factory
     boundary_primary: Responsibility
     audience: [Human, AI]
     stability: Medium
-    one_liner_ja: "『保存』は技術ではなく責務。不可逆点と置き場所を決める。"
+    one_liner_ja: "「どこに保存するか」は技術選定ではなく責務の割り当てである、という視点。不可逆点を見極める。"
     use_when_ja:
       - "どこに置くか／いつ確定するか／保障は誰が持つかを整理したい"
       - "仕様に書けない判断を『境界』として残したい"
@@ -74,10 +89,11 @@ repositories:
 
   - id: factory-data-shapes
     role: Field
+    category: factory
     boundary_primary: Fact
     audience: [Human, AI]
     stability: Medium
-    one_liner_ja: "フロー途中の shape を固定する。保存形式ではなく受け渡しの型を揃える。"
+    one_liner_ja: "Edge(発生)→Bus(輸送)→DB(蓄積)→BI(活用) の長いフローで、データの形(Shape)を固定し意味の揺れを防ぐ。"
     use_when_ja:
       - "Edge→Bus→DB→BI で『同じ』を定義したい"
       - "形式議論を shape に寄せて、意味の揺れを止めたい"
@@ -89,10 +105,11 @@ repositories:
 
   - id: db-layer-design-principles
     role: Field
+    category: factory
     boundary_primary: Responsibility
     audience: [Human, AI]
     stability: Medium
-    one_liner_ja: "DB層が引き受ける／引き受けないを、原理で切る。"
+    one_liner_ja: "「万能なDB」を作ろうとして失敗しないために、DB層が引き受けるべき責務を原理原則で切り分ける。"
     use_when_ja:
       - "RDB/TSDB/Lake の議論を『責務割当』として整理したい"
       - "DBの役割肥大（万能化）を防ぎたい"
@@ -104,10 +121,11 @@ repositories:
 
   - id: ot-it-async-design-appendix
     role: Field
+    category: factory
     boundary_primary: Interpretation
     audience: [Human, AI]
     stability: Medium
-    one_liner_ja: "非同期前提で、運用と設計の境界を守る。補遺としてパターンを残す。"
+    one_liner_ja: "同期通信前提のITを非同期な現場(OT)に持ち込まない。時間軸のズレと思想の衝突を前提とした設計パターン。"
     use_when_ja:
       - "OT/IT の摩擦が時間・責務で起きている"
       - "『会議室時間』を現場に持ち込まない型が欲しい"
@@ -119,10 +137,11 @@ repositories:
 
   - id: edge-semantics-template
     role: Field
+    category: factory
     boundary_primary: Interpretation
     audience: [Human, AI]
     stability: Medium
-    one_liner_ja: "Edgeで意味を扱うテンプレ。Fact不変、解釈は候補、責任は現場へ。"
+    one_liner_ja: "現場(Edge)で発生した数値を、意味付けしてから中央に送るための実装テンプレート。後工程での誤読を防ぐ。"
     use_when_ja:
       - "意味を中央に集める前に、Edgeで固定できる範囲を決めたい"
       - "生成AIに読ませても誤読しにくい構造が欲しい"
@@ -134,10 +153,11 @@ repositories:
 
   - id: interface-determinability-gate
     role: Field
+    category: core
     boundary_primary: Responsibility
     audience: [Human, AI]
     stability: Medium
-    one_liner_ja: "IDG の公式リポジトリ。Gate の定義と最小限の例。"
+    one_liner_ja: "どうやって守るか。責任なきデータをシステムに入れないための、決定可能性ゲートの実装例。"
     use_when_ja:
       - "曖昧性を境界で止めたい"
       - "責任境界を AI に越えさせない構造が必要"
@@ -149,16 +169,47 @@ repositories:
 
   - id: idg-boundary-patterns
     role: Field
+    category: core
     boundary_primary: Responsibility
     audience: [Human, AI]
     stability: Medium
-    one_liner_ja: "IDG の境界レンズ集。構造だけを残し、内容はローカルに適応。"
+    one_liner_ja: "境界レンズ集。IDG導入時に、どこで曖昧性が発生しやすいかをパターンで把握する。"
     use_when_ja:
       - "どこで曖昧性が発生するかを可視化したい"
       - "IDG の導入前に境界の壊れ方を把握したい"
     links:
-      site: "/library/idg-boundary-patterns"
+      github: "https://github.com/hironobu-arakawa/interface-determinability-gate/tree/main/profiles"
     tags: [idg, patterns, boundary, ambiguity]
+
+  - id: predictability-gate
+    role: Field
+    category: tools
+    boundary_primary: Responsibility
+    audience: [Human, AI]
+    stability: Medium
+    one_liner_ja: "AIモデルを作る前に「そもそもこの判断をAIに委譲してよいか」を決める、不可逆性の判断ゲート。"
+    use_when_ja:
+      - "予測精度以前に、外すと取り返しがつかない領域を排除したい"
+      - "48-72時間以内に『GO/NO-GO』を判断したい"
+    links:
+      github: "https://github.com/hironobu-arakawa/predictability-gate"
+      start_here: "https://github.com/hironobu-arakawa/predictability-gate#readme"
+    tags: [gate, pre-model, decision, safety]
+
+  - id: vcdlint
+    role: Field
+    category: tools
+    boundary_primary: Responsibility
+    audience: [Human, AI]
+    stability: Medium
+    one_liner_ja: "「良い設計か」ではなく「必要な手続きが抜けていないか」を機械的にチェックし、ガバナンス違反をCIで落とす。"
+    use_when_ja:
+      - "CIで VCDesign / BOA のガバナンス違反（責任者の不在など）を落としたい"
+      - "人間が忘れても機械が止める仕組みが欲しい"
+    links:
+      github: "https://github.com/hironobu-arakawa/vcdlint"
+      start_here: "https://github.com/hironobu-arakawa/vcdlint#readme"
+    tags: [lint, ci, governance, responsibility]
 
 site_integration:
   minimal:
