@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VCD — Value Continuity Design</title>
-  <meta name="description" content="VCD (Value Continuity Design) defines the conditions under which value and responsibility survive context drift. It explains why VCDesign Core exists and why boundaries must be explicit." />
+  <meta name="description"
+    content="VCD (Value Continuity Design) defines the conditions under which value and responsibility survive context drift. It explains why VCDesign Core exists and why boundaries must be explicit." />
   <meta name="theme-color" content="#0b0f19" />
   <link rel="stylesheet" href="../style.css" />
 </head>
@@ -18,10 +20,18 @@
         <div class="kicker"><span class="dot"></span><span>VCD — Value Continuity Design</span></div>
         <h1>The philosophy behind VCDesign Core.</h1>
         <p class="subtitle">
-          VCD (Value Continuity Design) explains why VCDesign Core exists.  
-          It defines the conditions under which value and responsibility survive  
+          VCD (Value Continuity Design) explains why VCDesign Core exists.
+          It defines the conditions under which value and responsibility survive
           even when context, meaning, or organizational structure change.
         </p>
+
+        <div class="note" style="margin-top:14px">
+          <strong>AI Definition File:</strong><br />
+          For the machine-readable VCD core definition (vcdesign_core.yaml), refer to:<br />
+          <a href="https://github.com/hironobu-arakawa/vcdesign-core/blob/main/vcdesign_core.yaml" target="_blank">
+            <code>vcdesign-core/vcdesign_core.yaml</code>
+          </a>
+        </div>
       </div>
     </header>
 
@@ -32,12 +42,12 @@
         <div class="inner">
           <h2>Why this document exists</h2>
           <p>
-            This page explains <strong>why VCDesign Core exists</strong> —  
+            This page explains <strong>why VCDesign Core exists</strong> —
             not how to use it.
           </p>
           <p class="muted">
-            If you are looking for tutorials, examples, or usage instructions,  
-            this is not the right place.  
+            If you are looking for tutorials, examples, or usage instructions,
+            this is not the right place.
             VCD exists to clarify the <strong>thinking boundary</strong> behind the Core.
           </p>
         </div>
@@ -48,11 +58,11 @@
         <div class="inner">
           <h2>The problem VCD addresses</h2>
           <p>
-            In systems that continue operating after deployment,  
+            In systems that continue operating after deployment,
             a recurring problem appears regardless of domain or technology.
           </p>
           <p class="muted">
-            Decisions are made.  
+            Decisions are made.
             But later, no one can clearly answer:
           </p>
           <ul class="rules">
@@ -61,8 +71,8 @@
             <li class="rule"><strong>where responsibility</strong> begins and ends</li>
           </ul>
           <p class="muted">
-            This is not caused by lack of skill.  
-            It happens because decisions are not treated as design artifacts.  
+            This is not caused by lack of skill.
+            It happens because decisions are not treated as design artifacts.
             They disappear into documents, meetings, or tacit understanding.
           </p>
         </div>
@@ -73,7 +83,7 @@
         <div class="inner">
           <h2>What was observed</h2>
           <p>
-            VCD did not start from theory.  
+            VCD did not start from theory.
             It started from observing environments where:
           </p>
           <ul class="rules">
@@ -82,7 +92,7 @@
             <li class="rule">responsibility had to remain clear over time</li>
           </ul>
           <p class="muted">
-            Some decision structures survived operation.  
+            Some decision structures survived operation.
             Others did not.
           </p>
         </div>
@@ -99,8 +109,8 @@
             <strong>They made decision boundaries explicit.</strong>
           </p>
           <p>
-            Not as process rules.  
-            Not as organizational policy.  
+            Not as process rules.
+            Not as organizational policy.
             But as part of the system’s design itself.
           </p>
         </div>
@@ -132,7 +142,7 @@
         <div class="inner">
           <h2>Why the Core is machine-readable</h2>
           <p>
-            Human discussions are good at exploring possibilities.  
+            Human discussions are good at exploring possibilities.
             They are bad at preserving boundaries over time.
           </p>
           <p class="muted">
@@ -144,7 +154,7 @@
             <li class="rule">be reasoned over by both humans and AI</li>
           </ul>
           <p>
-            This is not an implementation detail.  
+            This is not an implementation detail.
             It is a design choice.
           </p>
         </div>
@@ -155,11 +165,11 @@
         <div class="inner">
           <h2>Relationship to AI</h2>
           <p>
-            AI systems are good at proposing interpretations.  
+            AI systems are good at proposing interpretations.
             They are not suited to owning consequences.
           </p>
           <p class="muted">
-            VCD does not try to make AI “safer” by restricting it.  
+            VCD does not try to make AI “safer” by restricting it.
             It makes AI safer by:
           </p>
           <p><strong>never allowing it to decide where responsibility begins.</strong></p>
@@ -179,7 +189,7 @@
             <li class="rule">the refusal to treat operational judgment as configuration</li>
           </ul>
           <p>
-            These are not features.  
+            These are not features.
             They are constraints.
           </p>
         </div>
@@ -190,12 +200,12 @@
         <div class="inner">
           <h2>Final note</h2>
           <p>
-            If this philosophy feels strict,  
+            If this philosophy feels strict,
             it is because it was formed in places where looseness did not survive.
           </p>
           <p class="muted">
-            VCDesign Core exists to preserve these constraints  
-            even when systems grow, teams change,  
+            VCDesign Core exists to preserve these constraints
+            even when systems grow, teams change,
             and decisions are revisited years later.
           </p>
         </div>
@@ -211,4 +221,5 @@
 
   </div>
 </body>
+
 </html>

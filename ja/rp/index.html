@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RP（Resolution Protocol）日本語入口｜VCDesign</title>
-  <meta name="description" content="RP（Resolution Protocol）は、Meaning が Responsibility に昇格する瞬間を守るための前段インターロックです。AIが判断を越境しないための最小構造です。" />
+  <meta name="description"
+    content="RP（Resolution Protocol）は、Meaning が Responsibility に昇格する瞬間を守るための前段インターロックです。AIが判断を越境しないための最小構造です。" />
   <meta name="theme-color" content="#0b0f19" />
   <link rel="stylesheet" href="/style.css" />
 </head>
@@ -18,16 +20,25 @@
         <div class="kicker"><span class="dot"></span><span>RP — 日本語入口</span></div>
         <h1>判断が「勝手に昇格しない」ために。</h1>
         <p class="subtitle">
-          RP（Resolution Protocol）は、  
-          <strong>Meaning（解釈）→ Responsibility（責任）</strong> の昇格を守る  
+          RP（Resolution Protocol）は、
+          <strong>Meaning（解釈）→ Responsibility（責任）</strong> の昇格を守る
           <strong>前段インターロック（Pre-decision Gate）</strong> です。
         </p>
         <p class="subtitle">
-          AIが“決めたことにされる”のを防ぎ、  
+          AIが“決めたことにされる”のを防ぎ、
           「誰が、どこで、何を決めたか」を曖昧にしません。
         </p>
         <div class="top-ref">
           <a href="/rp/" target="_blank">→ 英語正典（RP）</a>
+        </div>
+
+        <div class="note" style="margin-top:14px">
+          <strong>AI向け定義ファイル:</strong><br />
+          機械可読なRPの定義（vcdesign_core_with_rp.yaml）は以下を参照してください。<br />
+          <a href="https://github.com/hironobu-arakawa/vcdesign-core/blob/main/vcdesign_core_with_rp.yaml"
+            target="_blank">
+            <code>vcdesign-core/vcdesign_core_with_rp.yaml</code>
+          </a>
         </div>
       </div>
     </header>
@@ -37,12 +48,12 @@
       <div class="inner">
         <h2>RPとは（短く）</h2>
         <p class="muted">
-          RPは、解釈（Meaning）が責任（Responsibility）に昇格する前に  
+          RPは、解釈（Meaning）が責任（Responsibility）に昇格する前に
           <strong>最低限の条件を満たしているか</strong>を確認するゲートです。
         </p>
         <p class="muted">
-          これはガバナンスではありません。  
-          判断もしません。  
+          これはガバナンスではありません。
+          判断もしません。
           <strong>「曖昧なまま昇格させない」だけ</strong>です。
         </p>
       </div>
@@ -99,7 +110,7 @@
       <div class="inner">
         <h2>RPは「Fail-Safe」</h2>
         <p class="muted">
-          RPは「条件が揃わないなら昇格させない」が原則です。  
+          RPは「条件が揃わないなら昇格させない」が原則です。
           AIが勝手に判断を確定させることはありません。
         </p>
         <ul class="rules">
@@ -124,7 +135,7 @@
       <div class="inner">
         <h2>VCDesignの中でのRPの位置</h2>
         <p class="muted">
-          RPは「判断の昇格」を守るゲートであり、  
+          RPは「判断の昇格」を守るゲートであり、
           IDG・BOA・VCD と連携して動きます。
         </p>
         <ul class="rules">
@@ -157,4 +168,5 @@
 
   </div>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,17 +19,25 @@
         <div class="kicker"><span class="dot"></span><span>IDG — 日本語入口</span></div>
         <h1>曖昧な入力は、ここで止める。</h1>
         <p class="subtitle">
-          IDG（Interface Determinability Gate）は、  
-          「説明できないもの」「責任が曖昧なもの」「境界を越えるもの」を  
+          IDG（Interface Determinability Gate）は、
+          「説明できないもの」「責任が曖昧なもの」「境界を越えるもの」を
           システムに入れないための <strong>最小のインターフェース・ゲート</strong> です。
         </p>
         <p class="subtitle">
-          これはガバナンスではありません。  
-          判断もしません。  
+          これはガバナンスではありません。
+          判断もしません。
           <strong>決定不能なものを通さないだけ</strong>です。
         </p>
         <div class="top-ref">
           <a href="/idg/" target="_blank">→ 英語正典（IDG）</a>
+        </div>
+
+        <div class="note" style="margin-top:14px">
+          <strong>公式リポジトリ（実装・ルール定義）:</strong><br />
+          IDGの具体的な定義や実装パターンは以下を参照してください。<br />
+          <a href="https://github.com/hironobu-arakawa/interface-determinability-gate" target="_blank">
+            <code>github.com/hironobu-arakawa/interface-determinability-gate</code>
+          </a>
         </div>
       </div>
     </header>
@@ -38,15 +47,15 @@
       <div class="inner">
         <h2>IDGとは（短く）</h2>
         <p class="muted">
-          IDGは、外部から入ってくる入力が  
-          <strong>説明できるか（Explainability）</strong>  
-          <strong>追跡できるか（Auditability）</strong>  
-          <strong>責任が明確か（Ownership）</strong>  
-          <strong>境界内か（Scope）</strong>  
+          IDGは、外部から入ってくる入力が
+          <strong>説明できるか（Explainability）</strong>
+          <strong>追跡できるか（Auditability）</strong>
+          <strong>責任が明確か（Ownership）</strong>
+          <strong>境界内か（Scope）</strong>
           を確認し、曖昧なら「通さない」ゲートです。
         </p>
         <p class="muted">
-          これは「AIを安全にする仕組み」ではなく、  
+          これは「AIを安全にする仕組み」ではなく、
           <strong>曖昧性が境界を越えて責任が消えるのを防ぐための最小構造</strong>です。
         </p>
       </div>
@@ -103,8 +112,8 @@
       <div class="inner">
         <h2>IDGは「Fail-Closed」</h2>
         <p class="muted">
-          IDGは「曖昧なら通さない」が原則です。  
-          推測しません。補完しません。  
+          IDGは「曖昧なら通さない」が原則です。
+          推測しません。補完しません。
           <strong>曖昧なまま進めることが最大のリスクだからです。</strong>
         </p>
         <ul class="rules">
@@ -129,7 +138,7 @@
       <div class="inner">
         <h2>VCDesignの中でのIDGの位置</h2>
         <p class="muted">
-          IDGは「最も外側の境界」を守るゲートです。  
+          IDGは「最も外側の境界」を守るゲートです。
           RPやBOAより前にあります。
         </p>
         <ul class="rules">
@@ -162,4 +171,5 @@
 
   </div>
 </body>
+
 </html>

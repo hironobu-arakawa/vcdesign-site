@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VCDesign x AI Demo | VCDesign</title>
+    <meta name="description"
+        content="A demo page to let Generative AI understand VCDesign philosophy and assist your design." />
+    <meta name="theme-color" content="#0b0f19" />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+        .prompt-box {
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+            font-family: monospace;
+            font-size: 0.9em;
+            color: var(--text);
+            white-space: pre-wrap;
+            position: relative;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .prompt-box {
+                background: rgba(255, 255, 255, 0.05);
+            }
+        }
+
+        .prompt-box::before {
+            content: "Prompt";
+            position: absolute;
+            top: -10px;
+            left: 12px;
+            background: var(--bg);
+            padding: 0 6px;
+            font-size: 0.75em;
+            color: var(--accent);
+            border: 1px solid var(--line);
+            border-radius: 4px;
+        }
+
+        .copy-btn {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 0.8em;
+            color: var(--accent);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <header>
+            <div class="brand">
+                <nav class="topnav">
+                    <a href="/">VCDesign</a>
+                    <a href="/idg/">IDG</a>
+                    <a href="/rp/">RP</a>
+                    <a href="/boa/">BOA</a>
+                    <a href="/vcd/">VCD</a>
+                    <a href="/library/">Library</a>
+                </nav>
+
+                <h1>VCDesign x Generative AI Demo</h1>
+                <p class="subtitle">
+                    This site is designed to be "machine-readable".<br />
+                    This is a guide to using AI as your design partner.
+                </p>
+            </div>
+        </header>
+
+        <main class="two">
+
+            <!-- Step 1: Loading -->
+            <section class="card">
+                <div class="inner">
+                    <h2>Step 1: Give AI the "Rules"</h2>
+                    <p class="muted">
+                        Choose the file to load based on your purpose.
+                    </p>
+
+                    <div class="note">
+                        <strong>Recommended: <code>vcdesign_core_with_rp.yaml</code></strong><br />
+                        This includes everything: VCDesign Core concepts and RP (Resolution Protocol).<br />
+                        (If you load this, you don't need to load <code>vcdesign_core.yaml</code> separately.)
+                    </div>
+
+                    <h3>A. For Practical Design Judgment (Recommended)</h3>
+                    <div class="prompt-box">Please read the following URL and treat it as the canonical design rules.
+                        https://raw.githubusercontent.com/hironobu-arakawa/vcdesign-core/main/vcdesign_core_with_rp.yaml
+
+                        Note: This file contains both VCDesign Core and RP (Resolution Protocol).
+                        Once loaded, simply reply with "Rules loaded".</div>
+
+                    <div class="hr"></div>
+
+                    <h3>B. For Structure/Map Only</h3>
+                    <div class="prompt-box">Please read the following URL to understand the library structure (index) of
+                        VCDesign.
+                        https://vcdesign.org/library/library.yaml
+
+                        Once loaded, simply reply with "Structure understood".</div>
+
+                    <div class="hr"></div>
+
+                    <h3>C. For IDG Implementation Patterns</h3>
+                    <p class="muted">Best for needing concrete code examples and implementation rules.</p>
+                    <div class="prompt-box">Please read the following repository to understand the implementation
+                        patterns and definitions of IDG (Interface Determinability Gate).
+                        https://github.com/hironobu-arakawa/interface-determinability-gate
+
+                        Once loaded, summarize the key points in 3 lines.</div>
+                </div>
+            </section>
+
+            <!-- Step 2: Use Cases -->
+            <section class="card">
+                <div class="inner">
+                    <h2>Step 2: Consult based on Use Case</h2>
+                    <p class="muted">
+                        Once the structure is understood, you can ask for specific design reviews.
+                    </p>
+
+                    <h3>Pattern A: API Design Review (IDG)</h3>
+                    <p class="muted">Check if your API definition is "ambiguous" or "avoiding responsibility".</p>
+                    <div class="prompt-box">Review the following API design proposal based on VCDesign's "IDG (Interface
+                        Determinability Gate)" criteria.
+
+                        Strictly check the following points:
+                        1. Ownership: Is the responsible party ambiguous?
+                        2. Explainability: Can the rejection reason be explained as a structure?
+                        3. Auditability: Is it traceable later?
+
+                        [Paste your API definition or JSON schema here]</div>
+
+                    <div class="hr"></div>
+
+                    <h3>Pattern B: Logic Placement (BOA)</h3>
+                    <p class="muted">"Where should I put this logic?"</p>
+                    <div class="prompt-box">I am unsure where to implement a certain business logic.
+                        Based on BOA (Boundary-Oriented Architecture) boundary distinctions (Fact / Meaning /
+                        Responsibility), please advise where this should be placed.
+
+                        Requirement:
+                        [Describe the feature or data flow you want to implement]</div>
+
+                    <div class="hr"></div>
+
+                    <h3>Pattern C: Value Continuity Question (VCD)</h3>
+                    <p class="muted">
+                        Asking not for the "correct answer" but "what is easily weathered".<br />
+                        A question to understand the core of VCDesign (Value Continuity Design).
+                    </p>
+                    <div class="prompt-box">Please point out "future risks" regarding the system I am designing, from
+                        the perspective of VCDesign (Value Continuity Design).
+
+                        System Overview:
+                        [Overview here: e.g. Internal inventory management system developed by 3 people]
+
+                        Question:
+                        When the context (personnel, organization, tech trends) changes, where are "Value" and
+                        "Responsibility" most likely to be lost in this system?
+                        To prevent that, where should boundaries be placed now?</div>
+                </div>
+            </section>
+
+            <!-- Step 3: Expectation -->
+            <section class="card">
+                <div class="inner">
+                    <h2>Step 3: What to Expect?</h2>
+                    <p class="muted">
+                        AI that understands VCDesign will return <strong>"Boundary Pointers"</strong>, not just code
+                        fixes.
+                    </p>
+                    <ul class="rules">
+                        <li class="rule">
+                            <strong>Bad Example</strong>
+                            <span>"It's more convenient to make this parameter optional."</span>
+                        </li>
+                        <li class="rule">
+                            <strong>VCDesign Answer</strong>
+                            <span>"Making this parameter optional makes 'who decides' ambiguous, violating IDG's
+                                Ownership rule. Make it required or separate the caller."</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div>© VCDesign — AI Demo Page</div>
+            <div class="muted">
+                <a href="/">Back to Top</a>
+            </div>
+        </footer>
+
+    </div>
+    <script>
+        // Auto-add copy buttons to all prompt boxes
+        document.querySelectorAll('.prompt-box').forEach(box => {
+            const btn = document.createElement('span');
+            btn.className = 'copy-btn';
+            btn.textContent = '[Copy Prompt]';
+
+            btn.onclick = () => {
+                navigator.clipboard.writeText(box.innerText).then(() => {
+                    const original = btn.textContent;
+                    btn.textContent = '[Copied!]';
+                    btn.style.color = 'var(--accent2)';
+                    setTimeout(() => {
+                        btn.textContent = original;
+                        btn.style.color = '';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Copy failed:', err);
+                    alert('Copy failed');
+                });
+            };
+
+            // Insert after the prompt box
+            box.parentNode.insertBefore(btn, box.nextSibling);
+        });
+    </script>
+</body>
+
+</html>

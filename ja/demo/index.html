@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VCDesign x AI Demo | VCDesign</title>
+    <meta name="description" content="生成AIに VCDesign の設計思想を理解させ、設計支援を受けるためのデモページ。" />
+    <meta name="theme-color" content="#0b0f19" />
+    <link rel="stylesheet" href="../../style.css" />
+    <style>
+        .prompt-box {
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+            font-family: monospace;
+            font-size: 0.9em;
+            color: var(--text);
+            white-space: pre-wrap;
+            position: relative;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .prompt-box {
+                background: rgba(255, 255, 255, 0.05);
+            }
+        }
+
+        .prompt-box::before {
+            content: "Prompt";
+            position: absolute;
+            top: -10px;
+            left: 12px;
+            background: var(--bg);
+            padding: 0 6px;
+            font-size: 0.75em;
+            color: var(--accent);
+            border: 1px solid var(--line);
+            border-radius: 4px;
+        }
+
+        .copy-btn {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 0.8em;
+            color: var(--accent);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <header>
+            <div class="brand">
+                <nav class="topnav">
+                    <a href="/ja/">VCDesign (JA)</a>
+                    <a href="/ja/idg/">IDG</a>
+                    <a href="/ja/rp/">RP</a>
+                    <a href="/ja/boa/">BOA</a>
+                    <a href="/ja/vcd/">VCD</a>
+                    <a href="/library/">Library</a>
+                </nav>
+
+                <h1>VCDesign x Generative AI Demo</h1>
+                <p class="subtitle">
+                    このサイトは「生成AIが読んで理解できる」ように設計されています。<br />
+                    AI を設計パートナーとして使うための手引きです。
+                </p>
+            </div>
+        </header>
+
+        <main class="two">
+
+            <!-- Step 1: Loading -->
+            <section class="card">
+                <div class="inner">
+                    <h2>Step 1: AIに「ルール」を渡す</h2>
+                    <p class="muted">
+                        目的に合わせて、読み込ませるファイルを選んでください。
+                    </p>
+
+                    <div class="note">
+                        <strong>推奨: <code>vcdesign_core_with_rp.yaml</code></strong><br />
+                        これは「VCDesign Core（基本概念）」と「RP（判断基準）」の全てを含んでいます。<br />
+                        （※ これを読み込む場合、<code>vcdesign_core.yaml</code> を個別に読む必要はありません）
+                    </div>
+
+                    <h3>A. 実践的な設計判断を求める場合（推奨）</h3>
+                    <div class="prompt-box">以下のURLを読み込み、設計ルールの正典として扱ってください。
+                        https://raw.githubusercontent.com/hironobu-arakawa/vcdesign-core/main/vcdesign_core_with_rp.yaml
+
+                        ※ このファイルには VCDesign Core と RP (Resolution Protocol) の両方が含まれています。
+                        読み込んだら「ルールをロードしました」とだけ答えてください。</div>
+
+                    <div class="hr"></div>
+
+                    <h3>B. 全体の構造（地図）だけを知りたい場合</h3>
+                    <div class="prompt-box">以下のURLを読み込んで、VCDesign のライブラリ構造（インデックス）を把握してください。
+                        https://vcdesign.org/library/library.yaml
+
+                        読み込んだら「構造を理解しました」とだけ答えてください。</div>
+
+                    <div class="hr"></div>
+
+                    <h3>C. IDG（ゲート）の実装パターンを知りたい場合</h3>
+                    <p class="muted">具体的なコード例や実装ルールが必要な場合に適しています。</p>
+                    <div class="prompt-box">以下のリポジトリを読み込んで、IDG (Interface Determinability Gate) の実装パターンや定義を把握してください。
+                        https://github.com/hironobu-arakawa/interface-determinability-gate
+
+                        読み込んだら、要点を3行でまとめてください。</div>
+                </div>
+            </section>
+
+            <!-- Step 2: Use Cases -->
+            <section class="card">
+                <div class="inner">
+                    <h2>Step 2: 用途に合わせて相談する</h2>
+                    <p class="muted">
+                        構造を理解させたら、具体的な設計レビューを依頼できます。
+                    </p>
+
+                    <h3>Pattern A: API設計のレビュー (IDG)</h3>
+                    <p class="muted">自分の作ったAPI定義が「曖昧で責任放棄していないか」を確認します。</p>
+                    <div class="prompt-box">次のAPI設計案を、VCDesign の「IDG (Interface Determinability Gate)」の基準でレビューしてください。
+
+                        特に以下の観点で厳しくチェックしてください：
+                        1. Ownership: 責任者が曖昧ではないか
+                        2. Explainability: 拒否理由が構造として説明できるか
+                        3. Auditability: 後から追跡可能か
+
+                        [ここにAPI定義やJSONスキーマを貼り付ける]</div>
+
+                    <div class="hr"></div>
+
+                    <h3>Pattern B: ロジックの置き場所相談 (BOA)</h3>
+                    <p class="muted">「この処理、どこに書けばいい？」を相談します。</p>
+                    <div class="prompt-box">あるビジネスロジックの実装場所で迷っています。
+                        BOA (Boundary-Oriented Architecture) の Fact / Meaning / Responsibility
+                        の境界区分に基づいて、どこに配置すべきかアドバイスしてください。
+
+                        要件：
+                        [ここに実装したい機能やデータの流れを書く]</div>
+
+                    <div class="hr"></div>
+
+                    <h3>Pattern C: 価値の継続性を問う (VCD)</h3>
+                    <p class="muted">
+                        「正解」ではなく「どこが風化しやすいか」を問いかけます。<br />
+                        VCDesign の核心（価値を継続する設計）を理解するための質問です。
+                    </p>
+                    <div class="prompt-box">私が設計しているシステムについて、VCDesign (Value Continuity Design) の観点から「未来のリスク」を指摘してください。
+
+                        システム概要：
+                        [ここに概要：例「3人で開発している社内向け在庫管理システム」]
+
+                        質問：
+                        文脈（担当者、組織、技術トレンド）が変化したとき、このシステムの「価値（Value）」と「責任（Responsibility）」が最も失われやすい箇所はどこですか？
+                        それを防ぐために、今どこに境界を置くべきですか？</div>
+                </div>
+            </section>
+
+            <!-- Step 3: Expectation -->
+            <section class="card">
+                <div class="inner">
+                    <h2>Step 3: 何が返ってくるか？</h2>
+                    <p class="muted">
+                        VCDesign を理解した AI は、単なるコード修正ではなく<strong>「境界の指摘」</strong>を返します。
+                    </p>
+                    <ul class="rules">
+                        <li class="rule">
+                            <strong>NG例</strong>
+                            <span>「このパラメータはオプションにした方が便利です」</span>
+                        </li>
+                        <li class="rule">
+                            <strong>VCDesign的回答</strong>
+                            <span>「このパラメータをオプションにすると『誰が決めるか』が曖昧になり、IDGの Ownership 違反になります。必須にするか、呼び出し元を分離してください」</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div>© VCDesign — AI Demo Page</div>
+            <div class="muted">
+                <a href="/ja/">Back to Top</a>
+            </div>
+        </footer>
+
+    </div>
+    <script>
+        // Auto-add copy buttons to all prompt boxes
+        document.querySelectorAll('.prompt-box').forEach(box => {
+            const btn = document.createElement('span');
+            btn.className = 'copy-btn';
+            btn.textContent = '[プロンプトをコピー]';
+
+            btn.onclick = () => {
+                navigator.clipboard.writeText(box.innerText).then(() => {
+                    const original = btn.textContent;
+                    btn.textContent = '[コピーしました！]';
+                    btn.style.color = 'var(--accent2)';
+                    setTimeout(() => {
+                        btn.textContent = original;
+                        btn.style.color = '';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Copy failed:', err);
+                    alert('コピーに失敗しました');
+                });
+            };
+
+            // Insert after the prompt box
+            box.parentNode.insertBefore(btn, box.nextSibling);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,17 +1,19 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>IDG — Interface Determinability Gate | VCDesign</title>
-  <meta name="description" content="IDG is a lightweight boundary interlock that blocks undeterminable inputs before they cause responsibility leakage or unsafe coupling." />
+  <meta name="description"
+    content="IDG is a lightweight boundary interlock that blocks undeterminable inputs before they cause responsibility leakage or unsafe coupling." />
   <meta name="theme-color" content="#0b0f19" />
   <link rel="stylesheet" href="../style.css" />
 </head>
 
 <body>
   <div class="wrap">
-    
+
     <header>
       <div class="brand">
         <nav class="topnav">
@@ -24,17 +26,25 @@
         </nav>
 
         <h1>Interface Determinability Gate (IDG)</h1>
-        
+
         <p class="subtitle">
-          IDG is one of the four entry points of the VCDesign ecosystem.  
-          It is a <strong>lightweight boundary interlock</strong> that blocks <strong>undeterminable inputs</strong>  
+          IDG is one of the four entry points of the VCDesign ecosystem.
+          It is a <strong>lightweight boundary interlock</strong> that blocks <strong>undeterminable inputs</strong>
           before they cause responsibility leakage or unsafe coupling.
         </p>
 
         <div class="note">
           <strong>IDG is not governance.</strong>
-          It does not decide, interpret, or authorize.  
+          It does not decide, interpret, or authorize.
           It only enforces <strong>minimum determinability</strong> at the boundary.
+        </div>
+
+        <div class="note" style="margin-top:14px">
+          <strong>Official Repository (Implementation & Rules):</strong><br />
+          For concrete definitions and implementation patterns, refer to:<br />
+          <a href="https://github.com/hironobu-arakawa/interface-determinability-gate" target="_blank">
+            <code>github.com/hironobu-arakawa/interface-determinability-gate</code>
+          </a>
         </div>
       </div>
     </header>
@@ -46,7 +56,7 @@
           <div class="inner">
             <h2>What IDG is</h2>
             <p class="muted">
-              IDG is a <strong>fast, local gate</strong> evaluated exactly at the interface  
+              IDG is a <strong>fast, local gate</strong> evaluated exactly at the interface
               where a system receives signals, data, or commands from outside its trusted domain.
             </p>
             <ul>
@@ -61,7 +71,8 @@
         <section class="card">
           <div class="inner">
             <h2>What IDG is not</h2>
-            <p class="muted">IDG defines <strong>hard stops</strong> and <strong>reject reasons</strong>, not outcomes. It is not:</p>
+            <p class="muted">IDG defines <strong>hard stops</strong> and <strong>reject reasons</strong>, not outcomes.
+              It is not:</p>
             <ul>
               <li>a decision mechanism</li>
               <li>a policy engine</li>
@@ -79,7 +90,7 @@
           <p class="muted">
             In BOA, artifacts are separated into Fact, Meaning, and Responsibility.
           </p>
-          
+
           <div class="quote">
             <strong>RP</strong> governs the promotion boundary:<br>
             Meaning → Responsibility (promotion)
@@ -91,7 +102,7 @@
           </div>
 
           <p class="muted" style="margin-top:14px">
-            IDG can be deployed even when governance is incomplete  
+            IDG can be deployed even when governance is incomplete
             because it does not claim authority — it only blocks what is <strong>undeterminable</strong>.
           </p>
         </div>
@@ -141,17 +152,18 @@
         <div class="inner">
           <h2>Specification & Further reading</h2>
           <p class="muted">
-            IDG is intended to be implemented as a simple gate (code, config, or contract clause)  
+            IDG is intended to be implemented as a simple gate (code, config, or contract clause)
             at any interface where determinability matters.
           </p>
           <div class="note" style="margin-top:12px;">
-            There is intentionally no single reference implementation.  
+            There is intentionally no single reference implementation.
             IDG is designed to be adapted locally, without assuming shared governance.
           </div>
 
           <div class="btnrow">
-             <a class="btn primary" href="https://github.com/hironobu-arakawa/interface-determinability-gate" target="_blank">→ IDG Pattern Repository (GitHub)</a>
-             <a class="btn" href="/library/" target="_blank">VCDesign Library</a>
+            <a class="btn primary" href="https://github.com/hironobu-arakawa/interface-determinability-gate"
+              target="_blank">→ IDG Pattern Repository (GitHub)</a>
+            <a class="btn" href="/library/" target="_blank">VCDesign Library</a>
           </div>
         </div>
       </section>
@@ -164,4 +176,5 @@
     </footer>
   </div>
 </body>
+
 </html>
