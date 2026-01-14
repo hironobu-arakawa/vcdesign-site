@@ -9,6 +9,54 @@
     content="VCDesign は、変化に耐えるシステムのための境界設計エコシステムです。IDG / RP / BOA / VCD の4つの入口から必要な境界だけを選んで使えます。" />
   <meta name="theme-color" content="#0b0f19" />
   <link rel="stylesheet" href="/style.css" />
+
+  <style>
+    /* Scoped: only for this page */
+    .lead-actions {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .lead-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .lead-action strong {
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .lead-action small {
+      color: var(--muted);
+    }
+
+    .lead-action.primary {
+      border-color: var(--accent);
+      background: rgba(96, 165, 250, 0.10);
+    }
+
+    .who {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .who strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+  </style>
 </head>
 
 <body>
@@ -18,26 +66,63 @@
     <header>
       <div class="brand">
         <div class="kicker"><span class="dot"></span><span>VCDesign エコシステム</span></div>
+
         <h1>境界が決める設計へ。</h1>
+
         <p class="subtitle">
-          VCDesign はフレームワークではありません。
+          VCDesign はフレームワークではありません。<br>
           「変化しても壊れないために、どこに境界を置くか」を扱うエコシステムです。
-          4つの入口（IDG / RP / BOA / VCD）から、必要な境界だけを選んで使えます。
+        </p>
+
+        <div class="lead-actions">
+          <a href="manifesto/" class="lead-action primary">
+            <span>
+              <strong>まず読む</strong>
+              <small>Manifesto：未来のエンジニアの職能と、章（Chapter）という時間の単位</small>
+            </span>
+            <span aria-hidden="true">→</span>
+          </a>
+
+          <a href="#entries" class="lead-action">
+            <span>
+              <strong>入口を選ぶ</strong>
+              <small>IDG / RP / BOA / VCD：必要な境界だけを取る</small>
+            </span>
+            <span aria-hidden="true">↓</span>
+          </a>
+
+          <a href="demo/" class="lead-action">
+            <span>
+              <strong>試す</strong>
+              <small>AI Demo：設計AIに読ませてレビューを受ける</small>
+            </span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <p class="who">
+          <strong>迷ったら：</strong>
+          まず手を動かしたいなら <strong>BOA</strong>。
+          入力／仕様／責任が曖昧で「通していいか分からない」なら <strong>IDG</strong>。
+          判断が“いつの間にか”決定になってしまうなら <strong>RP</strong>。
+          そもそもの前提（なぜ境界か／章で引き渡す）を押さえるなら <strong>VCD</strong>。
+          ちゃんとやっている人ほど<a href="entry/">疲れる理由</a>。
         </p>
       </div>
     </header>
 
     <!-- Four Entry Cards -->
-    <main class="two">
+    <main id="entries" class="two">
 
       <!-- IDG -->
       <section class="card">
         <div class="inner">
           <h2>IDG — インターフェース決定可能性ゲート</h2>
           <p class="muted">
-            曖昧な入力はここで止まります。
+            曖昧な入力はここで止まります。<br>
             説明できないもの、責任が曖昧なものは境界を通過できません。
           </p>
+          <p class="who"><strong>向いている人：</strong>AI入力／仕様／責任が曖昧で「通していいか分からない」</p>
           <a href="idg/" class="pill">IDG を開く</a>
         </div>
       </section>
@@ -47,9 +132,10 @@
         <div class="inner">
           <h2>RP — 解釈昇格プロトコル</h2>
           <p class="muted">
-            解釈（Meaning）が責任（Responsibility）に昇格する瞬間を守るゲート。
+            解釈（Meaning）が責任（Responsibility）に昇格する瞬間を守るゲート。<br>
             「いつ誰が決めたか」を曖昧にしません。
           </p>
+          <p class="who"><strong>向いている人：</strong>判断が“いつの間にか”決定になる／説明不能が増える</p>
           <a href="rp/" class="pill">RP を開く</a>
         </div>
       </section>
@@ -59,9 +145,10 @@
         <div class="inner">
           <h2>BOA — Boundary-Oriented Architecture</h2>
           <p class="muted">
-            Fact / Meaning / Responsibility を境界で分離する構築方法。
+            Fact / Meaning / Responsibility を境界で分離する構築方法。<br>
             現場でもすぐ使える実践的な入口です。
           </p>
+          <p class="who"><strong>向いている人：</strong>設計を「分けたい」／壊れ方を減らしたい／最初に手を動かしたい</p>
           <a href="boa/" class="pill">BOA を開く</a>
         </div>
       </section>
@@ -71,14 +158,13 @@
         <div class="inner">
           <h2>VCD — Value Continuity Design</h2>
           <p class="muted">
-            VCDesign の哲学的コア（基盤）。
-            なぜ境界が必要なのか、
-            なぜ価値と責任は文脈を越えて残らなければならないのかを扱います。
+            VCDesign の哲学的コア（基盤）。<br>
+            価値と責任が、変わる文脈（章）の中で <strong>引き渡され続ける</strong>ための前提条件を定義します。
           </p>
+          <p class="who"><strong>向いている人：</strong>「なぜ境界が必要か」を背骨から理解したい／章（時間）で整理したい</p>
           <a href="vcd/" class="pill">VCD を開く</a>
         </div>
       </section>
-
 
     </main>
 
@@ -100,7 +186,7 @@
         <h2>Library（衛星リポジトリ）</h2>
         <p class="muted">
           現場ノート、データ形状、責務の原則など、
-          VCDesign / BOA の周辺にある実践的な資料群です。
+          VCDesign / BOA の周辺にある実践的な資料群です。<br>
           ここは「読む場所」ではなく「参照先を決める場所」です。
         </p>
         <a href="../library/" class="pill">Library を開く</a>
@@ -115,7 +201,6 @@
       <div class="muted" style="margin-top:6px;">
         <a href="/">English canonical version</a>
       </div>
-
     </footer>
 
   </div>

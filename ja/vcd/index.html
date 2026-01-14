@@ -5,9 +5,125 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VCD（Value Continuity Design）日本語入口｜VCDesign</title>
-  <meta name="description" content="VCD（Value Continuity Design）は、価値と責任が文脈変化に流されずに残るための前提条件を定義する、VCDesign の哲学レイヤです。" />
+  <meta name="description"
+    content="VCD（Value Continuity Design）は、価値と責任が文脈（章）の変化を越えて引き渡されるための前提条件を定義する、VCDesign の哲学レイヤです。" />
   <meta name="theme-color" content="#0b0f19" />
   <link rel="stylesheet" href="/style.css" />
+
+  <style>
+    /* Scoped: only for this page */
+    .vcd-links {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .vcd-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .vcd-link small {
+      color: var(--muted);
+    }
+
+    /* Comparison table styles */
+    .vcd-compare {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 8px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .vcd-compare th,
+    .vcd-compare td {
+      border: 1px solid var(--line);
+      padding: 12px 14px;
+      vertical-align: top;
+    }
+
+    .vcd-compare th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--muted);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .vcd-compare td strong {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .vcd-compare .col-head {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .vcd-compare .chapter {
+      background: rgba(52, 211, 153, 0.06);
+    }
+
+    .vcd-compare-note {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Mobile: table -> cards */
+    @media (max-width: 700px) {
+
+      .vcd-compare,
+      .vcd-compare thead,
+      .vcd-compare tbody,
+      .vcd-compare tr,
+      .vcd-compare th,
+      .vcd-compare td {
+        display: block;
+        width: 100%;
+      }
+
+      .vcd-compare thead {
+        display: none;
+      }
+
+      .vcd-compare tr {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 14px;
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .vcd-compare td {
+        border: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .vcd-compare td:last-child {
+        border-bottom: none;
+      }
+
+      .vcd-compare td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 11px;
+        color: var(--muted);
+        margin-bottom: 6px;
+        letter-spacing: .02em;
+        text-transform: uppercase;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -17,7 +133,9 @@
     <header>
       <div class="brand">
         <div class="kicker"><span class="dot"></span><span>VCD — 日本語入口</span></div>
-        <h1>価値は「文脈に負けない」ように設計できる。</h1>
+
+        <h1>価値は、変わる文脈の中で引き渡され続けなければならない。</h1>
+
         <p class="subtitle">
           VCD は <strong>Value Continuity Design（価値継続設計）</strong> の略です。
           VCDesign の最上位にある <strong>哲学レイヤ</strong> であり、
@@ -26,6 +144,7 @@
         <p class="subtitle">
           BOA・RP・IDG はすべて、この哲学レイヤの上に成り立っています。
         </p>
+
         <div class="top-ref">
           <a href="/vcd/" target="_blank">→ 英語正典（VCD）</a>
         </div>
@@ -44,10 +163,12 @@
     <section class="card">
       <div class="inner">
         <h2>VCDとは（短く）</h2>
+
         <p class="muted">
-          VCD は、<strong>価値と責任が文脈変化に流されずに残るための前提条件</strong>を定義します。
+          VCD は、<strong>価値と責任が、文脈（章）の変化を越えて引き渡されるための前提条件</strong>を定義します。
           これは方法論ではなく、<strong>境界を置く理由そのもの</strong>です。
         </p>
+
         <p class="muted">
           BOA が「どう分けるか」を扱うのに対し、
           VCD は「なぜ分けなければならないのか」を扱います。
@@ -55,92 +176,103 @@
       </div>
     </section>
 
-    <!-- Why VCD exists -->
+    <!-- Bridge: time -->
     <section class="card">
       <div class="inner">
-        <h2>なぜVCDが必要なのか</h2>
-        <ul class="rules">
-          <li class="rule">
-            <strong>1. 意味は文脈で変わるから</strong>
-            <span>同じ言葉でも、部署・現場・時間で意味が変わる。</span>
-          </li>
-          <li class="rule">
-            <strong>2. 文脈が変わると価値が壊れやすいから</strong>
-            <span>「何を守るべきか」が曖昧になると、判断が揺れる。</span>
-          </li>
-          <li class="rule">
-            <strong>3. 境界がないと責任が消えるから</strong>
-            <span>責任の所在が曖昧なまま進むと、説明不能な結果になる。</span>
-          </li>
-        </ul>
-      </div>
-    </section>
+        <h2>設計は、どの「時間」を扱ってきたのか</h2>
 
-    <!-- Core Philosophy (based on your PHILOSOPHY document) -->
-    <section class="card">
-      <div class="inner">
-        <h2>VCDの核心（観測から生まれた哲学）</h2>
         <p class="muted">
-          VCD は理論から始まったのではありません。
-          「後から取り返せない環境」を観測し、
-          <strong>何が生き残り、何が壊れたか</strong>を分けるところから始まりました。
+          私たちはこれまで、無意識のうちに <strong>Phase（開発フェーズ）</strong> や
+          <strong>Version（バージョン）</strong> という区切りで、システムを設計してきました。
+          それらは進捗や変更を管理するには十分でしたが、
+          <strong>人の経験が積み重なり、意味が変わり、責任が移ろっていく時間</strong>を扱うには十分ではありませんでした。
         </p>
 
-        <ul class="rules">
-          <li class="rule">
-            <strong>・決定は“設計アーティファクト”である</strong>
-            <span>会議や文書に埋もれると、後から誰も説明できなくなる。</span>
-          </li>
-          <li class="rule">
-            <strong>・生き残った構造は「境界が明示されていた」</strong>
-            <span>プロセスでもルールでもなく、設計として境界が存在した。</span>
-          </li>
-          <li class="rule">
-            <strong>・責任は“後から辿れる”必要がある</strong>
-            <span>誰が、どの前提で、どこで決めたかが残らないと壊れる。</span>
-          </li>
-        </ul>
+        <p class="muted">
+          VCD は、この扱われてこなかった時間を <strong>章（Chapter）</strong> という設計単位として引き受けます。
+        </p>
       </div>
     </section>
 
-    <!-- Five Irreversible Rules -->
+    <!-- Comparison -->
     <section class="card">
       <div class="inner">
-        <h2>VCDの「変わらない5つの前提」</h2>
-        <p class="muted">VCDesign 全体が依存する、哲学的な前提です。</p>
+        <h2>Phase / Version / Chapter（VCD）の違い</h2>
 
-        <ol class="rules">
-          <li class="rule">
-            <strong>1. 意味は文脈に依存する</strong>
-            <span>価値は文脈が変わると揺らぐ。</span>
-          </li>
-          <li class="rule">
-            <strong>2. 判断には人間の責任が必要</strong>
-            <span>AIは候補を出せても、責任は持てない。</span>
-          </li>
-          <li class="rule">
-            <strong>3. 境界は意味を制限する</strong>
-            <span>境界を越えると意味は変わる。完全には持ち運べない。</span>
-          </li>
-          <li class="rule">
-            <strong>4. 不確定なものを固定してはいけない</strong>
-            <span>変わりうるものを“事実扱い”すると壊れる。</span>
-          </li>
-          <li class="rule">
-            <strong>5. 保存は流れの結果である</strong>
-            <span>保存は目的ではなく、流れの副産物。</span>
-          </li>
-        </ol>
+        <p class="muted">
+          VCD は Phase や Version を否定しません。<br>
+          それらでは扱いきれなかった <strong>「時間の中で変わる意味と責任」</strong>を、設計の対象にします。
+        </p>
+
+        <table class="vcd-compare" aria-label="Phase Version Chapter comparison table">
+          <thead>
+            <tr>
+              <th style="width:18%">観点</th>
+              <th class="col-head" style="width:27%">Phase（開発フェーズ）</th>
+              <th class="col-head" style="width:27%">Version（バージョン）</th>
+              <th class="col-head" style="width:28%">Chapter（VCD）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>主な目的</th>
+              <td data-label="Phase">作業を区切る</td>
+              <td data-label="Version">変更を識別する</td>
+              <td data-label="Chapter（VCD）" class="chapter"><strong>価値を継続させる</strong></td>
+            </tr>
+            <tr>
+              <th>扱う時間</th>
+              <td data-label="Phase">予定された時間</td>
+              <td data-label="Version">リリース時点</td>
+              <td data-label="Chapter（VCD）" class="chapter"><strong>経験が積み重なる時間</strong></td>
+            </tr>
+            <tr>
+              <th>人の経験</th>
+              <td data-label="Phase">含まれない</td>
+              <td data-label="Version">含まれない</td>
+              <td data-label="Chapter（VCD）" class="chapter"><strong>含まれる</strong></td>
+            </tr>
+            <tr>
+              <th>意味の変化</th>
+              <td data-label="Phase">想定しない</td>
+              <td data-label="Version">差分として扱う</td>
+              <td data-label="Chapter（VCD）" class="chapter"><strong>前提として受け止める</strong></td>
+            </tr>
+            <tr>
+              <th>責任の所在</th>
+              <td data-label="Phase">プロセス外</td>
+              <td data-label="Version">記録外</td>
+              <td data-label="Chapter（VCD）" class="chapter"><strong>章ごとに明示される</strong></td>
+            </tr>
+            <tr>
+              <th>終わり方</th>
+              <td data-label="Phase">完了</td>
+              <td data-label="Version">更新</td>
+              <td data-label="Chapter（VCD）" class="chapter"><strong>次の章への引き渡し</strong></td>
+            </tr>
+            <tr>
+              <th>設計の関心</th>
+              <td data-label="Phase">進捗管理</td>
+              <td data-label="Version">変更管理</td>
+              <td data-label="Chapter（VCD）" class="chapter"><strong>責任の移ろい</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="vcd-compare-note">
+          ※ 太字は VCD が新しく持ち込んだ視点です。Phase / Version は有効ですが、VCD は「その外側の時間（章）」を扱います。
+        </p>
       </div>
     </section>
 
-    <!-- Relationship -->
+    <!-- Position -->
     <section class="card">
       <div class="inner">
         <h2>VCDesignの中でのVCDの位置</h2>
+
         <p class="muted">
-          VCD は VCDesign の「背骨」です。
-          他の3つの入口（IDG / RP / BOA）は、この哲学レイヤの上に成り立ちます。
+          VCD は VCDesign の「背骨」です。<br />
+          IDG / RP / BOA は、この哲学レイヤの上で「境界」を具体化する入口です。
         </p>
 
         <ul class="rules">
@@ -160,19 +292,33 @@
       </div>
     </section>
 
-    <!-- Final note -->
+    <!-- Deep dive links -->
     <section class="card">
       <div class="inner">
-        <h2>最後に</h2>
+        <h2>深掘り（必要な人だけ）</h2>
         <p class="muted">
-          この哲学が厳しく見えるのは、
-          “緩さが生き残らなかった環境” から生まれたからです。
+          ここまでが「入口」です。以下は参照用に分割した詳細です。
         </p>
-        <p class="muted">
-          VCDesign（VCD）は、
-          システムが成長し、組織が変わり、
-          決定が何年も後に再検討される場面でも、
-          <strong>価値と責任が消えないようにするための前提条件</strong>です。
+
+        <div class="vcd-links">
+          <a class="vcd-link" href="./why.html">
+            <span><strong>なぜVCDが必要なのか</strong> <small>— 文脈変化が価値と責任を壊す理由</small></span>
+            <span aria-hidden="true">→</span>
+          </a>
+
+          <a class="vcd-link" href="./philosophy.html">
+            <span><strong>VCDの核心（観測から生まれた哲学）</strong> <small>— 生き残った構造の共通点</small></span>
+            <span aria-hidden="true">→</span>
+          </a>
+
+          <a class="vcd-link" href="./principles.html">
+            <span><strong>変わらない5つの前提</strong> <small>— VCDesign全体が依存する前提条件</small></span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <p class="muted" style="margin-top:14px">
+          ※ 上の3ページは「読むため」ではなく「参照するため」のページとして設計します。
         </p>
       </div>
     </section>

@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manifesto — ちゃんとやっている人ほど疲れる理由 | VCDesign</title>
+  <meta name="description" content="コーディングが自動化され、成果物が無限に生成できる時代に、なぜ『ちゃんとやっている人ほど疲れる』のか。VCDesignの入口となる宣言ページ。" />
+  <meta name="theme-color" content="#0b0f19" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    /* Scoped: only for this page */
+    .topnav {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin: 18px 0 6px;
+    }
+
+    .topnav a {
+      text-decoration: none;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .topnav a:hover {
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.24);
+    }
+
+    .hero {
+      margin-top: 10px;
+    }
+
+    .hero h1 {
+      margin-top: 10px;
+    }
+
+    .note {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .callouts {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .callout {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 14px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 14px;
+    }
+
+    .step h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    @media (min-width: 900px) {
+      .two-col {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .pillrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pillrow a {
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .pillrow a.primary {
+      border-color: var(--accent);
+      background: rgba(96, 165, 250, 0.10);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 18px 0;
+    }
+
+    blockquote {
+      margin: 12px 0;
+      padding: 12px 14px;
+      border-left: 3px solid rgba(96, 165, 250, 0.6);
+      background: rgba(96, 165, 250, 0.06);
+      border-radius: 12px;
+      color: var(--text);
+    }
+
+    blockquote p {
+      margin: 0;
+      line-height: 1.9;
+    }
+
+    .small {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header class="hero">
+      <div class="kicker"><span class="dot"></span><span>VCDesign Manifesto（入口ページ）</span></div>
+
+      <div class="topnav">
+        <a href="../">← トップへ戻る</a>
+        <a href="../demo/">AI Demo</a>
+        <a href="#map">地図へ</a>
+      </div>
+
+
+    </header>
+    <h2>ちゃんとやっている人ほど疲れる理由。</h2>
+
+    <p class="subtitle">
+      それは、能力の問題でも、性格の問題でもありません。<br>
+      世界の前提が変わり、<strong>「作る」から「価値を継続させる」へ</strong>、<br>エンジニアリングの中心が移ったからです。
+    </p>
+
+    <p class="note">
+      このページは VCDesign の「入口」です。<br>
+      VCDesign を理解していなくても読めます。必要になったときだけ、地図に戻れるように作っています。
+    </p>
+
+    <div class="divider"></div>
+
+    <main>
+
+      <section id="why" class="card">
+        <div class="inner">
+          <h2>結論：疲れているのは、あなたが引き受けすぎているから</h2>
+          <p class="muted">
+            AI と OSS によって、成果物は無限に作れます。だから「作れること」は価値になりにくい。<br>
+            一方で現実は変化し続け、価値は簡単に切れます。そこで残る仕事が増えました。
+          </p>
+
+          <div class="callouts">
+            <div class="callout">
+              <strong>残り続ける仕事</strong>
+              <div class="muted">誰が責任を引き受けるか／どこで人に返すか／何を「作らない」と決めるか</div>
+            </div>
+            <div class="callout">
+              <strong>見えにくい成果</strong>
+              <div class="muted">問題が起きなかったこと、事故が拡大しなかったこと、引き継ぎが成立したこと</div>
+            </div>
+          </div>
+
+          <blockquote>
+            <p><strong>未来のエンジニアは、作る人ではなく、価値を継続させる人である。</strong></p>
+          </blockquote>
+
+          <p class="muted">
+            VCDesign は、この「継続」の仕事を、善意ではなく構造として扱うための地図です。
+          </p>
+        </div>
+      </section>
+
+      <section id="chapter" class="card" style="margin-top:16px;">
+        <div class="inner">
+          <h2>章（Chapter）という時間の単位</h2>
+          <p class="muted">
+            システムは、完成して終わりません。人が入れ替わり、意味が変わり、責任が移ります。<br>
+            その変化を、フェーズ／バージョン／ライフサイクルだけでは受け止めきれないときがあります。
+          </p>
+
+          <div class="steps">
+            <div class="step">
+              <h3>章を受け止める</h3>
+              <p>現実が勝手に切る「区切り」を認識し、壊さずに引き受ける。</p>
+            </div>
+            <div class="step">
+              <h3>揺れを通す</h3>
+              <p>変化の途中で無理に固定せず、責任が切れないように通過させる。</p>
+            </div>
+            <div class="step">
+              <h3>引き渡す</h3>
+              <p>次の章へ「価値／意味／責任」を渡せる状態にする。</p>
+            </div>
+          </div>
+
+          <p class="small">
+            ※ VCDesign でいう「章」は、仕様上の区切りではなく、<strong>人と現実が作る区切り</strong>です。
+          </p>
+        </div>
+      </section>
+
+      <section id="map" class="card" style="margin-top:16px;">
+        <div class="inner">
+          <h2>次にどこへ行くか（地図）</h2>
+          <p class="muted">
+            ここから先は「必要な境界だけ」取りにいきます。迷ったら、このページに戻ってきてください。
+          </p>
+
+          <div class="two-col">
+            <div class="card" style="margin:0;">
+              <div class="inner">
+                <h3 style="margin-top:0;">まず手を動かしたい</h3>
+                <p class="muted">現場で使える分け方から入る。</p>
+                <a class="pill" href="../boa/">BOA を開く</a>
+              </div>
+            </div>
+
+            <div class="card" style="margin:0;">
+              <div class="inner">
+                <h3 style="margin-top:0;">通していいか分からない</h3>
+                <p class="muted">入力／仕様／責任が曖昧なものを止める。</p>
+                <a class="pill" href="../idg/">IDG を開く</a>
+              </div>
+            </div>
+
+            <div class="card" style="margin:0;">
+              <div class="inner">
+                <h3 style="margin-top:0;">判断が勝手に決定になる</h3>
+                <p class="muted">Meaning が Responsibility に昇格する瞬間を守る。</p>
+                <a class="pill" href="../rp/">RP を開く</a>
+              </div>
+            </div>
+
+            <div class="card" style="margin:0;">
+              <div class="inner">
+                <h3 style="margin-top:0;">背骨から理解したい</h3>
+                <p class="muted">なぜ境界か／なぜ章か、哲学的コアへ。</p>
+                <a class="pill" href="../vcd/">VCD を開く</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <p class="muted">
+            もしあなたがいま感じているのが「善意の疲弊」なら、次の2つだけを覚えておいてください。
+          </p>
+          <ul class="muted" style="line-height:1.9;">
+            <li><strong>善意は否定しない。</strong>ただし、善意だけで続けない。</li>
+            <li><strong>引き受けない責任を返す。</strong>返す場所を設計する。</li>
+          </ul>
+
+          <p class="small">
+            このページは「救い」の入口です。<br>
+            VCDesign は「地図」の本体です。必要になったときだけ奥へ進めば十分です。
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© VCDesign — 境界で設計するエコシステム</div>
+      <div class="muted">Static HTML. No dependencies.</div>
+      <div class="muted">意見は変わる。境界は残る。</div>
+      <div class="muted" style="margin-top:6px;">
+        <a href="/"><span>English canonical version</span></a>
+      </div>
+    </footer>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The VCDesign Manifesto | VCDesign</title>
+    <meta name="description" content="作る人から、価値を継続させる人へ。VCDesignが見据えていたエンジニアの未来と職能定義。" />
+    <meta name="theme-color" content="#0b0f19" />
+    <link rel="stylesheet" href="../../style.css" />
+    <style>
+        /* マニフェスト専用の追加スタイル */
+        .manifesto-text {
+            line-height: 1.9;
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        .highlight-box {
+            background: rgba(96, 165, 250, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 16px 20px;
+            margin: 24px 0;
+            border-radius: 4px;
+            color: var(--text);
+        }
+
+        /* 比較表のスタイル */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 14px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid var(--line);
+            padding: 12px 16px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .comparison-table th {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--muted);
+            font-weight: normal;
+        }
+
+        .comparison-table td.future {
+            background: rgba(52, 211, 153, 0.05);
+            /* 緑系の背景 */
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .comparison-table td strong {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--accent);
+        }
+
+        .sign-off {
+            margin-top: 40px;
+            text-align: right;
+            font-style: italic;
+            color: var(--muted);
+        }
+
+        @media (max-width: 700px) {
+
+            .comparison-table,
+            .comparison-table tbody,
+            .comparison-table tr,
+            .comparison-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .comparison-table thead {
+                display: none;
+            }
+
+            .comparison-table tr {
+                margin-bottom: 24px;
+                border: 1px solid var(--line);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            .comparison-table td {
+                border: none;
+                border-bottom: 1px solid var(--line);
+                position: relative;
+                padding-left: 16px;
+            }
+
+            .comparison-table td:before {
+                content: attr(data-label);
+                display: block;
+                font-size: 11px;
+                color: var(--muted);
+                margin-bottom: 4px;
+                text-transform: uppercase;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <header>
+            <div class="brand">
+                <nav class="topnav">
+                    <a href="/ja/">VCDesign (JA)</a>
+                    <a href="/ja/idg/">IDG</a>
+                    <a href="/ja/rp/">RP</a>
+                    <a href="/ja/boa/">BOA</a>
+                    <a href="/ja/vcd/">VCD</a>
+                    <a href="/library/">Library</a>
+                </nav>
+
+                <div class="kicker"><span class="dot"></span><span>Manifesto</span></div>
+                <h1>Making, Fixing, and Continuing.</h1>
+                <p class="subtitle">
+                    作る、直す、そして続ける。<br>
+                    なぜ我々が「構造」にこだわり続けたのか、その本当の理由について。
+                </p>
+            </div>
+        </header>
+
+        <main>
+
+            <section class="card">
+                <div class="inner">
+                    <h2>Prelude — 価値は、いつ失われるのか</h2>
+
+                    <div class="manifesto-text">
+                        <p>
+                            VCDesign は <strong>Value Continuity Design</strong> の略です。<br>
+                            それは、「システムを作る方法」ではなく、作られたシステムが生み出す価値を、時間の中でどう維持するかを扱う設計思想です。
+                        </p>
+                        <p>
+                            多くのシステムは、完成した瞬間に評価されます。<br>
+                            要件を満たし、テストを通過し、プロジェクトは成功と呼ばれる。
+                        </p>
+                        <p>
+                            しかし、数年後に残るのは、こうした現実です。<br>
+                            なぜこの設計になっているのか、誰も説明できない。<br>
+                            触るのが怖くて、誰も責任を取りたがらない。<br>
+                            本来の目的は、どこかで失われている。
+                        </p>
+                        <p>
+                            <strong>システムは残っている。<br>
+                            だが、価値は続いていない。</strong>
+                        </p>
+                        <p>
+                            VCDesign は、この断絶を前提にしません。<br>
+                            私たちは問い続けてきました。
+                        </p>
+                        <p>
+                            システムは完成しても、価値は、本当に続いているのだろうか。
+                        </p>
+                        <p>
+                            このマニフェストは、その問いに対して「構造」という言葉で答えようとした記録です。<br>
+                            <strong>構造とは、時間を敵にせず、味方につけるための仕組みです。</strong>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="inner">
+                    <h2>1. VCDesign が本当に見据えていたもの</h2>
+
+                    <div class="manifesto-text">
+                        <p>
+                            構造が完成しても、私たちは問い続けました。<br>
+                            システムは完成しても、価値は、本当に続いているのだろうか。
+                        </p>
+                        <p>
+                            開発には「フェーズ」があり、ソフトウェアには「バージョン」があります。<br>
+                            それらは、進捗を管理し、変更を記録するためのとても優れた区切りです。
+                        </p>
+                        <p>
+                            しかし、時間が進むにつれて、私たちは違和感を覚えるようになりました。<br>
+                            それらの区切りは、人がそこで何を経験したのかを語ってくれません。<br>
+                            次に、その経験によって意味がどう変わったのかも残りません。<br>
+                            そして最後に、責任が、いつ・どこで・誰に移っていったのかを説明できません。
+                        </p>
+                        <p>
+                            時間は確かに流れているのに、その流れが、設計の中に残らない。<br>
+                            そこで私たちは、設計の単位そのものを問い直しました。
+                        </p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <strong>章（Chapter）とは何か</strong><br>
+                        それは、単なる時間や機能の区切りではありません。<br>
+                        人の経験を含み、意味の変化を含み、責任の移ろいを含み、「終わり」と「次」を同時に内包できる単位。<br><br>
+                        それが、私たちの辿り着いた <strong>章（Chapter）</strong> という考え方でした。
+                    </div>
+
+                    <div class="manifesto-text">
+                        <h3>価値を、章を越えて通すこと</h3>
+                        <p>
+                            AIによって「作ること」の摩擦が消えたとき、エンジニアリングの重心は静かに移動しました。<br>
+                            それは、「構築」から、現実の変化によって生じる揺れの中で、<strong>価値を壊さずに次へ手渡すこと</strong>へ。
+                        </p>
+                        <p>
+                            ある章で生まれた判断が、次の章では前提になり、やがて制約になり、いつかは返されるべき責任になる。<br>
+                            その連なりを断ち切らず、章を越えて価値を通し続けること。<br>
+                            それこそが、新しいエンジニアリングの本質でした。
+                        </p>
+
+                        <h3>「運用」の意味が変わる</h3>
+                        <p>
+                            今、世界はこの行為を単に「運用」と呼んでいます。<br>
+                            開発が終わった後の、維持管理として。
+                        </p>
+                        <p>
+                            <strong>しかし、それは変わります。</strong>
+                        </p>
+                        <p>
+                            「作ること」が瞬時に終わる世界では、作った後に<strong>価値を継続させること（＝運用）</strong>こそが、<br>
+                            最も創造的で、最も難易度の高い仕事になります。
+                        </p>
+                        <p>
+                            VCDesign は、すべてを作るための設計図ではありません。<br>
+                            運用と呼ばれてきた行為が主役になる時代に、<strong>「責任を、どの章で人間に返すのか」を判断するための地図</strong>なのです。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="inner">
+                    <h2>2. 未来のエンジニアの職能定義</h2>
+                    <p class="muted">
+                        AIによって実装コストがゼロに近づく世界で、エンジニアは何になるのか。
+                    </p>
+
+                    <div class="highlight-box">
+                        <strong>エンジニアは「作る人」ではない</strong><br>
+                        未来のエンジニアは、作る人でも、完成させる人でもありません。<br>
+                        現実の変化によって生じる<strong>“揺れ”を受け止め、人とシステムの間で責任が切れないよう、完成品をいじり続ける人（The Continuer）</strong>になります。
+                    </div>
+
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th style="width:20%">比較軸</th>
+                                <th style="width:40%">旧来のエンジニア像 (The Builder)</th>
+                                <th style="width:40%">未来のエンジニア像 (The Continuer)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="比較軸">根本的な職能</td>
+                                <td data-label="旧来"><strong>「作る人」</strong>機能要件を満たし、完成品を納品する。</td>
+                                <td data-label="未来" class="future"><strong>「価値を継続させる人」</strong>現実の「揺れ」を受け止め、責任をつなぐ。</td>
+                            </tr>
+                            <tr>
+                                <td data-label="比較軸">完成への態度</td>
+                                <td data-label="旧来"><strong>「完成」を目指す</strong>変化（ズレ）をバグとして扱う。</td>
+                                <td data-label="未来" class="future"><strong>「完成」を否定する</strong>ズレを壊さずに戻すために「いじり続ける」。</td>
+                            </tr>
+                            <tr>
+                                <td data-label="比較軸">設計の判断</td>
+                                <td data-label="旧来"><strong>最適化と拡張</strong>「技術的に可能か？」を追求する。</td>
+                                <td data-label="未来" class="future"><strong>責任の境界
+                                        (Boundary)</strong>「引き受けるべき責任か？」を問い、不要なら返す。</td>
+                            </tr>
+                            <tr>
+                                <td data-label="比較軸">成果物の価値</td>
+                                <td data-label="旧来"><strong>機能リスト</strong>何ができるか、どれだけ速いか。</td>
+                                <td data-label="未来" class="future"><strong>保証の範囲</strong>何を保証し、どこで人に判断を戻すか。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <div class="highlight-box">
+                <strong>補足：より論理的な説明が必要な方へ</strong><br>
+                このマニフェストは、あえて短く、比喩的に書かれています。<br>
+                もし「なぜそこまで責任の話になるのか」「実装や構築が極端に容易になったとき、その“先”で何が起きるのか」を
+                エンジニア目線で整理した説明が必要であれば、以下に丁寧版を用意しています。<br><br>
+                <a href="./engineering-after-vibe.html" class="pill">
+                    その先のエンジニアリング（丁寧版）
+                </a>
+            </div>
+
+            <section class="card">
+                <div class="inner">
+                    <h2>3. 招待状 (Invitation)</h2>
+                    <p class="manifesto-text">
+                        AIにより、理論上「最強の設計」は常に作れるようになりました。<br>
+                        それでも我々がそれを選ばない理由は、<strong>引き受けるべきでない責任まで背負ってしまうから</strong>です。
+                    </p>
+                    <p class="manifesto-text">
+                        設計とは最適化ではなく、責任を引き受け、引き受けない責任を返す判断のこと。<br>
+                        「作れること」が価値ではなくなった世界で、我々は<strong>「責任を果たせる設計だけを選び続ける」</strong>道を選びます。
+                    </p>
+
+                    <div class="hr"></div>
+
+                    <p class="manifesto-text" style="margin-top:24px;">
+                        もしあなたが、右側の定義——<strong>「作る人ではなく、価値を継続させる人」</strong>——に共鳴するなら、<br>
+                        VCDesign はあなたのための場所です。
+                    </p>
+
+                    <div class="btnrow" style="margin-top:32px; justify-content:center;">
+                        <a href="/ja/" class="btn primary" style="padding:12px 32px;">VCDesign エコシステムへ</a>
+                        <a href="https://github.com/hironobu-arakawa/vcdesign-core" class="btn">GitHub</a>
+                    </div>
+
+                    <div class="sign-off">
+                        VCDesign Project
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div>© VCDesign — The Manifesto</div>
+            <div class="muted">
+                <a href="/ja/">Back to Top</a>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

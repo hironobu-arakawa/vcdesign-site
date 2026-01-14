@@ -4,11 +4,59 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VCDesign — Boundary-Oriented Ecosystem</title>
+  <title>VCDesign — Ecosystem for Design by Boundary</title>
   <meta name="description"
-    content="VCDesign is a boundary-oriented ecosystem built on VCD (Value Continuity Design). It provides four independent entry points: IDG, RP, BOA, and VCD." />
+    content="VCDesign is a boundary design ecosystem for systems that withstand change. Choose only the boundaries you need from 4 entry points: IDG / RP / BOA / VCD." />
   <meta name="theme-color" content="#0b0f19" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/style.css" />
+
+  <style>
+    /* Scoped: only for this page */
+    .lead-actions {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .lead-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .lead-action strong {
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .lead-action small {
+      color: var(--muted);
+    }
+
+    .lead-action.primary {
+      border-color: var(--accent);
+      background: rgba(96, 165, 250, 0.10);
+    }
+
+    .who {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .who strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+  </style>
 </head>
 
 <body>
@@ -18,28 +66,62 @@
     <header>
       <div class="brand">
         <div class="kicker"><span class="dot"></span><span>VCDesign Ecosystem</span></div>
-        <h1>Design where boundaries decide.</h1>
+
+        <h1>Design by Boundary.</h1>
+
         <p class="subtitle">
-          VCDesign is not a framework.
-          It is a boundary-oriented ecosystem built on
-          <strong>VCD — Value Continuity Design</strong>,
-          the philosophical layer that defines why boundaries must exist.
-          The ecosystem offers four independent entry points — each with its own responsibility.
+          VCDesign is not a framework.<br>
+          It is an ecosystem dealing with "where to place boundaries to withstand change".
+        </p>
+
+        <div class="lead-actions">
+          <a href="manifesto/" class="lead-action primary">
+            <span>
+              <strong>Read First</strong>
+              <small>Manifesto: The Future of Engineering and the "Chapter" of Time</small>
+            </span>
+            <span aria-hidden="true">→</span>
+          </a>
+
+          <a href="#entries" class="lead-action">
+            <span>
+              <strong>Choose Entry</strong>
+              <small>IDG / RP / BOA / VCD: Take only necessary boundaries</small>
+            </span>
+            <span aria-hidden="true">↓</span>
+          </a>
+
+          <a href="demo/" class="lead-action">
+            <span>
+              <strong>Try</strong>
+              <small>AI Demo: Let AI Read and Review Your Design</small>
+            </span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <p class="who">
+          <strong>If unsure:</strong>
+          If you want to start building right away, choose <strong>BOA</strong>.
+          If inputs/specs/responsibilities are vague and you "don't know if it's okay to pass", choose <strong>IDG</strong>.
+          If judgments become decisions "before you know it", choose <strong>RP</strong>.
+          If you want to understand the premise (why boundaries / passing by chapters), choose <strong>VCD</strong>.
         </p>
       </div>
     </header>
 
     <!-- Four Entry Cards -->
-    <main class="two">
+    <main id="entries" class="two">
 
       <!-- IDG -->
       <section class="card">
         <div class="inner">
           <h2>IDG — Interface Determinability Gate</h2>
           <p class="muted">
-            Ambiguity stops here.
-            IDG blocks inputs that cannot be owned, traced, or explained.
+            Vague inputs stop here.<br>
+            Things that cannot be explained or have vague responsibilities cannot pass the boundary.
           </p>
+          <p class="who"><strong>For:</strong> AI input / specs / responsibilities are vague and "unsafe to pass"</p>
           <a href="idg/" class="pill">Open IDG</a>
         </div>
       </section>
@@ -47,11 +129,12 @@
       <!-- RP -->
       <section class="card">
         <div class="inner">
-          <h2>RP — Resolution Protocol</h2>
+          <h2>RP — Responsibility Promotion Protocol</h2>
           <p class="muted">
-            Decisions must not silently promote themselves.
-            RP protects the moment where Meaning becomes Responsibility.
+            The gate protecting the moment Meaning promotes to Responsibility.<br>
+            We do not make "when and who decided" ambiguous.
           </p>
+          <p class="who"><strong>For:</strong> Judgments become decisions "unnoticed" / Unexplainable items increase</p>
           <a href="rp/" class="pill">Open RP</a>
         </div>
       </section>
@@ -61,9 +144,10 @@
         <div class="inner">
           <h2>BOA — Boundary-Oriented Architecture</h2>
           <p class="muted">
-            Fact, Meaning, Responsibility.
-            BOA constructs boundaries that survive change and prevent silent drift.
+            A construction method separating Fact / Meaning / Responsibility by boundaries.<br>
+            A practical entry point ready for immediate use in the field.
           </p>
+          <p class="who"><strong>For:</strong> Want to "separate" design / Reduce ways it breaks / Build hands-on first</p>
           <a href="boa/" class="pill">Open BOA</a>
         </div>
       </section>
@@ -73,10 +157,10 @@
         <div class="inner">
           <h2>VCD — Value Continuity Design</h2>
           <p class="muted">
-            The philosophical core.
-            VCD defines the conditions under which value and responsibility
-            survive context drift and remain explainable over time.
+            The philosophical core (foundation) of VCDesign.<br>
+            Defines the prerequisites for value and responsibility to <strong>continue to be handed over</strong> within changing contexts (Chapters).
           </p>
+          <p class="who"><strong>For:</strong> Want to understand "why boundaries are needed" from the backbone / Organize by chapters (time)</p>
           <a href="vcd/" class="pill">Open VCD</a>
         </div>
       </section>
@@ -86,34 +170,35 @@
     <!-- AI Demo -->
     <section class="card" style="margin-top:16px;">
       <div class="inner">
-        <h2>AI Demo — Experiment with Design AI</h2>
+        <h2>AI Demo — Dialogue Experiment with Design AI</h2>
         <p class="muted">
-          VCDesign is designed to be "machine-readable".<br />
-          Experience design reviews by letting your AI read this site.
+          VCDesign is designed to be "read and understood by Generative AI".<br />
+          You can experience letting your AI read this site and review your design.
         </p>
         <a href="demo/" class="pill">Open Demo Page</a>
       </div>
     </section>
+
     <!-- Library -->
     <section class="card" style="margin-top:24px;">
       <div class="inner">
-        <h2>Library (Derived Repositories)</h2>
+        <h2>Library (Satellite Repositories)</h2>
         <p class="muted">
-          Practical notes, field observations, and implementation materials.
-          These are not the Core — they live outside the boundary.
+          Field notes, data shapes, principles of responsibility, etc.<br>
+          Practical materials surrounding VCDesign / BOA.<br>
+          This is a place to "decide where to refer", not a "place to read".
         </p>
         <a href="library/" class="pill">Open Library</a>
       </div>
     </section>
 
-
     <!-- Footer -->
     <footer>
-      <div>© VCDesign — Value Continuity Design.</div>
+      <div>© VCDesign — Ecosystem for Design by Boundary</div>
       <div class="muted">Static HTML. No dependencies.</div>
-      <div class="muted">Boundaries first. Opinions expire.</div>
+      <div class="muted">Opinions change. Boundaries remain.</div>
       <div class="muted" style="margin-top:6px;">
-        <a href="/ja/">Japanese entry</a>
+        <a href="/ja/">Japanese Version</a>
       </div>
     </footer>
 
