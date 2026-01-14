@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>章（Chapter）とは｜VCDesign Definition</title>
+    <meta name="description" content="コードではなく、責任と文脈を区切るための単位。「章」の定義と、エンジニアが果たすべき編集者としての役割について。" />
+    <meta name="theme-color" content="#0b0f19" />
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <div class="wrap">
+
+        <header>
+            <div class="brand">
+                <div class="kicker">
+                    <span class="dot"></span>
+                    <span>Definition</span>
+                </div>
+
+                <h2>章（Chapter）とは何か</h2>
+
+                <p class="subtitle">
+                    コードではなく、責任と文脈を区切るための単位。<br>
+                    なぜ「バージョン」や「フェーズ」では足りないのか。
+                </p>
+
+                <div class="top-ref">
+                    <a href="./" class="pill">← Manifesto に戻る</a>
+                    <a href="/ja/vcd/" class="pill">VCD を読む</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="card">
+                <div class="inner">
+                    <h2>1. なぜ「バージョン」や「フェーズ」では足りないのか</h2>
+
+                    <p class="muted">
+                        ソフトウェア開発には、すでに優れた区切り方が存在します。<br>
+                        ソースコードを管理する「バージョン」。<br>
+                        プロジェクトの進捗を管理する「フェーズ」。
+                    </p>
+
+                    <p class="muted">
+                        これらは「作る側」にとっては完璧な管理単位です。<br>
+                        しかし、システムが動き出し、現実という時間の流れにさらされたとき、これらの単位は無力になります。<br>
+                        なぜなら、そこには決定的な情報が抜け落ちているからです。
+                    </p>
+
+                    <div class="highlight-box">
+                        <strong>欠落している情報：</strong><br>
+                        「誰が、その判断の重さを背負っているか」
+                    </div>
+
+                    <p class="muted">
+                        バージョンが変わらなくても、現場の状況が変われば、システムの「意味」は変わります。<br>
+                        フェーズが完了しても、責任の所在が曖昧であれば、運用者は「何もしない」という最も難しい判断を強いられ続けます。
+                    </p>
+
+                    <ul class="rules">
+                        <li class="rule">バージョンはコードを区切るが、責任は区切らない</li>
+                        <li class="rule">フェーズは時間を区切るが、文脈は区切らない</li>
+                    </ul>
+
+                    <p class="muted">
+                        だからこそ、私たちは新しい単位を必要としました。<br>
+                        作る時間と、続ける時間。その両方を内包し、責任のバトンを落とさずに渡すための器。<br>
+                        それが <strong>章（Chapter）</strong> です。
+                    </p>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="inner">
+                    <h2>2. 章（Chapter）の定義</h2>
+
+                    <p class="muted">
+                        章とは、システムにおける機能的なまとまりではありません。<br>
+                        それは、<strong>「ある特定の文脈と責任において、設計が価値を保証できると宣言された期間」</strong>の定義です。
+                    </p>
+
+                    <p class="muted">
+                        一つの章には、以下の3つの要素が不可分な状態でパッケージされています。
+                    </p>
+
+                    <dl class="definition-list">
+                        <dt>① 文脈（Context）</dt>
+                        <dd>
+                            「なぜその設計になったのか」「その時、何が正解とされていたのか」という背景情報。<br>
+                            教科書的な「標準」と、その場ごとの「現場の現実」との間にあるズレを、<br>
+                            当時どう解釈して実装したかという「合意」を保存します。
+                        </dd>
+
+                        <dt>② 責任の境界（Boundary of Responsibility）</dt>
+                        <dd>
+                            「どこまではシステムが保証し、どこからは人間が判断すべきか」という線引き。<br>
+                            現実の揺れ（遅延、欠損、例外）をすべてシステムで吸収することはできません。<br>
+                            章は、「この揺れは人間が判断する」という条約を明文化します。
+                        </dd>
+
+                        <dt>③ 終わりと次（End & Next）</dt>
+                        <dd>
+                            これが最も重要です。章には、必ず「終わり」が定義されます。<br>
+                            運用には終わりがありませんが、章には終わりがあります。<br>
+                            「前提が変わったら」「一定期間が過ぎたら」、その章は閉じられ、責任は次の章（あるいは人間）へと返却されます。
+                        </dd>
+                    </dl>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="inner">
+                    <h2>3. 揺れる世界を通すための構造</h2>
+
+                    <p class="muted">
+                        システム開発の理想（標準）は、常に「揺れない世界」を前提にします。<br>
+                        <strong>それは欠陥ではなく、成立条件です。</strong><br>
+                        しかし、現場は常に「揺れる世界」を生きています。<br>
+                        時間は揺れ、順序は入れ替わり、判断はその場で変わります。
+                    </p>
+
+                    <p class="muted">
+                        章（Chapter）は、この二つの世界の間に置かれる<strong>「揺れを通す構造」</strong>です。
+                    </p>
+
+                    <h3>運用の「重さ」を断ち切る</h3>
+                    <p class="muted">
+                        運用現場ではしばしば「判断の過密」が起き、現場が疲弊します。<br>
+                        これは、過去のすべての判断（設計時の妥協、プロジェクト時の仮置き）が、<br>
+                        整理されないまま運用へ流れ込み続けるからです。
+                    </p>
+                    <p class="muted">
+                        章を導入することで、この流れを断ち切ることができます。
+                    </p>
+                    <ul class="rules">
+                        <li class="rule">「この判断は、第1章の前提に基づいている」</li>
+                        <li class="rule">「前提が変わったので、第1章は終了する」</li>
+                    </ul>
+                    <p class="muted">
+                        これにより、運用者は「無限の責任」から解放され、<br>
+                        「定義された章の中での判断」に集中できるようになります。
+                    </p>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="inner">
+                    <h2>4. エンジニアの新しい仕事：章を編集する</h2>
+
+                    <p class="muted">
+                        AIによってコードが瞬時に生成される時代において、<br>
+                        エンジニアの仕事は「中身を書くこと」から「章を定義すること」へとシフトします。
+                    </p>
+
+                    <p class="muted">
+                        エンジニアは、コードの書き手（Author）から、<br>
+                        <strong>章の編集者（Editor）</strong>になります。
+                    </p>
+
+                    <div class="highlight-box">
+                        <strong>編集者としての問い：</strong>
+                        <ul>
+                            <li>この機能は、どのくらいの期間、価値を維持できるか？</li>
+                            <li>この設計は、現場の「揺れ」に対し、どこまで責任を持てるか？</li>
+                            <li>その責任を果たせなくなったとき、どうやって安全に人間に判断を戻すか？</li>
+                        </ul>
+                    </div>
+
+                    <p class="muted">
+                        これらを決定し、章の「始まり」と「終わり」を設計図に書き込むこと。<br>
+                        それが、VCDesignが提唱する <strong>Value Continuity Design（価値継続設計）</strong> の実践です。
+                    </p>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="inner">
+                    <h2>Epilogue — 本のように、システムを閉じる</h2>
+
+                    <p class="muted">
+                        優れた本が章立てによって構成されるように、<br>
+                        優れたシステムもまた、章によって構成されるべきです。
+                    </p>
+
+                    <p class="muted">
+                        章があるからこそ、私たちは一度立ち止まることができます。<br>
+                        章があるからこそ、文脈が変わったことに気づくことができます。<br>
+                        そして章があるからこそ、前の章を書いた人（過去の自分やチーム）に敬意を払いながら、<br>
+                        新しいページをめくることができます。
+                    </p>
+
+                    <p class="muted">
+                        システムは完成しても、価値は続いていく。<br>
+                        その長い旅路において、迷子にならないためのマイルストーン。<br>
+                        それが「章」なのです。
+                    </p>
+
+                    <div class="btnrow" style="margin-top:32px;">
+                        <a href="/ja/manifesto/" class="btn">Manifesto に戻る</a>
+                        <a href="/ja/vcd/" class="btn primary">VCD 実践ガイドへ</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div>© VCDesign — Definition of Chapter</div>
+            <div class="muted">Based on Series 5 & 9 Concepts</div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

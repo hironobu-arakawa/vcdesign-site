@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>What is a Chapter | VCDesign Definition</title>
+    <meta name="description"
+        content="A unit to delimit responsibility and context, not code. Definition of 'Chapter' and the role of the engineer as an editor." />
+    <meta name="theme-color" content="#0b0f19" />
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <div class="wrap">
+
+        <header>
+            <div class="brand">
+                <div class="kicker">
+                    <span class="dot"></span>
+                    <span>Definition</span>
+                </div>
+
+                <h2>What is a Chapter?</h2>
+
+                <p class="subtitle">
+                    A unit to delimit responsibility and context, not code.<br>
+                    Why "versions" and "phases" are not enough.
+                </p>
+
+                <div class="top-ref">
+                    <a href="./" class="pill">← Back to Manifesto</a>
+                    <a href="/vcd/" class="pill">Read VCD</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="card">
+                <div class="inner">
+                    <h2>1. Why "Versions" and "Phases" Are Not Enough</h2>
+
+                    <p class="muted">
+                        Software development already has excellent delimiters.<br>
+                        "Versions" to manage source code.<br>
+                        "Phases" to manage project progress.
+                    </p>
+
+                    <p class="muted">
+                        These are perfect management units for the "maker".<br>
+                        However, when the system starts running and is exposed to the flow of reality, these units
+                        become powerless.<br>
+                        Because decisive information is missing there.
+                    </p>
+
+                    <div class="highlight-box">
+                        <strong>Missing Information:</strong><br>
+                        "Who bears the weight of that judgment?"
+                    </div>
+
+                    <p class="muted">
+                        Even if the version doesn't change, if the situation on the ground changes, the "meaning" of the
+                        system changes.<br>
+                        Even if the phase is complete, if the locus of responsibility is vague, operators are forced to
+                        continue making the most difficult decision of "doing nothing".
+                    </p>
+
+                    <ul class="rules">
+                        <li class="rule">Versions delimit code, but not responsibility.</li>
+                        <li class="rule">Phases delimit time, but not context.</li>
+                    </ul>
+
+                    <p class="muted">
+                        That is why we needed a new unit.<br>
+                        A vessel to contain both the time of making and the time of continuing, and to pass the baton of
+                        responsibility without dropping it.<br>
+                        That is the <strong>Chapter</strong>.
+                    </p>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="inner">
+                    <h2>2. Definition of Chapter</h2>
+
+                    <p class="muted">
+                        A chapter is not a functional grouping in a system.<br>
+                        It is the definition of <strong>"a declared period where the design guarantees value under a
+                            specific context and responsibility."</strong>
+                    </p>
+
+                    <p class="muted">
+                        Three elements are packaged indivisibly in one chapter.
+                    </p>
+
+                    <dl class="definition-list">
+                        <dt>1. Context</dt>
+                        <dd>
+                            Background information on "why this design was chosen" and "what was considered correct at
+                            the time".<br>
+                            It preserves the "agreement" on how the gap between the textbook "standard" and the "reality
+                            of the field" was interpreted and implemented at that time.
+                        </dd>
+
+                        <dt>2. Boundary of Responsibility</dt>
+                        <dd>
+                            A line drawn to define "up to where the system guarantees, and from where humans should
+                            judge".<br>
+                            The system cannot absorb all tremors of reality (delays, losses, exceptions).<br>
+                            A chapter explicitly states the treaty that "humans decide this tremor".
+                        </dd>
+
+                        <dt>3. End & Next</dt>
+                        <dd>
+                            This is the most important. A chapter always has an "End" defined.<br>
+                            Operation has no end, but a chapter has an end.<br>
+                            When "premises change" or "a certain period passes", the chapter closes, and responsibility
+                            is returned to the next chapter (or human).
+                        </dd>
+                    </dl>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="inner">
+                    <h2>3. Structure to Pass Through a Trembling World</h2>
+
+                    <p class="muted">
+                        The ideal (standard) of system development always assumes a "world that doesn't tremble".<br>
+                        <strong>That is not a defect, but a condition for establishment.</strong><br>
+                        However, the field is always living in a "trembling world".<br>
+                        Time trembles, orders flip, and judgments change on the spot.
+                    </p>
+
+                    <p class="muted">
+                        A Chapter is a <strong>"structure to pass tremors"</strong> placed between these two worlds.
+                    </p>
+
+                    <h3>Cutting the "Weight" of Operation</h3>
+                    <p class="muted">
+                        In operation fields, "judgment overload" often occurs, exhausting the field.<br>
+                        This is because all past judgments (compromises during design, temporary values during projects)
+                        continue to flow into operation without being organized.
+                    </p>
+                    <p class="muted">
+                        By introducing chapters, this flow can be cut off.
+                    </p>
+                    <ul class="rules">
+                        <li class="rule">"This judgment is based on the premises of Chapter 1."</li>
+                        <li class="rule">"Since premises changed, Chapter 1 ends."</li>
+                    </ul>
+                    <p class="muted">
+                        This releases operators from "infinite responsibility"<br>
+                        and allows them to focus on "judgments within the defined chapter".
+                    </p>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="inner">
+                    <h2>4. New Job of Engineers: Editing Chapters</h2>
+
+                    <p class="muted">
+                        In an era where code is generated instantly by AI,<br>
+                        the engineer's job shifts from "writing content" to "defining chapters".
+                    </p>
+
+                    <p class="muted">
+                        Engineers become <strong>Editors of Chapters</strong><br>
+                        from Authors of code.
+                    </p>
+
+                    <div class="highlight-box">
+                        <strong>Questions as an Editor:</strong>
+                        <ul>
+                            <li>How long can this feature maintain value?</li>
+                            <li>How far can this design take responsibility for the "tremors" of the field?</li>
+                            <li>When it can no longer fulfill that responsibility, how do we safely return judgment to
+                                humans?</li>
+                        </ul>
+                    </div>
+
+                    <p class="muted">
+                        Deciding these and writing the "start" and "end" of the chapter into the blueprint.<br>
+                        That is the practice of <strong>Value Continuity Design</strong> proposed by VCDesign.
+                    </p>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="inner">
+                    <h2>Epilogue — Closing the System Like a Book</h2>
+
+                    <p class="muted">
+                        Just as great books are composed of chapters,<br>
+                        great systems should also be composed of chapters.
+                    </p>
+
+                    <p class="muted">
+                        Because there are chapters, we can stop for a moment.<br>
+                        Because there are chapters, we can notice that the context has changed.<br>
+                        And because there are chapters, we can turn a new page<br>
+                        while paying respect to the person who wrote the previous chapter (past self or team).
+                    </p>
+
+                    <p class="muted">
+                        Even if the system is complete, value continues.<br>
+                        A milestone to avoid getting lost in that long journey.<br>
+                        That is the "Chapter".
+                    </p>
+
+                    <div class="btnrow" style="margin-top:32px;">
+                        <a href="/manifesto/" class="btn">Back to Manifesto</a>
+                        <a href="/vcd/" class="btn primary">Go to VCD Practice Guide</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div>© VCDesign — Definition of Chapter</div>
+            <div class="muted">Based on Series 5 & 9 Concepts</div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
